@@ -1,1 +1,11 @@
 c:\users\13121\documents\visual studio 2012\Projects\BaiToanEPAA\BaiToan\bin\Debug\BaiToan.exe.config
+c:\users\13121\documents\visual studio 2012\Projects\BaiToanEPAA\BaiToan\bin\Debug\BaiToan.exe
+c:\users\13121\documents\visual studio 2012\Projects\BaiToanEPAA\BaiToan\bin\Debug\BaiToan.pdb
+c:\users\13121\documents\visual studio 2012\Projects\BaiToanEPAA\BaiToan\bin\Debug\EPAA.dll
+c:\users\13121\documents\visual studio 2012\Projects\BaiToanEPAA\BaiToan\bin\Debug\EPAA.pdb
+c:\users\13121\documents\visual studio 2012\Projects\BaiToanEPAA\BaiToan\obj\Debug\BaiToan.csprojResolveAssemblyReference.cache
+c:\users\13121\documents\visual studio 2012\Projects\BaiToanEPAA\BaiToan\obj\Debug\BaiToan.Form1.resources
+c:\users\13121\documents\visual studio 2012\Projects\BaiToanEPAA\BaiToan\obj\Debug\BaiToan.Properties.Resources.resources
+c:\users\13121\documents\visual studio 2012\Projects\BaiToanEPAA\BaiToan\obj\Debug\BaiToan.csproj.GenerateResource.Cache
+c:\users\13121\documents\visual studio 2012\Projects\BaiToanEPAA\BaiToan\obj\Debug\BaiToan.exe
+c:\users\13121\documents\visual studio 2012\Projects\BaiToanEPAA\BaiToan\obj\Debug\BaiToan.pdb

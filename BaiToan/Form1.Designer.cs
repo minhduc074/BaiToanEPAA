@@ -28,12 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.btndocFile = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // btndocFile
+            // 
+            this.btndocFile.Location = new System.Drawing.Point(89, 153);
+            this.btndocFile.Name = "btndocFile";
+            this.btndocFile.Size = new System.Drawing.Size(75, 23);
+            this.btndocFile.TabIndex = 0;
+            this.btndocFile.Text = "Doc File";
+            this.btndocFile.UseVisualStyleBackColor = true;
+            this.btndocFile.Click += new System.EventHandler(this.btndocFile_Click);
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.btndocFile);
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.Button btndocFile;
+
     }
 }
 

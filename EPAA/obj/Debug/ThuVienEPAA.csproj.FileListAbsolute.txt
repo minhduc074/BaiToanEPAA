@@ -1,0 +1,5 @@
+c:\users\13121\documents\visual studio 2012\Projects\BaiToanEPAA\EPAA\bin\Debug\EPAA.dll
+c:\users\13121\documents\visual studio 2012\Projects\BaiToanEPAA\EPAA\bin\Debug\EPAA.pdb
+c:\users\13121\documents\visual studio 2012\Projects\BaiToanEPAA\EPAA\obj\Debug\ThuVienEPAA.csprojResolveAssemblyReference.cache
+c:\users\13121\documents\visual studio 2012\Projects\BaiToanEPAA\EPAA\obj\Debug\EPAA.dll
+c:\users\13121\documents\visual studio 2012\Projects\BaiToanEPAA\EPAA\obj\Debug\EPAA.pdb

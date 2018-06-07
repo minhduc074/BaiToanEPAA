@@ -16,5 +16,11 @@ namespace BaiToan
         {
             InitializeComponent();
         }
+
+        private void btndocFile_Click(object sender, EventArgs e)
+        {
+            ThuVienEPAA.EPAA epaa = new ThuVienEPAA.EPAA("power_data.txt");
+            MessageBox.Show("So luong du lieu da doc duoc: " + epaa.SoCot.ToString());
+        }
     }
 }
