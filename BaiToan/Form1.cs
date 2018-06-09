@@ -18,21 +18,42 @@ namespace BaiToan
             InitializeComponent();
         }
 
-        private void HienThiDuLieu()
+        private void HienThiDuLieu(List<ThuVienEPAA.Node> data)
         {
+            if (data == null)
+                return;
+            chart1.Series.Clear();
+            chart1.Series.Add("Min");
+            chart1.Series["Min"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            chart1.Series.Add("Avg");
+            chart1.Series["Avg"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            chart1.Series.Add("Max");
+            chart1.Series["Max"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            for(int i = 0; i < data.Count(); i++)
+            {
+                chart1.Series["Avg"].Points.AddXY(i + 1, data[i].Avg);
+                chart1.Series["Max"].Points.AddXY(i + 1, data[i].Max);
+                chart1.Series["Min"].Points.AddXY(i + 1, data[i].Min);
+            }
 
         }
 
         private void btndocFile_Click(object sender, EventArgs e)
         {
             epaa = new ThuVienEPAA.EPAA("power_data.txt");
-            MessageBox.Show("So luong du lieu da doc duoc: " + epaa.SoCot.ToString());
+            List<ThuVienEPAA.Node> data = epaa.Data;
+            HienThiDuLieu(data);
         }
 
         private void btnEPAA_Click(object sender, EventArgs e)
         {
-            epaa.ThayDoiSoLuongDuLieu(5);
-            MessageBox.Show("So luong du lieu da doc duoc: " + epaa.SoCot.ToString());
+            if(txtSoCot.Text.CompareTo("") == 0)
+            {
+                MessageBox.Show("Nhap so cot");
+                return;
+            }
+            List<ThuVienEPAA.Node> data  = epaa.ThayDoiSoLuongDuLieu(Int32.Parse(txtSoCot.Text));
+            HienThiDuLieu(data);
         }
     }
 }

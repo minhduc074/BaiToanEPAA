@@ -71,6 +71,33 @@ namespace ThuVienEPAA
             data = TapTin.DocFile(tenFile);
             soCot = data.Count();
         }
+        public List<double> LayDanhSachMin()
+        {
+            List<double> ret = new List<double>();
+
+            for (int i = 0; i < soCot; i++)
+                ret.Add(data[i].Min);
+
+                return ret;
+        }
+        public List<double> LayDanhSachAvg()
+        {
+            List<double> ret = new List<double>();
+
+            for (int i = 0; i < soCot; i++)
+                ret.Add(data[i].Avg);
+
+            return ret;
+        }
+        public List<double> LayDanhSachMax()
+        {
+            List<double> ret = new List<double>();
+
+            for (int i = 0; i < soCot; i++)
+                ret.Add(data[i].Max);
+
+            return ret;
+        }
 
         private double GiaTriNhoNhatTrongDoan(int batdau, int ketthuc)
         {
@@ -103,19 +130,19 @@ namespace ThuVienEPAA
             {
                 ret += data[i].Avg;
             }
-            ret = ret / (batdau - ketthuc + 1);
+            ret = ret / (ketthuc - batdau);
 
             return ret;
         }
 
-        public void ThayDoiSoLuongDuLieu(int soCotMoi)
+        public List<Node> ThayDoiSoLuongDuLieu(int soCotMoi)
         {
             List<Node> newData = new List<Node>();
             if (soCot == soCotMoi)
-                return;
-            if (soCotMoi <= 0)
-                return;
-            int len = soCotMoi / soCot;
+                return data;
+            if (soCotMoi <= 0 && soCotMoi > SoCot)
+                return null;
+            int len = soCot / soCotMoi;
             for(int i = 0; i < soCotMoi; i++)
             {
                 Node t = new Node();
@@ -125,9 +152,12 @@ namespace ThuVienEPAA
                 newData.Add(t);
             }
             data.Clear();
-            data = newData;
-            soCot = newData.Count();
 
+            return newData;
+        }
+        public void Clear()
+        {
+            data.Clear();
         }
 
     }
