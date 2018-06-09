@@ -9,3 +9,14 @@ c:\users\13121\documents\visual studio 2012\Projects\BaiToanEPAA\BaiToan\obj\Deb
 c:\users\13121\documents\visual studio 2012\Projects\BaiToanEPAA\BaiToan\obj\Debug\BaiToan.csproj.GenerateResource.Cache
 c:\users\13121\documents\visual studio 2012\Projects\BaiToanEPAA\BaiToan\obj\Debug\BaiToan.exe
 c:\users\13121\documents\visual studio 2012\Projects\BaiToanEPAA\BaiToan\obj\Debug\BaiToan.pdb
+C:\Users\minhd\Documents\GitHub\BaiToanEPAA\BaiToan\bin\Debug\BaiToan.exe.config
+C:\Users\minhd\Documents\GitHub\BaiToanEPAA\BaiToan\bin\Debug\BaiToan.exe
+C:\Users\minhd\Documents\GitHub\BaiToanEPAA\BaiToan\bin\Debug\BaiToan.pdb
+C:\Users\minhd\Documents\GitHub\BaiToanEPAA\BaiToan\bin\Debug\EPAA.dll
+C:\Users\minhd\Documents\GitHub\BaiToanEPAA\BaiToan\bin\Debug\EPAA.pdb
+C:\Users\minhd\Documents\GitHub\BaiToanEPAA\BaiToan\obj\Debug\BaiToan.csprojResolveAssemblyReference.cache
+C:\Users\minhd\Documents\GitHub\BaiToanEPAA\BaiToan\obj\Debug\BaiToan.Form1.resources
+C:\Users\minhd\Documents\GitHub\BaiToanEPAA\BaiToan\obj\Debug\BaiToan.Properties.Resources.resources
+C:\Users\minhd\Documents\GitHub\BaiToanEPAA\BaiToan\obj\Debug\BaiToan.csproj.GenerateResource.Cache
+C:\Users\minhd\Documents\GitHub\BaiToanEPAA\BaiToan\obj\Debug\BaiToan.exe
+C:\Users\minhd\Documents\GitHub\BaiToanEPAA\BaiToan\obj\Debug\BaiToan.pdb

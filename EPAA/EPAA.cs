@@ -72,5 +72,63 @@ namespace ThuVienEPAA
             soCot = data.Count();
         }
 
+        private double GiaTriNhoNhatTrongDoan(int batdau, int ketthuc)
+        {
+            double ret = data[batdau].Avg;
+
+            for (int i = batdau; i < ketthuc; i++)
+            {
+                if (ret > data[i].Avg)
+                    ret = data[i].Avg;
+            }
+
+                return ret;
+        }
+        private double GiaTriLonNhatTrongDoan(int batdau, int ketthuc)
+        {
+            double ret = data[batdau].Avg;
+
+            for (int i = batdau; i < ketthuc; i++)
+            {
+                if (ret < data[i].Avg)
+                    ret = data[i].Avg;
+            }
+
+            return ret;
+        }
+        private double GiaTriTrungBinhTrongDoan(int batdau, int ketthuc)
+        {
+            double ret = 0;
+            for (int i = batdau; i < ketthuc; i++)
+            {
+                ret += data[i].Avg;
+            }
+            ret = ret / (batdau - ketthuc + 1);
+
+            return ret;
+        }
+
+        public void ThayDoiSoLuongDuLieu(int soCotMoi)
+        {
+            List<Node> newData = new List<Node>();
+            if (soCot == soCotMoi)
+                return;
+            if (soCotMoi <= 0)
+                return;
+            int len = soCotMoi / soCot;
+            for(int i = 0; i < soCotMoi; i++)
+            {
+                Node t = new Node();
+                t.Max = GiaTriLonNhatTrongDoan(i * len, (i + 1) * len);
+                t.Min = GiaTriNhoNhatTrongDoan(i * len, (i + 1) * len);
+                t.Avg = GiaTriTrungBinhTrongDoan(i * len, (i + 1) * len);
+                newData.Add(t);
+            }
+            data.Clear();
+            data = newData;
+            soCot = newData.Count();
+
+        }
+
     }
 }
