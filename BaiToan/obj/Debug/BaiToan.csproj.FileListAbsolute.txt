@@ -20,3 +20,6 @@ C:\Users\minhd\Documents\GitHub\BaiToanEPAA\BaiToan\obj\Debug\BaiToan.Properties
 C:\Users\minhd\Documents\GitHub\BaiToanEPAA\BaiToan\obj\Debug\BaiToan.csproj.GenerateResource.Cache
 C:\Users\minhd\Documents\GitHub\BaiToanEPAA\BaiToan\obj\Debug\BaiToan.exe
 C:\Users\minhd\Documents\GitHub\BaiToanEPAA\BaiToan\obj\Debug\BaiToan.pdb
+C:\Users\user\Documents\GitHub\BaiToanEPAA\BaiToan\bin\Debug\BaiToan.exe.config
+C:\Users\user\Documents\GitHub\BaiToanEPAA\BaiToan\obj\Debug\BaiToan.exe
+C:\Users\user\Documents\GitHub\BaiToanEPAA\BaiToan\obj\Debug\BaiToan.pdb
