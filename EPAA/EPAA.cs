@@ -8,51 +8,93 @@ namespace ThuVienEPAA
 {
     public class Node
     {
-        double min, avg, max;
+        double giatri;
 
-        public double Max
+        public double Giatri
         {
-            get { return max; }
-            set { max = value; }
+            get { return giatri; }
+            set { giatri = value; }
+        }
+        double vitri;
+
+        public double Vitri
+        {
+            get { return vitri; }
+            set { vitri = value; }
         }
 
-        public double Avg
+        Node()
+        {
+            giatri = 0;
+            vitri = 0;
+        }
+
+        public Node(double giatri, double vitri)
+        {
+            this.giatri = giatri;
+            this.vitri = vitri;
+        }
+        public Node Clone()
+        {
+            return new Node(giatri, vitri);
+        }
+    }
+    public class Diem
+    {
+        Node min, max, avg;
+
+        public Node Avg
         {
             get { return avg; }
             set { avg = value; }
         }
 
-        public double Min
+        public Node Max
+        {
+            get { return max; }
+            set { max = value; }
+        }
+
+        public Node Min
         {
             get { return min; }
             set { min = value; }
         }
-        public Node()
+        public Diem()
         {
-            min = max = avg = 0;
-        }
-        public Node(double giatri)
-        {
-            min = max = avg = giatri;
-        }
-        public Node(double thapnhat, double trungbinh, double caonhat)
-        {
-            min = thapnhat;
-            avg = trungbinh;
-            max = caonhat;
-        }
 
+        }
+        public Diem(double giatri, double vitri)
+        {
+            min = new Node(giatri, vitri);
+            max = new Node(giatri, vitri);
+            avg = new Node(giatri, vitri);
+        }
+        public Diem(Node NhoNhat, Node TrungBinh, Node LonNhat)
+        {
+            min = NhoNhat;
+            max = TrungBinh;
+            avg = LonNhat;
+        }
     }
 
     public class EPAA
     {
-        List<Node> data = new List<Node>();
+        List<Diem> data = new List<Diem>();
+        bool duLieuDaGopTungDoan = false;
 
-        public List<Node> Data
+        public bool DuLieuDaGopTungDoan
+        {
+            get { return duLieuDaGopTungDoan; }
+            set { duLieuDaGopTungDoan = value; }
+        }
+
+        public List<Diem> Data
         {
             get { return data; }
             set { data = value; }
         }
+
         int soCot;
 
         public int SoCot
@@ -70,74 +112,86 @@ namespace ThuVienEPAA
         {
             data = TapTin.DocFile(tenFile);
             soCot = data.Count();
-        }
-        public List<double> LayDanhSachMin()
-        {
-            List<double> ret = new List<double>();
-
-            for (int i = 0; i < soCot; i++)
-                ret.Add(data[i].Min);
-
-                return ret;
-        }
-        public List<double> LayDanhSachAvg()
-        {
-            List<double> ret = new List<double>();
-
-            for (int i = 0; i < soCot; i++)
-                ret.Add(data[i].Avg);
-
-            return ret;
-        }
-        public List<double> LayDanhSachMax()
-        {
-            List<double> ret = new List<double>();
-
-            for (int i = 0; i < soCot; i++)
-                ret.Add(data[i].Max);
-
-            return ret;
+            //ChuanHoa();
         }
 
-        private double GiaTriNhoNhatTrongDoan(int batdau, int ketthuc)
+        private Node GiaTriNhoNhatTrongDoan(int batdau, int ketthuc)
         {
-            double ret = data[batdau].Avg;
-
-            for (int i = batdau; i < ketthuc; i++)
+            if (ketthuc >= soCot)
+                ketthuc = soCot - 1;
+            Node ret = data[batdau].Avg.Clone();
+            for (int i = batdau; i <= ketthuc; i++)
             {
-                if (ret > data[i].Avg)
-                    ret = data[i].Avg;
-            }
-
-                return ret;
-        }
-        private double GiaTriLonNhatTrongDoan(int batdau, int ketthuc)
-        {
-            double ret = data[batdau].Avg;
-
-            for (int i = batdau; i < ketthuc; i++)
-            {
-                if (ret < data[i].Avg)
-                    ret = data[i].Avg;
+                if (ret.Giatri > data[i].Avg.Giatri)
+                {
+                    ret.Giatri = data[i].Avg.Giatri;
+                    ret.Vitri = data[i].Avg.Vitri;
+                }
             }
 
             return ret;
         }
-        private double GiaTriTrungBinhTrongDoan(int batdau, int ketthuc)
+        private Node GiaTriLonNhatTrongDoan(int batdau, int ketthuc)
         {
-            double ret = 0;
-            for (int i = batdau; i < ketthuc; i++)
+            if (ketthuc >= soCot)
+                ketthuc = soCot - 1;
+            Node ret = data[batdau].Avg.Clone();
+            for (int i = batdau; i <= ketthuc; i++)
             {
-                ret += data[i].Avg;
+                if (ret.Giatri < data[i].Avg.Giatri)
+                {
+                    ret.Giatri = data[i].Avg.Giatri;
+                    ret.Vitri = data[i].Avg.Vitri;
+                }
             }
-            ret = ret / (ketthuc - batdau);
+
+            return ret;
+        }
+        private Node GiaTriTrungBinhTrongDoan(int batdau, int ketthuc)
+        {
+            if (ketthuc >= soCot)
+                ketthuc = soCot - 1;
+            Node ret = new Node(0,0);
+            for (int i = batdau; i <= ketthuc; i++)
+            {
+                ret.Giatri += data[i].Avg.Giatri;
+            }
+            ret.Giatri = ret.Giatri / (ketthuc - batdau + 1);
+            ret.Vitri = (ketthuc + batdau)*1.0 / 2;
 
             return ret;
         }
 
-        public List<Node> ThayDoiSoLuongDuLieu(int soCotMoi)
+        public List<Diem> ChuanHoa()
         {
-            List<Node> newData = new List<Node>();
+            List<Diem> newData = new List<Diem>();
+
+            double meanQ = GiaTriTrungBinhTrongDoan(0, soCot).Giatri;
+
+            double varQ = 0;
+            double varQTu = 0;
+            for (int i = 0; i < soCot; i++)
+            {
+                varQTu += Math.Pow((data[i].Avg.Giatri - meanQ), 2);
+            }
+            varQ = Math.Sqrt(varQTu / soCot);
+
+            for(int i = 0; i < soCot; i++)
+            {
+                Diem giatri = new Diem((data[i].Avg.Giatri - meanQ) / varQ, data[i].Avg.Vitri);
+
+                newData.Add(giatri);
+            }
+            Clear();
+            data = newData;
+
+            return newData;
+        }
+
+        public List<Diem> ThayDoiSoLuongDuLieu(int soCotMoi)
+        {
+            DuLieuDaGopTungDoan = true;
+            List<Diem> newData = new List<Diem>();
             if (soCot == soCotMoi)
                 return data;
             if (soCotMoi <= 0 && soCotMoi > SoCot)
@@ -145,13 +199,12 @@ namespace ThuVienEPAA
             int len = soCot / soCotMoi;
             for(int i = 0; i < soCotMoi; i++)
             {
-                Node t = new Node();
-                t.Max = GiaTriLonNhatTrongDoan(i * len, (i + 1) * len);
-                t.Min = GiaTriNhoNhatTrongDoan(i * len, (i + 1) * len);
-                t.Avg = GiaTriTrungBinhTrongDoan(i * len, (i + 1) * len);
-                newData.Add(t);
+                Diem d = new Diem();
+                d.Max = GiaTriLonNhatTrongDoan(i * len, (i + 1) * len);
+                d.Min = GiaTriNhoNhatTrongDoan(i * len, (i + 1) * len);
+                d.Avg = GiaTriTrungBinhTrongDoan(i * len, (i + 1) * len);
+                newData.Add(d);
             }
-            data.Clear();
 
             return newData;
         }

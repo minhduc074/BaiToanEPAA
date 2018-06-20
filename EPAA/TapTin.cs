@@ -9,18 +9,20 @@ namespace ThuVienEPAA
 {
     public class TapTin
     {
-        public static List<Node> DocFile(string tenFile)
+        public static List<Diem> DocFile(string tenFile)
         {
-            List<Node> ret = new List<Node>();
+            List<Diem> ret = new List<Diem>();
             string line;
              
             // Read the file and display it line by line.  
             System.IO.StreamReader file =
                 new System.IO.StreamReader(tenFile);
+            int i = 0;
             while ((line = file.ReadLine()) != null)
             {
-                Node n = new Node(Double.Parse(line));
+                Diem n = new Diem(Double.Parse(line), i);
                 ret.Add(n);
+                i++;
             }
 
             file.Close();  

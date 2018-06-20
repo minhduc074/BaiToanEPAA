@@ -37,6 +37,7 @@
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.btnEPAA = new System.Windows.Forms.Button();
             this.txtSoCot = new System.Windows.Forms.TextBox();
+            this.btnChuanHoa = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,11 +95,22 @@
             this.txtSoCot.Size = new System.Drawing.Size(100, 20);
             this.txtSoCot.TabIndex = 3;
             // 
+            // btnChuanHoa
+            // 
+            this.btnChuanHoa.Location = new System.Drawing.Point(74, 295);
+            this.btnChuanHoa.Name = "btnChuanHoa";
+            this.btnChuanHoa.Size = new System.Drawing.Size(75, 23);
+            this.btnChuanHoa.TabIndex = 4;
+            this.btnChuanHoa.Text = "Chuan Hoa";
+            this.btnChuanHoa.UseVisualStyleBackColor = true;
+            this.btnChuanHoa.Click += new System.EventHandler(this.btnChuanHoa_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(879, 489);
+            this.Controls.Add(this.btnChuanHoa);
             this.Controls.Add(this.txtSoCot);
             this.Controls.Add(this.btnEPAA);
             this.Controls.Add(this.chart1);
@@ -117,6 +129,7 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.Button btnEPAA;
         private System.Windows.Forms.TextBox txtSoCot;
+        private System.Windows.Forms.Button btnChuanHoa;
 
     }
 }
