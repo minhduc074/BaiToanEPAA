@@ -23,3 +23,6 @@ C:\Users\minhd\Documents\GitHub\BaiToanEPAA\BaiToan\obj\Debug\BaiToan.pdb
 C:\Users\user\Documents\GitHub\BaiToanEPAA\BaiToan\bin\Debug\BaiToan.exe.config
 C:\Users\user\Documents\GitHub\BaiToanEPAA\BaiToan\obj\Debug\BaiToan.exe
 C:\Users\user\Documents\GitHub\BaiToanEPAA\BaiToan\obj\Debug\BaiToan.pdb
+C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\BaiToan\bin\Debug\BaiToan.exe.config
+C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\BaiToan\obj\Debug\BaiToan.exe
+C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\BaiToan\obj\Debug\BaiToan.pdb
