@@ -13,59 +13,112 @@ namespace BaiToan
     public partial class Form1 : Form
     {
         ThuVienEPAA.EPAA epaa;
+        ThuVienEPAA.EPAA du_lieu_so_sanh;
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void HienThiDuLieu(List<ThuVienEPAA.Diem> data)
+        private void HienThiDuLieu(List<ThuVienEPAA.Diem> data, int doThi)
         {
             if (data == null)
                 return;
-            chart1.Series.Clear();
-            chart1.Series.Add("GiaTri");
-            chart1.Series["GiaTri"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            for (int i = 0; i < data.Count(); i++)
+            if(doThi == 1)
             {
-                if (!epaa.DuLieuDaGopTungDoan)
+                chart1.Series.Clear();
+                chart1.Series.Add("GiaTri");
+                chart1.Series["GiaTri"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+                for (int i = 0; i < data.Count(); i++)
                 {
-                    chart1.Series["GiaTri"].Points.AddXY(i + 1, data[i].Avg.Giatri);
+                    if (!epaa.DuLieuDaGopTungDoan)
+                    {
+                        chart1.Series["GiaTri"].Points.AddXY(i + 1, data[i].Avg.Giatri);
+                    }
+                    else if ((data[i].Max.Vitri < data[i].Avg.Vitri) && (data[i].Avg.Vitri < data[i].Min.Vitri))
+                    {
+                        chart1.Series["GiaTri"].Points.AddXY(i * 3 + 1, data[i].Max.Giatri);
+                        chart1.Series["GiaTri"].Points.AddXY(i * 3 + 2, data[i].Avg.Giatri);
+                        chart1.Series["GiaTri"].Points.AddXY(i * 3 + 3, data[i].Min.Giatri);
+                    }
+                    else if ((data[i].Min.Vitri < data[i].Avg.Vitri) && (data[i].Avg.Vitri < data[i].Max.Vitri))
+                    {
+                        chart1.Series["GiaTri"].Points.AddXY(i * 3 + 1, data[i].Min.Giatri);
+                        chart1.Series["GiaTri"].Points.AddXY(i * 3 + 2, data[i].Avg.Giatri);
+                        chart1.Series["GiaTri"].Points.AddXY(i * 3 + 3, data[i].Max.Giatri);
+                    }
+                    else if ((data[i].Min.Vitri < data[i].Max.Vitri) && (data[i].Max.Vitri < data[i].Avg.Vitri))
+                    {
+                        chart1.Series["GiaTri"].Points.AddXY(i * 3 + 1, data[i].Min.Giatri);
+                        chart1.Series["GiaTri"].Points.AddXY(i * 3 + 2, data[i].Max.Giatri);
+                        chart1.Series["GiaTri"].Points.AddXY(i * 3 + 3, data[i].Avg.Giatri);
+                    }
+                    else if ((data[i].Max.Vitri < data[i].Min.Vitri) && (data[i].Min.Vitri < data[i].Avg.Vitri))
+                    {
+                        chart1.Series["GiaTri"].Points.AddXY(i * 3 + 1, data[i].Max.Giatri);
+                        chart1.Series["GiaTri"].Points.AddXY(i * 3 + 2, data[i].Min.Giatri);
+                        chart1.Series["GiaTri"].Points.AddXY(i * 3 + 3, data[i].Avg.Giatri);
+                    }
+                    else if ((data[i].Avg.Vitri < data[i].Max.Vitri) && (data[i].Max.Vitri < data[i].Min.Vitri))
+                    {
+                        chart1.Series["GiaTri"].Points.AddXY(i * 3 + 1, data[i].Avg.Giatri);
+                        chart1.Series["GiaTri"].Points.AddXY(i * 3 + 2, data[i].Max.Giatri);
+                        chart1.Series["GiaTri"].Points.AddXY(i * 3 + 3, data[i].Min.Giatri);
+                    }
+                    else
+                    {
+                        chart1.Series["GiaTri"].Points.AddXY(i * 3 + 1, data[i].Avg.Giatri);
+                        chart1.Series["GiaTri"].Points.AddXY(i * 3 + 2, data[i].Min.Giatri);
+                        chart1.Series["GiaTri"].Points.AddXY(i * 3 + 3, data[i].Max.Giatri);
+                    }
                 }
-                else if ((data[i].Max.Vitri < data[i].Avg.Vitri) && (data[i].Avg.Vitri < data[i].Min.Vitri))
+            }
+            else
+            {
+                chart2.Series.Clear();
+                chart2.Series.Add("GiaTri");
+                chart2.Series["GiaTri"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+                for (int i = 0; i < data.Count(); i++)
                 {
-                    chart1.Series["GiaTri"].Points.AddXY(i * 3 + 1, data[i].Max.Giatri);
-                    chart1.Series["GiaTri"].Points.AddXY(i * 3 + 2, data[i].Avg.Giatri);
-                    chart1.Series["GiaTri"].Points.AddXY(i * 3 + 3, data[i].Min.Giatri);
-                }
-                else if ((data[i].Min.Vitri < data[i].Avg.Vitri) && (data[i].Avg.Vitri < data[i].Max.Vitri))
-                {
-                    chart1.Series["GiaTri"].Points.AddXY(i * 3 + 1, data[i].Min.Giatri);
-                    chart1.Series["GiaTri"].Points.AddXY(i * 3 + 2, data[i].Avg.Giatri);
-                    chart1.Series["GiaTri"].Points.AddXY(i * 3 + 3, data[i].Max.Giatri);
-                }
-                else if ((data[i].Min.Vitri < data[i].Max.Vitri) && (data[i].Max.Vitri < data[i].Avg.Vitri))
-                {
-                    chart1.Series["GiaTri"].Points.AddXY(i * 3 + 1, data[i].Min.Giatri);
-                    chart1.Series["GiaTri"].Points.AddXY(i * 3 + 2, data[i].Max.Giatri);
-                    chart1.Series["GiaTri"].Points.AddXY(i * 3 + 3, data[i].Avg.Giatri);
-                }
-                else if ((data[i].Max.Vitri < data[i].Min.Vitri) && (data[i].Min.Vitri < data[i].Avg.Vitri))
-                {
-                    chart1.Series["GiaTri"].Points.AddXY(i * 3 + 1, data[i].Max.Giatri);
-                    chart1.Series["GiaTri"].Points.AddXY(i * 3 + 2, data[i].Min.Giatri);
-                    chart1.Series["GiaTri"].Points.AddXY(i * 3 + 3, data[i].Avg.Giatri);
-                }
-                else if ((data[i].Avg.Vitri < data[i].Max.Vitri) && (data[i].Max.Vitri < data[i].Min.Vitri))
-                {
-                    chart1.Series["GiaTri"].Points.AddXY(i * 3 + 1, data[i].Avg.Giatri);
-                    chart1.Series["GiaTri"].Points.AddXY(i * 3 + 2, data[i].Max.Giatri);
-                    chart1.Series["GiaTri"].Points.AddXY(i * 3 + 3, data[i].Min.Giatri);
-                }
-                else
-                {
-                    chart1.Series["GiaTri"].Points.AddXY(i * 3 + 1, data[i].Avg.Giatri);
-                    chart1.Series["GiaTri"].Points.AddXY(i * 3 + 2, data[i].Min.Giatri);
-                    chart1.Series["GiaTri"].Points.AddXY(i * 3 + 3, data[i].Max.Giatri);
+                    if (!du_lieu_so_sanh.DuLieuDaGopTungDoan)
+                    {
+                        chart2.Series["GiaTri"].Points.AddXY(i + 1, data[i].Avg.Giatri);
+                    }
+                    else if ((data[i].Max.Vitri < data[i].Avg.Vitri) && (data[i].Avg.Vitri < data[i].Min.Vitri))
+                    {
+                        chart2.Series["GiaTri"].Points.AddXY(i * 3 + 1, data[i].Max.Giatri);
+                        chart2.Series["GiaTri"].Points.AddXY(i * 3 + 2, data[i].Avg.Giatri);
+                        chart2.Series["GiaTri"].Points.AddXY(i * 3 + 3, data[i].Min.Giatri);
+                    }
+                    else if ((data[i].Min.Vitri < data[i].Avg.Vitri) && (data[i].Avg.Vitri < data[i].Max.Vitri))
+                    {
+                        chart2.Series["GiaTri"].Points.AddXY(i * 3 + 1, data[i].Min.Giatri);
+                        chart2.Series["GiaTri"].Points.AddXY(i * 3 + 2, data[i].Avg.Giatri);
+                        chart2.Series["GiaTri"].Points.AddXY(i * 3 + 3, data[i].Max.Giatri);
+                    }
+                    else if ((data[i].Min.Vitri < data[i].Max.Vitri) && (data[i].Max.Vitri < data[i].Avg.Vitri))
+                    {
+                        chart2.Series["GiaTri"].Points.AddXY(i * 3 + 1, data[i].Min.Giatri);
+                        chart2.Series["GiaTri"].Points.AddXY(i * 3 + 2, data[i].Max.Giatri);
+                        chart2.Series["GiaTri"].Points.AddXY(i * 3 + 3, data[i].Avg.Giatri);
+                    }
+                    else if ((data[i].Max.Vitri < data[i].Min.Vitri) && (data[i].Min.Vitri < data[i].Avg.Vitri))
+                    {
+                        chart2.Series["GiaTri"].Points.AddXY(i * 3 + 1, data[i].Max.Giatri);
+                        chart2.Series["GiaTri"].Points.AddXY(i * 3 + 2, data[i].Min.Giatri);
+                        chart2.Series["GiaTri"].Points.AddXY(i * 3 + 3, data[i].Avg.Giatri);
+                    }
+                    else if ((data[i].Avg.Vitri < data[i].Max.Vitri) && (data[i].Max.Vitri < data[i].Min.Vitri))
+                    {
+                        chart2.Series["GiaTri"].Points.AddXY(i * 3 + 1, data[i].Avg.Giatri);
+                        chart2.Series["GiaTri"].Points.AddXY(i * 3 + 2, data[i].Max.Giatri);
+                        chart2.Series["GiaTri"].Points.AddXY(i * 3 + 3, data[i].Min.Giatri);
+                    }
+                    else
+                    {
+                        chart2.Series["GiaTri"].Points.AddXY(i * 3 + 1, data[i].Avg.Giatri);
+                        chart2.Series["GiaTri"].Points.AddXY(i * 3 + 2, data[i].Min.Giatri);
+                        chart2.Series["GiaTri"].Points.AddXY(i * 3 + 3, data[i].Max.Giatri);
+                    }
                 }
             }
 
@@ -75,7 +128,7 @@ namespace BaiToan
         {
             epaa = new ThuVienEPAA.EPAA("power_data.txt");
             List<ThuVienEPAA.Diem> data = epaa.Data;
-            HienThiDuLieu(data);
+            HienThiDuLieu(data,1);
         }
 
         private void btnEPAA_Click(object sender, EventArgs e)
@@ -86,13 +139,20 @@ namespace BaiToan
                 return;
             }
             List<ThuVienEPAA.Diem> data  = epaa.ThayDoiSoLuongDuLieu(Int32.Parse(txtSoCot.Text));
-            HienThiDuLieu(data);
+            HienThiDuLieu(data, 1);
         }
 
         private void btnChuanHoa_Click(object sender, EventArgs e)
         {
             List<ThuVienEPAA.Diem> data = epaa.ChuanHoa();
-            HienThiDuLieu(data);
+            HienThiDuLieu(data, 1);
+        }
+
+        private void btnDocFile2_Click(object sender, EventArgs e)
+        {
+            du_lieu_so_sanh = new ThuVienEPAA.EPAA("power_data_test.txt");
+            List<ThuVienEPAA.Diem> data = du_lieu_so_sanh.Data;
+            HienThiDuLieu(data, 2);
         }
     }
 }

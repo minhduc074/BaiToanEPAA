@@ -8,3 +8,8 @@ C:\Users\minhd\Documents\GitHub\BaiToanEPAA\EPAA\bin\Debug\EPAA.pdb
 C:\Users\minhd\Documents\GitHub\BaiToanEPAA\EPAA\obj\Debug\ThuVienEPAA.csprojResolveAssemblyReference.cache
 C:\Users\minhd\Documents\GitHub\BaiToanEPAA\EPAA\obj\Debug\EPAA.dll
 C:\Users\minhd\Documents\GitHub\BaiToanEPAA\EPAA\obj\Debug\EPAA.pdb
+C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\EPAA\bin\Debug\EPAA.dll
+C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\EPAA\bin\Debug\EPAA.pdb
+C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\EPAA\obj\Debug\ThuVienEPAA.csprojResolveAssemblyReference.cache
+C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\EPAA\obj\Debug\EPAA.dll
+C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\EPAA\obj\Debug\EPAA.pdb

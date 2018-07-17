@@ -33,17 +33,23 @@
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.btndocFile = new System.Windows.Forms.Button();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.btnEPAA = new System.Windows.Forms.Button();
             this.txtSoCot = new System.Windows.Forms.TextBox();
             this.btnChuanHoa = new System.Windows.Forms.Button();
+            this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.btnDocFile2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
             this.SuspendLayout();
             // 
             // btndocFile
             // 
-            this.btndocFile.Location = new System.Drawing.Point(89, 153);
+            this.btndocFile.Location = new System.Drawing.Point(40, 159);
             this.btndocFile.Name = "btndocFile";
             this.btndocFile.Size = new System.Drawing.Size(75, 23);
             this.btndocFile.TabIndex = 0;
@@ -74,7 +80,7 @@
             this.chart1.Series.Add(series1);
             this.chart1.Series.Add(series2);
             this.chart1.Series.Add(series3);
-            this.chart1.Size = new System.Drawing.Size(611, 465);
+            this.chart1.Size = new System.Drawing.Size(598, 465);
             this.chart1.TabIndex = 1;
             this.chart1.Text = "Dữ Liệu";
             // 
@@ -105,11 +111,39 @@
             this.btnChuanHoa.UseVisualStyleBackColor = true;
             this.btnChuanHoa.Click += new System.EventHandler(this.btnChuanHoa_Click);
             // 
+            // chart2
+            // 
+            chartArea2.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chart2.Legends.Add(legend2);
+            this.chart2.Location = new System.Drawing.Point(860, 12);
+            this.chart2.Name = "chart2";
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.chart2.Series.Add(series4);
+            this.chart2.Size = new System.Drawing.Size(559, 465);
+            this.chart2.TabIndex = 5;
+            this.chart2.Text = "Dữ liệu cần so sánh";
+            // 
+            // btnDocFile2
+            // 
+            this.btnDocFile2.Location = new System.Drawing.Point(133, 159);
+            this.btnDocFile2.Name = "btnDocFile2";
+            this.btnDocFile2.Size = new System.Drawing.Size(75, 23);
+            this.btnDocFile2.TabIndex = 6;
+            this.btnDocFile2.Text = "Đọc File 2";
+            this.btnDocFile2.UseVisualStyleBackColor = true;
+            this.btnDocFile2.Click += new System.EventHandler(this.btnDocFile2_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(879, 489);
+            this.ClientSize = new System.Drawing.Size(1431, 489);
+            this.Controls.Add(this.btnDocFile2);
+            this.Controls.Add(this.chart2);
             this.Controls.Add(this.btnChuanHoa);
             this.Controls.Add(this.txtSoCot);
             this.Controls.Add(this.btnEPAA);
@@ -118,6 +152,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -130,6 +165,8 @@
         private System.Windows.Forms.Button btnEPAA;
         private System.Windows.Forms.TextBox txtSoCot;
         private System.Windows.Forms.Button btnChuanHoa;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
+        private System.Windows.Forms.Button btnDocFile2;
 
     }
 }
