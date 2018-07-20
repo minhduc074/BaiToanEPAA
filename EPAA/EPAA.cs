@@ -103,6 +103,14 @@ namespace ThuVienEPAA
             set { soCot = value; }
         }
 
+        int doTuongTu;
+
+        public int DoTuongTu
+        {
+            get { return doTuongTu; }
+            set { doTuongTu = value; }
+        }
+
         public EPAA()
         {
             data.Clear();
@@ -211,6 +219,27 @@ namespace ThuVienEPAA
         public void Clear()
         {
             data.Clear();
+        }
+
+        public int DoDoTuongTu(List<Diem> _data)
+        {
+
+            List<Diem> S = data;
+            List<Diem> Q = _data;
+
+
+
+            return 0;
+        }
+
+        public int DoDoTuongTu(EPAA _data)
+        {
+            if (_data.Data.Count < data.Count)
+                _data.ChuanHoa();
+            else if (_data.Data.Count > data.Count)
+                ChuanHoa();
+
+            return DoDoTuongTu(_data.Data);
         }
 
     }

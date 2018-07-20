@@ -154,5 +154,11 @@ namespace BaiToan
             List<ThuVienEPAA.Diem> data = du_lieu_so_sanh.Data;
             HienThiDuLieu(data, 2);
         }
+
+        private void btnChuanHoa2_Click(object sender, EventArgs e)
+        {
+            List<ThuVienEPAA.Diem> data = du_lieu_so_sanh.ChuanHoa();
+            HienThiDuLieu(data, 2);
+        }
     }
 }
