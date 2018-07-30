@@ -221,25 +221,38 @@ namespace ThuVienEPAA
             data.Clear();
         }
 
-        public int DoDoTuongTu(List<Diem> _data)
+
+        public double DoDoTuongTu(EPAA _data, int epaa)
         {
-
-            List<Diem> S = data;
-            List<Diem> Q = _data;
-
-
-
-            return 0;
-        }
-
-        public int DoDoTuongTu(EPAA _data)
-        {
+            int n = soCot;
+            int w = epaa;
+            double nw = n*1.0/w;
             if (_data.Data.Count < data.Count)
                 _data.ChuanHoa();
             else if (_data.Data.Count > data.Count)
                 ChuanHoa();
 
-            return DoDoTuongTu(_data.Data);
+            double ret = 0;
+            double s_alpha = 0;
+
+            double dpaa = 0, drpaa = 0;
+
+            for (int i = 0; i < w; i++)
+            {
+                double r = data[i].Avg.Giatri - _data.Data[i].Avg.Giatri;
+                r = r * r;
+                dpaa+=r;
+            }
+            drpaa = nw * dpaa;
+
+            for (int i = 0; i < w; i++ )
+            {
+                s_alpha += 0.0005 * 0.0005;
+            }
+
+            ret = Math.Sqrt(drpaa + ((nw - 1) * (nw + 1) * (nw + 1)) * s_alpha / 18);
+
+            return ret;
         }
 
     }
