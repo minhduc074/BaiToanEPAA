@@ -15,14 +15,16 @@ namespace BaiToan
     {
         ThuVienEPAA.EPAA epaa;
         ThuVienEPAA.EPAA du_lieu_so_sanh;
+        GraphPane myPane;
+
         public Form1()
         {
             InitializeComponent();
+            myPane = zedGraphControl1.GraphPane;
         }
 
         private void HienThiDuLieu(List<ThuVienEPAA.Diem> data, int doThi)
         {
-            GraphPane myPane = zedGraphControl1.GraphPane;
             myPane.Title.Text = "Do Thi";
             myPane.XAxis.Title.Text = "Gia Tri";
             myPane.YAxis.Title.Text = "Phan Tụu";
@@ -141,25 +143,37 @@ namespace BaiToan
                  
             }
 
-            int curveIndex = myPane.CurveList.IndexOfTag("Du Lieu 1");
-            if (curveIndex != -1)
+            int curveIndex = myPane.CurveList.IndexOfTag("DuLieu1");
+            if (curveIndex != -1 && doThi == 1)
             {
                 myPane.CurveList.RemoveAt(curveIndex);
             }
-            curveIndex = myPane.CurveList.IndexOfTag("Du Lieu 2");
-            if (curveIndex != -1)
+            curveIndex = myPane.CurveList.IndexOfTag("DuLieu2");
+            if (curveIndex != -1 && doThi == 2)
             {
                 myPane.CurveList.RemoveAt(curveIndex);
             }
 
             LineItem myCurve;
-            myCurve = myPane.AddCurve("Du Lieu 1", null, data_int.ToArray(), Color.Blue, SymbolType.None);
+            if (doThi == 1)
+            {
+                myCurve = myPane.AddCurve("Du Lieu 1", null, data_int.ToArray(), Color.Blue, SymbolType.None);
+                myCurve.Tag = "DuLieu1";
+            }
+            else
+            {
+                myCurve = myPane.AddCurve("Du Lieu 2", null, data_int2.ToArray(), Color.Red, SymbolType.None);
+                myCurve.Tag = "DuLieu2";
+            }
 
-            myCurve = myPane.AddCurve("Du Lieu 2", null, data_int2.ToArray(), Color.Red, SymbolType.None);
-
+            
             myCurve.Symbol.Fill = new Fill(Color.White);
             myPane.Chart.Fill = new Fill(Color.White, Color.LightGoldenrodYellow, 45F);
             myPane.Fill = new Fill(Color.White, Color.FromArgb(220, 220, 255), 45F);
+
+
+            myPane.AxisChange();
+            zedGraphControl1.Invalidate();
 
             zedGraphControl1.AxisChange();
             zedGraphControl1.Refresh();
