@@ -81,3 +81,4 @@ C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\BaiToan\bin\Debug\sv\ZedGraph.resour
 C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\BaiToan\bin\Debug\tr\ZedGraph.resources.dll
 C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\BaiToan\bin\Debug\zh-cn\ZedGraph.resources.dll
 C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\BaiToan\bin\Debug\zh-tw\ZedGraph.resources.dll
+C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\BaiToan\obj\Debug\BaiToan.loading.resources
