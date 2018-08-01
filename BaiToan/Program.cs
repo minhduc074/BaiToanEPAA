@@ -16,7 +16,11 @@ namespace BaiToan
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new loading());
+
+            loading load = new loading();
+
+
+            Application.Run(load);
         }
     }
 }

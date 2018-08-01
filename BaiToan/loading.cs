@@ -12,27 +12,36 @@ namespace BaiToan
 {
     public partial class loading : Form
     {
+        private static int timeLoad = 20;
+        private int time;
+
+        Form1 frm = new Form1();
         public loading()
         {
             InitializeComponent();
+            progressBar1.Maximum = timeLoad;
+            time = 0;
+            timer1.Start();
         }
 
-        void wait(int x)
-        {
-            DateTime t = DateTime.Now;
-            DateTime tf = DateTime.Now.AddSeconds(x);
-
-            while (t < tf)
-            {
-                t = DateTime.Now;
-            }
-            Form frm = new Form1();
-            frm.Show();
-        }
 
         private void loading_Load(object sender, EventArgs e)
         {
-            wait(5);
+            
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            time++;
+            if (time < timeLoad)
+                progressBar1.Value = time;
+            else
+            {
+                timer1.Stop();
+                Form1.Instance.Show();
+                this.Hide();
+            }
+        }
+
     }
 }

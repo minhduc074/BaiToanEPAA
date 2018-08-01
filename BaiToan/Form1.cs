@@ -13,6 +13,24 @@ namespace BaiToan
 {
     public partial class Form1 : Form
     {
+        private static volatile Form1 instance;
+        static object key = new object();
+        public static Form1 Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    lock (key)
+                    {
+                        instance = new Form1();
+                    }
+                }
+                return instance;
+            }
+        }
+
+
         ThuVienEPAA.EPAA epaa;
         ThuVienEPAA.EPAA du_lieu_so_sanh;
         GraphPane myPane;
@@ -242,6 +260,11 @@ namespace BaiToan
                 trungKhop = epaa.DoDoTuongTu(epaa, 10);
             }
             MessageBox.Show(trungKhop.ToString());
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

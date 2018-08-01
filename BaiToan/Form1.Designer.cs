@@ -41,7 +41,7 @@
             // 
             // btndocFile
             // 
-            this.btndocFile.Location = new System.Drawing.Point(40, 159);
+            this.btndocFile.Location = new System.Drawing.Point(25, 65);
             this.btndocFile.Name = "btndocFile";
             this.btndocFile.Size = new System.Drawing.Size(75, 23);
             this.btndocFile.TabIndex = 0;
@@ -51,7 +51,7 @@
             // 
             // btnEPAA
             // 
-            this.btnEPAA.Location = new System.Drawing.Point(146, 216);
+            this.btnEPAA.Location = new System.Drawing.Point(147, 149);
             this.btnEPAA.Name = "btnEPAA";
             this.btnEPAA.Size = new System.Drawing.Size(75, 23);
             this.btnEPAA.TabIndex = 2;
@@ -61,14 +61,14 @@
             // 
             // txtSoCot
             // 
-            this.txtSoCot.Location = new System.Drawing.Point(25, 216);
+            this.txtSoCot.Location = new System.Drawing.Point(25, 149);
             this.txtSoCot.Name = "txtSoCot";
             this.txtSoCot.Size = new System.Drawing.Size(100, 20);
             this.txtSoCot.TabIndex = 3;
             // 
             // btnChuanHoa
             // 
-            this.btnChuanHoa.Location = new System.Drawing.Point(40, 290);
+            this.btnChuanHoa.Location = new System.Drawing.Point(25, 234);
             this.btnChuanHoa.Name = "btnChuanHoa";
             this.btnChuanHoa.Size = new System.Drawing.Size(75, 23);
             this.btnChuanHoa.TabIndex = 4;
@@ -78,7 +78,7 @@
             // 
             // btnDocFile2
             // 
-            this.btnDocFile2.Location = new System.Drawing.Point(133, 159);
+            this.btnDocFile2.Location = new System.Drawing.Point(133, 65);
             this.btnDocFile2.Name = "btnDocFile2";
             this.btnDocFile2.Size = new System.Drawing.Size(75, 23);
             this.btnDocFile2.TabIndex = 6;
@@ -88,7 +88,7 @@
             // 
             // btnChuanHoa2
             // 
-            this.btnChuanHoa2.Location = new System.Drawing.Point(133, 290);
+            this.btnChuanHoa2.Location = new System.Drawing.Point(147, 234);
             this.btnChuanHoa2.Name = "btnChuanHoa2";
             this.btnChuanHoa2.Size = new System.Drawing.Size(75, 23);
             this.btnChuanHoa2.TabIndex = 4;
@@ -98,7 +98,7 @@
             // 
             // btnSoSanh
             // 
-            this.btnSoSanh.Location = new System.Drawing.Point(87, 332);
+            this.btnSoSanh.Location = new System.Drawing.Point(88, 286);
             this.btnSoSanh.Name = "btnSoSanh";
             this.btnSoSanh.Size = new System.Drawing.Size(75, 23);
             this.btnSoSanh.TabIndex = 7;
@@ -125,7 +125,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1362, 489);
+            this.ClientSize = new System.Drawing.Size(1362, 372);
             this.Controls.Add(this.zedGraphControl1);
             this.Controls.Add(this.btnSoSanh);
             this.Controls.Add(this.btnDocFile2);
@@ -136,6 +136,7 @@
             this.Controls.Add(this.btndocFile);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.ResumeLayout(false);
             this.PerformLayout();
 
