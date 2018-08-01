@@ -44,8 +44,8 @@ namespace BaiToan
         private void HienThiDuLieu(List<ThuVienEPAA.Diem> data, int doThi)
         {
             myPane.Title.Text = "Do Thi";
-            myPane.XAxis.Title.Text = "Gia Tri";
-            myPane.YAxis.Title.Text = "Phan Tụu";
+            myPane.XAxis.Title.Text = "Chieu Dai";
+            myPane.YAxis.Title.Text = "Gia Tri";
 
             double[] y = { 1, 2, 3, 9, 1, 15, 3, 7, 2 };
 
@@ -200,49 +200,38 @@ namespace BaiToan
 
         private void btndocFile_Click(object sender, EventArgs e)
         {
-            epaa = new ThuVienEPAA.EPAA("power_data.txt");
-            List<ThuVienEPAA.Diem> data = epaa.Data;
-            HienThiDuLieu(data,1);
-        }
-
-        private void btnEPAA_Click(object sender, EventArgs e)
-        {
-            if(txtSoCot.Text.CompareTo("") == 0)
+            if(txtTenFile.Text.Length != 0)
             {
-                MessageBox.Show("Nhap so cot");
+                epaa = new ThuVienEPAA.EPAA(txtTenFile.Text);
+                List<ThuVienEPAA.Diem> data = epaa.Data;
+                HienThiDuLieu(data, 1);
+            }
+
+            if (txtSoCot.Value == 0)
+            {
                 return;
             }
-            if(epaa.SoCot != 0)
+            if (epaa.SoCot != 0)
             {
-                List<ThuVienEPAA.Diem> data = epaa.ThayDoiSoLuongDuLieu(Int32.Parse(txtSoCot.Text));
+                List<ThuVienEPAA.Diem> data = epaa.ThayDoiSoLuongDuLieu((int)txtSoCot.Value);
                 HienThiDuLieu(data, 1);
             }
 
             if (du_lieu_so_sanh.SoCot != 0)
             {
-                List<ThuVienEPAA.Diem> data = du_lieu_so_sanh.ThayDoiSoLuongDuLieu(Int32.Parse(txtSoCot.Text));
+                List<ThuVienEPAA.Diem> data = du_lieu_so_sanh.ThayDoiSoLuongDuLieu((int)txtSoCot.Value);
                 HienThiDuLieu(data, 2);
             }
         }
 
         private void btnChuanHoa_Click(object sender, EventArgs e)
         {
+            if(epaa)
+
             List<ThuVienEPAA.Diem> data = epaa.ChuanHoa();
             HienThiDuLieu(data, 1);
         }
 
-        private void btnDocFile2_Click(object sender, EventArgs e)
-        {
-            du_lieu_so_sanh = new ThuVienEPAA.EPAA("power_data_test.txt");
-            List<ThuVienEPAA.Diem> data = du_lieu_so_sanh.Data;
-            HienThiDuLieu(data, 2);
-        }
-
-        private void btnChuanHoa2_Click(object sender, EventArgs e)
-        {
-            List<ThuVienEPAA.Diem> data = du_lieu_so_sanh.ChuanHoa();
-            HienThiDuLieu(data, 2);
-        }
 
         private void btnSoSanh_Click(object sender, EventArgs e)
         {
@@ -265,6 +254,16 @@ namespace BaiToan
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnChonFile_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog FileDialog = new OpenFileDialog();
+            FileDialog.Filter = "Data|*.txt";
+            if (FileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                txtTenFile.Text = FileDialog.FileName;
+            }
         }
     }
 }
