@@ -287,7 +287,7 @@ namespace BaiToan
             }
             else if(tabPane1.SelectedPageIndex == 2)
             {
-                dataGridView1.DataSource;
+                //dataGridView1.DataSource;
             }
         }
 
