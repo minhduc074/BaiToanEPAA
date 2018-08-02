@@ -15,7 +15,7 @@ namespace BaiToan
         private static int timeLoad = 20;
         private int time;
 
-        Form1 frm = new Form1();
+        //Form1 frm = new Form1();
         public loading()
         {
             InitializeComponent();
