@@ -170,9 +170,9 @@ namespace ThuVienEPAA
             return ret;
         }
 
-        public List<Diem> ChuanHoa()
+        public EPAA ChuanHoa()
         {
-            List<Diem> newData = new List<Diem>();
+            EPAA newData = new EPAA();
 
             double meanQ = GiaTriTrungBinhTrongDoan(0, soCot).Giatri;
 
@@ -188,24 +188,23 @@ namespace ThuVienEPAA
             {
                 Diem giatri = new Diem((data[i].Avg.Giatri - meanQ) / varQ, data[i].Avg.Vitri);
 
-                newData.Add(giatri);
+                newData.Data.Add(giatri);
             }
-            Clear();
-            data = newData;
+            newData.soCot = newData.data.Count;
 
             return newData;
         }
 
-        public List<Diem> ThayDoiSoLuongDuLieu(int soCotMoi)
+        public List<Diem> ThayDoiSoLuongDuLieu(int doDaiCotMoi)
         {
             DuLieuDaGopTungDoan = true;
             List<Diem> newData = new List<Diem>();
-            if (soCot == soCotMoi)
+            if (soCot == doDaiCotMoi)
                 return data;
-            if (soCotMoi <= 0 && soCotMoi > SoCot)
+            if (doDaiCotMoi <= 0 && doDaiCotMoi > SoCot)
                 return null;
-            int len = soCot / soCotMoi;
-            for(int i = 0; i < soCotMoi; i++)
+            int len = soCot / doDaiCotMoi;
+            for (int i = 0; i < doDaiCotMoi; i++)
             {
                 Diem d = new Diem();
                 d.Max = GiaTriLonNhatTrongDoan(i * len, (i + 1) * len);
@@ -213,24 +212,35 @@ namespace ThuVienEPAA
                 d.Avg = GiaTriTrungBinhTrongDoan(i * len, (i + 1) * len);
                 newData.Add(d);
             }
-
+            soCot = doDaiCotMoi;
             return newData;
         }
         public void Clear()
         {
             data.Clear();
         }
+        public EPAA copy(int viTriDau, int doDai)
+        {
+            EPAA ret = new EPAA();
 
+            int i = viTriDau;
+
+            for (i = viTriDau; i < viTriDau + doDai; i++)
+            {
+                ret.data.Add(data[i]);
+            }
+            ret.SoCot = ret.data.Count;
+
+            return ret;
+        }
 
         public double DoDoTuongTu(EPAA _data, int epaa)
         {
             int n = soCot;
             int w = epaa;
-            double nw = n*1.0/w;
-            if (_data.Data.Count < data.Count)
-                _data.ChuanHoa();
-            else if (_data.Data.Count > data.Count)
-                ChuanHoa();
+            double nw = n * 1.0 / w;
+            EPAA data1 = _data.ChuanHoa();
+            EPAA data2 = ChuanHoa();
 
             double ret = 0;
             double s_alpha = 0;
@@ -239,13 +249,13 @@ namespace ThuVienEPAA
 
             for (int i = 0; i < w; i++)
             {
-                double r = data[i].Avg.Giatri - _data.Data[i].Avg.Giatri;
+                double r = data2.Data[i].Avg.Giatri - data1.Data[i].Avg.Giatri;
                 r = r * r;
-                dpaa+=r;
+                dpaa += r;
             }
             drpaa = nw * dpaa;
 
-            for (int i = 0; i < w; i++ )
+            for (int i = 0; i < w; i++)
             {
                 s_alpha += 0.0005 * 0.0005;
             }

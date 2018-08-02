@@ -51,9 +51,6 @@
             this.tabNavigationPage3 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.zedGraphControl3 = new ZedGraph.ZedGraphControl();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.viTri = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.doSaiLech = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
             this.tabPane1.SuspendLayout();
             this.tabNavigationPage1.SuspendLayout();
@@ -111,8 +108,6 @@
             this.tabNavigationPage1.Caption = "Dữ liệu gốc";
             this.tabNavigationPage1.Controls.Add(this.label4);
             this.tabNavigationPage1.Controls.Add(this.label2);
-            this.tabNavigationPage1.Controls.Add(this.label1);
-            this.tabNavigationPage1.Controls.Add(this.txtSoCot);
             this.tabNavigationPage1.Controls.Add(this.btnChonFile);
             this.tabNavigationPage1.Controls.Add(this.txtTenFile);
             this.tabNavigationPage1.Controls.Add(this.zedGraphControl1);
@@ -142,23 +137,33 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(33, 161);
+            this.label1.Location = new System.Drawing.Point(88, 161);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 13);
+            this.label1.Size = new System.Drawing.Size(38, 13);
             this.label1.TabIndex = 12;
-            this.label1.Text = "Độ dài từng đoạn gộp";
+            this.label1.Text = "Độ dài";
             // 
             // txtSoCot
             // 
-            this.txtSoCot.Location = new System.Drawing.Point(154, 159);
+            this.txtSoCot.Location = new System.Drawing.Point(135, 159);
             this.txtSoCot.Maximum = new decimal(new int[] {
             999999,
+            0,
+            0,
+            0});
+            this.txtSoCot.Minimum = new decimal(new int[] {
+            1,
             0,
             0,
             0});
             this.txtSoCot.Name = "txtSoCot";
             this.txtSoCot.Size = new System.Drawing.Size(31, 20);
             this.txtSoCot.TabIndex = 11;
+            this.txtSoCot.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // btnChonFile
             // 
@@ -191,6 +196,8 @@
             // 
             this.tabNavigationPage2.Caption = "Dữ liệu so sánh";
             this.tabNavigationPage2.Controls.Add(this.btnSoSanh);
+            this.tabNavigationPage2.Controls.Add(this.label1);
+            this.tabNavigationPage2.Controls.Add(this.txtSoCot);
             this.tabNavigationPage2.Controls.Add(this.btnThemDuLieu);
             this.tabNavigationPage2.Controls.Add(this.label5);
             this.tabNavigationPage2.Controls.Add(this.label3);
@@ -300,33 +307,11 @@
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ten,
-            this.viTri,
-            this.doSaiLech});
             this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(349, 348);
             this.dataGridView1.TabIndex = 16;
-            // 
-            // ten
-            // 
-            this.ten.HeaderText = "Ten";
-            this.ten.Name = "ten";
-            this.ten.ReadOnly = true;
-            // 
-            // viTri
-            // 
-            this.viTri.HeaderText = "Vị Trí";
-            this.viTri.Name = "viTri";
-            this.viTri.ReadOnly = true;
-            // 
-            // doSaiLech
-            // 
-            this.doSaiLech.HeaderText = "Độ Sai Lệch";
-            this.doSaiLech.Name = "doSaiLech";
-            this.doSaiLech.ReadOnly = true;
             // 
             // Form1
             // 
@@ -374,9 +359,6 @@
         private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage3;
         private System.Windows.Forms.DataGridView dataGridView1;
         private ZedGraph.ZedGraphControl zedGraphControl3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ten;
-        private System.Windows.Forms.DataGridViewTextBoxColumn viTri;
-        private System.Windows.Forms.DataGridViewTextBoxColumn doSaiLech;
 
     }
 }

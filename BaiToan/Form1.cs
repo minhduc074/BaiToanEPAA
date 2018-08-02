@@ -33,7 +33,7 @@ namespace BaiToan
 
         ThuVienEPAA.EPAA epaa;
         List<ThuVienEPAA.EPAA> du_lieu_so_sanh;
-        GraphPane myPane1, myPane2;
+        GraphPane myPane1, myPane2, myPane3;
         DataTable dataTable = new DataTable();
 
         public Form1()
@@ -51,15 +51,25 @@ namespace BaiToan
             myPane2.Title.Text = "Do Thi";
             myPane2.XAxis.Title.Text = "Chieu Dai";
             myPane2.YAxis.Title.Text = "Gia Tri";
+
+            myPane3 = zedGraphControl3.GraphPane;
+            myPane3.Title.Text = "Do Thi";
+            myPane3.XAxis.Title.Text = "Chieu Dai";
+            myPane3.YAxis.Title.Text = "Gia Tri";
+
+            dataTable.Columns.Add("Tên ", typeof(string));
+            dataTable.Columns.Add("Vị Trí", typeof(int));
+            dataTable.Columns.Add("Độ Sai Lệch", typeof(double));
         }
 
-        private void HienThiDuLieu(int pane, List<ThuVienEPAA.Diem> data, int duLieuGoc)
+        private void HienThiDuLieu(int pane, List<ThuVienEPAA.Diem> data, int duLieuGoc, int vitri = 0)
         {
             GraphPane graphpane;
             if (pane == 1)
                 graphpane = myPane1;
-            else
+            else if (pane == 2)
                 graphpane = myPane2;
+            else graphpane = myPane3;
 
             List<double> data_int = new List<double>();
             //List<double> data_int2 = new List<double>();
@@ -69,55 +79,70 @@ namespace BaiToan
             if (data == null)
                 return;
 
-            //chart1.Series.Clear();
-            //chart1.Series.Add("GiaTri");
-            //chart1.ChartAreas["ChartArea1"].AxisX.Interval = 3;
-            //chart1.Series["GiaTri"].YValuesPerPoint = 10;
-            //chart1.Series["GiaTri"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            for (int i = 0; i < data.Count(); i++)
+            for (int i = 0; i < vitri; i++ )
             {
+                int? SomeValue = null;
                 if (!epaa.DuLieuDaGopTungDoan)
                 {
-                    data_int.Add(data[i].Avg.Giatri);
-                }
-                else if ((data[i].Max.Vitri < data[i].Avg.Vitri) && (data[i].Avg.Vitri < data[i].Min.Vitri))
-                {
-                    data_int.Add(data[i].Max.Giatri);
-                    data_int.Add(data[i].Avg.Giatri);
-                    data_int.Add(data[i].Min.Giatri);
-                }
-                else if ((data[i].Min.Vitri < data[i].Avg.Vitri) && (data[i].Avg.Vitri < data[i].Max.Vitri))
-                {
-                    data_int.Add(data[i].Min.Giatri);
-                    data_int.Add(data[i].Avg.Giatri);
-                    data_int.Add(data[i].Max.Giatri);
-                }
-                else if ((data[i].Min.Vitri < data[i].Max.Vitri) && (data[i].Max.Vitri < data[i].Avg.Vitri))
-                {
-                    data_int.Add(data[i].Min.Giatri);
-                    data_int.Add(data[i].Max.Giatri);
-                    data_int.Add(data[i].Avg.Giatri);
-                }
-                else if ((data[i].Max.Vitri < data[i].Min.Vitri) && (data[i].Min.Vitri < data[i].Avg.Vitri))
-                {
-                    data_int.Add(data[i].Max.Giatri);
-                    data_int.Add(data[i].Min.Giatri);
-                    data_int.Add(data[i].Avg.Giatri);
-                }
-                else if ((data[i].Avg.Vitri < data[i].Max.Vitri) && (data[i].Max.Vitri < data[i].Min.Vitri))
-                {
-                    data_int.Add(data[i].Avg.Giatri);
-                    data_int.Add(data[i].Max.Giatri);
-                    data_int.Add(data[i].Min.Giatri);
+                    data_int.Add(SomeValue ?? double.NaN);
                 }
                 else
                 {
-                    data_int.Add(data[i].Avg.Giatri);
-                    data_int.Add(data[i].Min.Giatri);
-                    data_int.Add(data[i].Max.Giatri);
+                    data_int.Add(SomeValue ?? double.NaN);
+                    data_int.Add(SomeValue ?? double.NaN);
+                    data_int.Add(SomeValue ?? double.NaN);
                 }
-
             }
+
+                //chart1.Series.Clear();
+                //chart1.Series.Add("GiaTri");
+                //chart1.ChartAreas["ChartArea1"].AxisX.Interval = 3;
+                //chart1.Series["GiaTri"].YValuesPerPoint = 10;
+                //chart1.Series["GiaTri"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+                for (int i = vitri; i < data.Count(); i++)
+                {
+                    if (!epaa.DuLieuDaGopTungDoan)
+                    {
+                        data_int.Add(data[i].Avg.Giatri);
+                    }
+                    else if ((data[i].Max.Vitri < data[i].Avg.Vitri) && (data[i].Avg.Vitri < data[i].Min.Vitri))
+                    {
+                        data_int.Add(data[i].Max.Giatri);
+                        data_int.Add(data[i].Avg.Giatri);
+                        data_int.Add(data[i].Min.Giatri);
+                    }
+                    else if ((data[i].Min.Vitri < data[i].Avg.Vitri) && (data[i].Avg.Vitri < data[i].Max.Vitri))
+                    {
+                        data_int.Add(data[i].Min.Giatri);
+                        data_int.Add(data[i].Avg.Giatri);
+                        data_int.Add(data[i].Max.Giatri);
+                    }
+                    else if ((data[i].Min.Vitri < data[i].Max.Vitri) && (data[i].Max.Vitri < data[i].Avg.Vitri))
+                    {
+                        data_int.Add(data[i].Min.Giatri);
+                        data_int.Add(data[i].Max.Giatri);
+                        data_int.Add(data[i].Avg.Giatri);
+                    }
+                    else if ((data[i].Max.Vitri < data[i].Min.Vitri) && (data[i].Min.Vitri < data[i].Avg.Vitri))
+                    {
+                        data_int.Add(data[i].Max.Giatri);
+                        data_int.Add(data[i].Min.Giatri);
+                        data_int.Add(data[i].Avg.Giatri);
+                    }
+                    else if ((data[i].Avg.Vitri < data[i].Max.Vitri) && (data[i].Max.Vitri < data[i].Min.Vitri))
+                    {
+                        data_int.Add(data[i].Avg.Giatri);
+                        data_int.Add(data[i].Max.Giatri);
+                        data_int.Add(data[i].Min.Giatri);
+                    }
+                    else
+                    {
+                        data_int.Add(data[i].Avg.Giatri);
+                        data_int.Add(data[i].Min.Giatri);
+                        data_int.Add(data[i].Max.Giatri);
+                    }
+
+                }
 
             int curveIndex = graphpane.CurveList.IndexOfTag("DuLieuGoc");
             if (curveIndex != -1 && duLieuGoc == 1)
@@ -128,10 +153,10 @@ namespace BaiToan
             string tagDuLieu = "DuLieu" + duLieuGoc;
             if(duLieuGoc != 1)
             {
-                curveIndex = myPane1.CurveList.IndexOfTag(tenDuLieu);
+                curveIndex = graphpane.CurveList.IndexOfTag(tenDuLieu);
                 if (curveIndex != -1 && duLieuGoc == 2)
                 {
-                    myPane1.CurveList.RemoveAt(curveIndex);
+                    graphpane.CurveList.RemoveAt(curveIndex);
                 }
             }
             
@@ -155,15 +180,24 @@ namespace BaiToan
 
 
             graphpane.AxisChange();
-            zedGraphControl1.Invalidate();
-
-            zedGraphControl1.AxisChange();
-            zedGraphControl1.Refresh();
-
-            zedGraphControl2.Invalidate();
-
-            zedGraphControl2.AxisChange();
-            zedGraphControl2.Refresh();
+            if (pane == 1)
+            {
+                zedGraphControl1.Invalidate();
+                zedGraphControl1.AxisChange();
+                zedGraphControl1.Refresh();
+            }
+            else if (pane == 2)
+            {
+                zedGraphControl2.Invalidate();
+                zedGraphControl2.AxisChange();
+                zedGraphControl2.Refresh();
+            }
+            else
+            {
+                zedGraphControl3.Invalidate();
+                zedGraphControl3.AxisChange();
+                zedGraphControl3.Refresh();
+            }
 
         }
 
@@ -176,16 +210,6 @@ namespace BaiToan
                 HienThiDuLieu(1, data, 1);
             }
 
-            if (txtSoCot.Value == 0)
-            {
-                return;
-            }
-            if (epaa.SoCot != 0)
-            {
-                List<ThuVienEPAA.Diem> data = epaa.ThayDoiSoLuongDuLieu((int)txtSoCot.Value);
-                epaa.ChuanHoa();
-                HienThiDuLieu(1, data, 1);
-            }
         }
 
         private void btnChuanHoa_Click(object sender, EventArgs e)
@@ -194,7 +218,7 @@ namespace BaiToan
 
             try
             {
-                List<ThuVienEPAA.Diem> data = epaa.ChuanHoa();
+                List<ThuVienEPAA.Diem> data = epaa.ChuanHoa().Data;
                 HienThiDuLieu(1, data, 1);
             }
             catch(Exception e1)
@@ -203,12 +227,44 @@ namespace BaiToan
             }
         }
 
+        private void soSanh(int i)
+        {
+            int soluong = 2;
+            for (int j = 0; j <= epaa.SoCot - du_lieu_so_sanh[i].SoCot; j++ )
+            {
+                ThuVienEPAA.EPAA sosanh = du_lieu_so_sanh[i];
+                ThuVienEPAA.EPAA goc = epaa.copy(j, sosanh.SoCot);
+
+
+                double trungKhop = 0;
+                int viTri = j;
+                string ten = "Du Lieu " + (i + 2);
+
+                double doSaiLech = 0;
+
+                trungKhop = goc.DoDoTuongTu(sosanh, (int)txtSoCot.Value);
+                if (trungKhop < 2)
+                {
+
+                    doSaiLech = trungKhop;
+                    dataTable.Rows.Add(ten, viTri, doSaiLech);
+                    //HienThiDuLieu(3, sosanh.Data, soluong, j);
+                    soluong++;
+                    break;
+                }
+                    //MessageBox.Show(doSaiLech.ToString());
+
+                dataGridView1.DataSource = dataTable;
+                tabPane1.SelectNextPage();
+            }
+        }
 
         private void btnSoSanh_Click(object sender, EventArgs e)
         {
-            double trungKhop = 0;
-
-            trungKhop = epaa.DoDoTuongTu(epaa, 10);
+            for (int i = 0; i < du_lieu_so_sanh.Count; i++ )
+            {
+                soSanh(i);
+            }
         }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
@@ -230,7 +286,7 @@ namespace BaiToan
         {
             try
             {
-                List<ThuVienEPAA.Diem> data = epaa.ChuanHoa();
+                List<ThuVienEPAA.Diem> data = epaa.ChuanHoa().Data;
                 HienThiDuLieu(2, data, 1);
             }
             catch (Exception e1)
@@ -274,7 +330,7 @@ namespace BaiToan
                 {
                     if (epaa.SoCot > 0)
                     {
-                        epaa.ChuanHoa();
+                        //epaa.ChuanHoa();
                         List<ThuVienEPAA.Diem> data = epaa.Data;
                         HienThiDuLieu(2, data, 1);
                     }
@@ -287,7 +343,7 @@ namespace BaiToan
             }
             else if(tabPane1.SelectedPageIndex == 2)
             {
-                //dataGridView1.DataSource;
+                HienThiDuLieu(3, epaa.Data, 1);
             }
         }
 
