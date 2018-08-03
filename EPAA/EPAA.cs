@@ -119,7 +119,10 @@ namespace ThuVienEPAA
         public EPAA(string tenFile)
         {
             data = TapTin.DocFile(tenFile);
-            soCot = data.Count();
+            if (data == null)
+                soCot = 0;
+            else
+                soCot = data.Count();
             //ChuanHoa();
         }
 

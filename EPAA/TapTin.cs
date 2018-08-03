@@ -20,7 +20,7 @@ namespace ThuVienEPAA
             int i = 0;
             while ((line = file.ReadLine()) != null)
             {
-                string[] bits = line.Split(' ');
+                string[] bits = line.Split(' ', '\t');
                 foreach (string bit in bits)
                 {
                     double value;
