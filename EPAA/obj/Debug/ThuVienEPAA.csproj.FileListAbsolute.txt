@@ -18,3 +18,8 @@ C:\Users\user\Downloads\BaiToanEPAA-master\BaiToanEPAA-master\EPAA\bin\Debug\EPA
 C:\Users\user\Downloads\BaiToanEPAA-master\BaiToanEPAA-master\EPAA\obj\Debug\ThuVienEPAA.csprojResolveAssemblyReference.cache
 C:\Users\user\Downloads\BaiToanEPAA-master\BaiToanEPAA-master\EPAA\obj\Debug\EPAA.dll
 C:\Users\user\Downloads\BaiToanEPAA-master\BaiToanEPAA-master\EPAA\obj\Debug\EPAA.pdb
+C:\Users\user\Downloads\BaiToanEPAA-master (1)\BaiToanEPAA-master\EPAA\bin\Debug\EPAA.dll
+C:\Users\user\Downloads\BaiToanEPAA-master (1)\BaiToanEPAA-master\EPAA\bin\Debug\EPAA.pdb
+C:\Users\user\Downloads\BaiToanEPAA-master (1)\BaiToanEPAA-master\EPAA\obj\Debug\ThuVienEPAA.csprojResolveAssemblyReference.cache
+C:\Users\user\Downloads\BaiToanEPAA-master (1)\BaiToanEPAA-master\EPAA\obj\Debug\EPAA.dll
+C:\Users\user\Downloads\BaiToanEPAA-master (1)\BaiToanEPAA-master\EPAA\obj\Debug\EPAA.pdb

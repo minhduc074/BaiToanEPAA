@@ -35,27 +35,30 @@
             this.tabNavigationPage1 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtSoCot = new System.Windows.Forms.NumericUpDown();
             this.btnChonFile = new System.Windows.Forms.Button();
             this.txtTenFile = new System.Windows.Forms.TextBox();
             this.btnChuanHoa = new System.Windows.Forms.Button();
             this.tabNavigationPage2 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.btnSoSanh = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtSoCot = new System.Windows.Forms.NumericUpDown();
             this.btnThemDuLieu = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.zedGraphControl2 = new ZedGraph.ZedGraphControl();
             this.txtTenFile2 = new System.Windows.Forms.TextBox();
             this.btnChonFile2 = new System.Windows.Forms.Button();
-            this.btnSoSanh = new System.Windows.Forms.Button();
             this.tabNavigationPage3 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.zedGraphControl3 = new ZedGraph.ZedGraphControl();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.zedGraphControl3 = new ZedGraph.ZedGraphControl();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.btnReset2 = new System.Windows.Forms.Button();
+            this.btnReset3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
             this.tabPane1.SuspendLayout();
             this.tabNavigationPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSoCot)).BeginInit();
             this.tabNavigationPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSoCot)).BeginInit();
             this.tabNavigationPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -106,6 +109,7 @@
             // tabNavigationPage1
             // 
             this.tabNavigationPage1.Caption = "Dữ liệu gốc";
+            this.tabNavigationPage1.Controls.Add(this.btnReset);
             this.tabNavigationPage1.Controls.Add(this.label4);
             this.tabNavigationPage1.Controls.Add(this.label2);
             this.tabNavigationPage1.Controls.Add(this.btnChonFile);
@@ -133,37 +137,6 @@
             this.label2.Size = new System.Drawing.Size(51, 13);
             this.label2.TabIndex = 13;
             this.label2.Text = "Tên File: ";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(88, 161);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 13);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Độ dài";
-            // 
-            // txtSoCot
-            // 
-            this.txtSoCot.Location = new System.Drawing.Point(135, 159);
-            this.txtSoCot.Maximum = new decimal(new int[] {
-            999999,
-            0,
-            0,
-            0});
-            this.txtSoCot.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.txtSoCot.Name = "txtSoCot";
-            this.txtSoCot.Size = new System.Drawing.Size(31, 20);
-            this.txtSoCot.TabIndex = 11;
-            this.txtSoCot.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             // 
             // btnChonFile
             // 
@@ -195,6 +168,7 @@
             // tabNavigationPage2
             // 
             this.tabNavigationPage2.Caption = "Dữ liệu so sánh";
+            this.tabNavigationPage2.Controls.Add(this.btnReset2);
             this.tabNavigationPage2.Controls.Add(this.btnSoSanh);
             this.tabNavigationPage2.Controls.Add(this.label1);
             this.tabNavigationPage2.Controls.Add(this.txtSoCot);
@@ -206,6 +180,47 @@
             this.tabNavigationPage2.Controls.Add(this.btnChonFile2);
             this.tabNavigationPage2.Name = "tabNavigationPage2";
             this.tabNavigationPage2.Size = new System.Drawing.Size(1320, 354);
+            // 
+            // btnSoSanh
+            // 
+            this.btnSoSanh.Location = new System.Drawing.Point(38, 276);
+            this.btnSoSanh.Name = "btnSoSanh";
+            this.btnSoSanh.Size = new System.Drawing.Size(147, 23);
+            this.btnSoSanh.TabIndex = 17;
+            this.btnSoSanh.Text = "So Sánh";
+            this.btnSoSanh.UseVisualStyleBackColor = true;
+            this.btnSoSanh.Click += new System.EventHandler(this.btnSoSanh_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(88, 161);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 13);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Độ dài";
+            // 
+            // txtSoCot
+            // 
+            this.txtSoCot.Location = new System.Drawing.Point(135, 159);
+            this.txtSoCot.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
+            this.txtSoCot.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.txtSoCot.Name = "txtSoCot";
+            this.txtSoCot.Size = new System.Drawing.Size(50, 20);
+            this.txtSoCot.TabIndex = 11;
+            this.txtSoCot.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // btnThemDuLieu
             // 
@@ -268,23 +283,25 @@
             this.btnChonFile2.UseVisualStyleBackColor = true;
             this.btnChonFile2.Click += new System.EventHandler(this.btnChonFile2_Click);
             // 
-            // btnSoSanh
-            // 
-            this.btnSoSanh.Location = new System.Drawing.Point(38, 296);
-            this.btnSoSanh.Name = "btnSoSanh";
-            this.btnSoSanh.Size = new System.Drawing.Size(147, 23);
-            this.btnSoSanh.TabIndex = 17;
-            this.btnSoSanh.Text = "So Sánh";
-            this.btnSoSanh.UseVisualStyleBackColor = true;
-            this.btnSoSanh.Click += new System.EventHandler(this.btnSoSanh_Click);
-            // 
             // tabNavigationPage3
             // 
             this.tabNavigationPage3.Caption = "Kết Quả";
+            this.tabNavigationPage3.Controls.Add(this.btnReset3);
             this.tabNavigationPage3.Controls.Add(this.dataGridView1);
             this.tabNavigationPage3.Controls.Add(this.zedGraphControl3);
             this.tabNavigationPage3.Name = "tabNavigationPage3";
             this.tabNavigationPage3.Size = new System.Drawing.Size(1320, 354);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(349, 301);
+            this.dataGridView1.TabIndex = 16;
             // 
             // zedGraphControl3
             // 
@@ -302,16 +319,35 @@
             this.zedGraphControl3.TabIndex = 15;
             this.zedGraphControl3.UseExtendedPrintDialog = true;
             // 
-            // dataGridView1
+            // btnReset
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(349, 348);
-            this.dataGridView1.TabIndex = 16;
+            this.btnReset.Location = new System.Drawing.Point(154, 299);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(75, 23);
+            this.btnReset.TabIndex = 18;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
+            // btnReset2
+            // 
+            this.btnReset2.Location = new System.Drawing.Point(148, 318);
+            this.btnReset2.Name = "btnReset2";
+            this.btnReset2.Size = new System.Drawing.Size(75, 23);
+            this.btnReset2.TabIndex = 18;
+            this.btnReset2.Text = "Reset";
+            this.btnReset2.UseVisualStyleBackColor = true;
+            this.btnReset2.Click += new System.EventHandler(this.btnReset2_Click);
+            // 
+            // btnReset3
+            // 
+            this.btnReset3.Location = new System.Drawing.Point(277, 328);
+            this.btnReset3.Name = "btnReset3";
+            this.btnReset3.Size = new System.Drawing.Size(75, 23);
+            this.btnReset3.TabIndex = 17;
+            this.btnReset3.Text = "Reset";
+            this.btnReset3.UseVisualStyleBackColor = true;
+            this.btnReset3.Click += new System.EventHandler(this.btnReset3_Click);
             // 
             // Form1
             // 
@@ -320,15 +356,15 @@
             this.ClientSize = new System.Drawing.Size(1362, 641);
             this.Controls.Add(this.tabPane1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "EPAA";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).EndInit();
             this.tabPane1.ResumeLayout(false);
             this.tabNavigationPage1.ResumeLayout(false);
             this.tabNavigationPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSoCot)).EndInit();
             this.tabNavigationPage2.ResumeLayout(false);
             this.tabNavigationPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSoCot)).EndInit();
             this.tabNavigationPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
@@ -359,6 +395,9 @@
         private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage3;
         private System.Windows.Forms.DataGridView dataGridView1;
         private ZedGraph.ZedGraphControl zedGraphControl3;
+        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.Button btnReset2;
+        private System.Windows.Forms.Button btnReset3;
 
     }
 }

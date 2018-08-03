@@ -12,7 +12,7 @@ namespace BaiToan
 {
     public partial class loading : Form
     {
-        private static int timeLoad = 20;
+        private static int timeLoad = 2;
         private int time;
 
         //Form1 frm = new Form1();

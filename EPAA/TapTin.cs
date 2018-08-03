@@ -20,9 +20,18 @@ namespace ThuVienEPAA
             int i = 0;
             while ((line = file.ReadLine()) != null)
             {
-                Diem n = new Diem(Double.Parse(line), i);
-                ret.Add(n);
-                i++;
+                string[] bits = line.Split(' ');
+                foreach (string bit in bits)
+                {
+                    double value;
+                    if (!double.TryParse(bit, out value))
+                    {
+                        return null;
+                    }
+                    Diem n = new Diem(value, i);
+                    ret.Add(n);
+                    i++;
+                }
             }
 
             file.Close();  

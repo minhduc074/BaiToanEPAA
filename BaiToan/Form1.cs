@@ -243,20 +243,19 @@ namespace BaiToan
                 double doSaiLech = 0;
 
                 trungKhop = goc.DoDoTuongTu(sosanh, (int)txtSoCot.Value);
-                if (trungKhop < 2)
+                if (trungKhop < 1)
                 {
 
                     doSaiLech = trungKhop;
                     dataTable.Rows.Add(ten, viTri, doSaiLech);
-                    //HienThiDuLieu(3, sosanh.Data, soluong, j);
+                    HienThiDuLieu(3, sosanh.Data, soluong, j);
                     soluong++;
                     break;
                 }
                     //MessageBox.Show(doSaiLech.ToString());
-
-                dataGridView1.DataSource = dataTable;
-                tabPane1.SelectNextPage();
             }
+            dataGridView1.DataSource = dataTable;
+            tabPane1.SelectNextPage();
         }
 
         private void btnSoSanh_Click(object sender, EventArgs e)
@@ -314,7 +313,7 @@ namespace BaiToan
                 ep.ChuanHoa();
                 if(ep.SoCot > 0)
                 {
-                    List<ThuVienEPAA.Diem> data = ep.Data;
+                    List<ThuVienEPAA.Diem> data = ep.ChuanHoa().Data;
                     HienThiDuLieu(2, data, du_lieu_so_sanh.Count + 2);
                     du_lieu_so_sanh.Add(ep);
                 }
@@ -330,8 +329,7 @@ namespace BaiToan
                 {
                     if (epaa.SoCot > 0)
                     {
-                        //epaa.ChuanHoa();
-                        List<ThuVienEPAA.Diem> data = epaa.Data;
+                        List<ThuVienEPAA.Diem> data = epaa.ChuanHoa().Data;
                         HienThiDuLieu(2, data, 1);
                     }
 
@@ -343,8 +341,37 @@ namespace BaiToan
             }
             else if(tabPane1.SelectedPageIndex == 2)
             {
-                HienThiDuLieu(3, epaa.Data, 1);
+                epaa.ChuanHoa();
+                List<ThuVienEPAA.Diem> data = epaa.Data;
+                HienThiDuLieu(3, data, 1);
             }
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            //zedGraphControl1.GraphPane.CurveList.Clear();
+            //zedGraphControl1.GraphPane.GraphObjList.Clear();
+
+            zedGraphControl1.RestoreScale(zedGraphControl1.GraphPane);
+        }
+
+        private void btnReset2_Click(object sender, EventArgs e)
+        {
+            zedGraphControl2.RestoreScale(zedGraphControl2.GraphPane);
+
+            for(int i = 1; i < zedGraphControl2.GraphPane.CurveList.Count; i++)
+            {
+                zedGraphControl2.GraphPane.CurveList.RemoveAt(i);
+            }
+
+            zedGraphControl2.Invalidate();
+            zedGraphControl2.AxisChange();
+            zedGraphControl2.Refresh();
+        }
+
+        private void btnReset3_Click(object sender, EventArgs e)
+        {
+            zedGraphControl3.RestoreScale(zedGraphControl3.GraphPane);
         }
 
     }

@@ -257,7 +257,7 @@ namespace ThuVienEPAA
 
             for (int i = 0; i < w; i++)
             {
-                s_alpha += 0.0005 * 0.0005;
+                s_alpha += 0.00005 * 0.00005;
             }
 
             ret = Math.Sqrt(drpaa + ((nw - 1) * (nw + 1) * (nw + 1)) * s_alpha / 18);
