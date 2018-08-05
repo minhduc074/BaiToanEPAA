@@ -112,3 +112,33 @@ C:\Users\user\Downloads\BaiToanEPAA-master (1)\BaiToanEPAA-master\BaiToan\obj\De
 C:\Users\user\Downloads\BaiToanEPAA-master (1)\BaiToanEPAA-master\BaiToan\obj\Debug\BaiToan.Properties.Resources.resources
 C:\Users\user\Downloads\BaiToanEPAA-master (1)\BaiToanEPAA-master\BaiToan\obj\Debug\BaiToan.csproj.GenerateResource.Cache
 C:\Users\user\Downloads\BaiToanEPAA-master (1)\BaiToanEPAA-master\BaiToan\obj\Debug\BaiToan.exe.licenses
+G:\BaiToanEPAA-master\BaiToan\bin\Debug\BaiToan.exe.config
+G:\BaiToanEPAA-master\BaiToan\obj\Debug\BaiToan.csproj.ResolveComReference.cache
+G:\BaiToanEPAA-master\BaiToan\obj\Debug\BaiToan.exe
+G:\BaiToanEPAA-master\BaiToan\obj\Debug\BaiToan.pdb
+G:\BaiToanEPAA-master\BaiToan\bin\Debug\BaiToan.exe
+G:\BaiToanEPAA-master\BaiToan\bin\Debug\BaiToan.pdb
+G:\BaiToanEPAA-master\BaiToan\bin\Debug\EPAA.dll
+G:\BaiToanEPAA-master\BaiToan\bin\Debug\ZedGraph.dll
+G:\BaiToanEPAA-master\BaiToan\bin\Debug\EPAA.pdb
+G:\BaiToanEPAA-master\BaiToan\bin\Debug\ZedGraph.xml
+G:\BaiToanEPAA-master\BaiToan\bin\Debug\de\ZedGraph.resources.dll
+G:\BaiToanEPAA-master\BaiToan\bin\Debug\es\ZedGraph.resources.dll
+G:\BaiToanEPAA-master\BaiToan\bin\Debug\fr\ZedGraph.resources.dll
+G:\BaiToanEPAA-master\BaiToan\bin\Debug\hu\ZedGraph.resources.dll
+G:\BaiToanEPAA-master\BaiToan\bin\Debug\it\ZedGraph.resources.dll
+G:\BaiToanEPAA-master\BaiToan\bin\Debug\ja\ZedGraph.resources.dll
+G:\BaiToanEPAA-master\BaiToan\bin\Debug\pt\ZedGraph.resources.dll
+G:\BaiToanEPAA-master\BaiToan\bin\Debug\ru\ZedGraph.resources.dll
+G:\BaiToanEPAA-master\BaiToan\bin\Debug\sk\ZedGraph.resources.dll
+G:\BaiToanEPAA-master\BaiToan\bin\Debug\sv\ZedGraph.resources.dll
+G:\BaiToanEPAA-master\BaiToan\bin\Debug\tr\ZedGraph.resources.dll
+G:\BaiToanEPAA-master\BaiToan\bin\Debug\zh-cn\ZedGraph.resources.dll
+G:\BaiToanEPAA-master\BaiToan\bin\Debug\zh-tw\ZedGraph.resources.dll
+G:\BaiToanEPAA-master\BaiToan\obj\Debug\BaiToan.csprojResolveAssemblyReference.cache
+G:\BaiToanEPAA-master\BaiToan\obj\Debug\BaiToan.DoThi.resources
+G:\BaiToanEPAA-master\BaiToan\obj\Debug\BaiToan.Form1.resources
+G:\BaiToanEPAA-master\BaiToan\obj\Debug\BaiToan.loading.resources
+G:\BaiToanEPAA-master\BaiToan\obj\Debug\BaiToan.Properties.Resources.resources
+G:\BaiToanEPAA-master\BaiToan\obj\Debug\BaiToan.csproj.GenerateResource.Cache
+G:\BaiToanEPAA-master\BaiToan\obj\Debug\BaiToan.exe.licenses

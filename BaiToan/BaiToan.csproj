@@ -126,6 +126,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="License-LGPL.txt" />
+    <None Include="Resources\undo.png" />
+    <None Include="Resources\registry.png" />
+    <None Include="Resources\add.png" />
+    <None Include="Resources\50668201.jpg" />
+    <None Include="Resources\images.jpg" />
+    <None Include="Resources\1a.jpg" />
+    <None Include="Resources\3S.png" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="Microsoft.Office.Core">

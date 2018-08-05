@@ -39,18 +39,18 @@
             this.progressPanel1.Appearance.BackColor = System.Drawing.Color.Transparent;
             this.progressPanel1.Appearance.Options.UseBackColor = true;
             this.progressPanel1.BarAnimationElementThickness = 2;
-            this.progressPanel1.Location = new System.Drawing.Point(12, 145);
+            this.progressPanel1.Location = new System.Drawing.Point(345, 414);
             this.progressPanel1.Name = "progressPanel1";
-            this.progressPanel1.Size = new System.Drawing.Size(260, 66);
+            this.progressPanel1.Size = new System.Drawing.Size(127, 66);
             this.progressPanel1.TabIndex = 0;
             this.progressPanel1.Text = "progressPanel1";
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(12, 226);
+            this.progressBar1.Location = new System.Drawing.Point(12, 590);
             this.progressBar1.Maximum = 5000;
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(260, 23);
+            this.progressBar1.Size = new System.Drawing.Size(768, 23);
             this.progressBar1.TabIndex = 1;
             // 
             // timer1
@@ -61,7 +61,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.BackgroundImage = global::BaiToan.Properties.Resources._3S;
+            this.ClientSize = new System.Drawing.Size(792, 625);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.progressPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

@@ -391,5 +391,30 @@ namespace BaiToan
             zedGraphControl3.RestoreScale(zedGraphControl3.GraphPane);
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPane1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupControl1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txtTenFile_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
     }
 }
