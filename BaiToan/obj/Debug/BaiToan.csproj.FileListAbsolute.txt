@@ -133,7 +133,6 @@ C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\BaiToan\bin\Debug\zh-cn\ZedGraph.res
 C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\BaiToan\bin\Debug\zh-tw\ZedGraph.resources.dll
 C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\BaiToan\obj\Debug\BaiToan.csprojResolveAssemblyReference.cache
 C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\BaiToan\obj\Debug\BaiToan.csproj.ResolveComReference.cache
-C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\BaiToan\obj\Debug\BaiToan.DoThi.resources
 C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\BaiToan\obj\Debug\BaiToan.Form1.resources
 C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\BaiToan\obj\Debug\BaiToan.loading.resources
 C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\BaiToan\obj\Debug\BaiToan.Properties.Resources.resources

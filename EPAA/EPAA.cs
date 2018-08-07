@@ -173,6 +173,12 @@ namespace ThuVienEPAA
             return ret;
         }
 
+        public void Add(Diem diem)
+        {
+            data.Add(diem);
+            soCot++;
+        }
+
         public EPAA ChuanHoa()
         {
             EPAA newData = new EPAA();
@@ -221,6 +227,7 @@ namespace ThuVienEPAA
         public void Clear()
         {
             data.Clear();
+            soCot = 0;
         }
         public EPAA copy(int viTriDau, int doDai)
         {
@@ -252,7 +259,16 @@ namespace ThuVienEPAA
 
             for (int i = 0; i < w; i++)
             {
-                double r = data2.Data[i].Avg.Giatri - data1.Data[i].Avg.Giatri;
+                double r;
+                r = data2.Data[i].Avg.Giatri - data1.Data[i].Avg.Giatri;
+                r = r * r;
+                dpaa += r;
+
+                r = data2.Data[i].Min.Giatri - data1.Data[i].Min.Giatri;
+                r = r * r;
+                dpaa += r;
+
+                r = data2.Data[i].Max.Giatri - data1.Data[i].Max.Giatri;
                 r = r * r;
                 dpaa += r;
             }
@@ -260,7 +276,7 @@ namespace ThuVienEPAA
 
             for (int i = 0; i < w; i++)
             {
-                s_alpha += 0.00005 * 0.00005;
+                s_alpha += 0 * 0;
             }
 
             ret = Math.Sqrt(drpaa + ((nw - 1) * (nw + 1) * (nw + 1)) * s_alpha / 18);

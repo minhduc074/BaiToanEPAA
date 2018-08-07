@@ -20,7 +20,6 @@ C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\BaiToan\bin\Release\tr\ZedGraph.reso
 C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\BaiToan\bin\Release\zh-cn\ZedGraph.resources.dll
 C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\BaiToan\bin\Release\zh-tw\ZedGraph.resources.dll
 C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\BaiToan\obj\Release\BaiToan.csprojResolveAssemblyReference.cache
-C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\BaiToan\obj\Release\BaiToan.DoThi.resources
 C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\BaiToan\obj\Release\BaiToan.Form1.resources
 C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\BaiToan\obj\Release\BaiToan.loading.resources
 C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\BaiToan\obj\Release\BaiToan.Properties.Resources.resources
