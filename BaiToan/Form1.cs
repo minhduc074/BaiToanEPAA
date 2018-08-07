@@ -259,8 +259,9 @@ namespace BaiToan
 
             try
             {
-                List<ThuVienEPAA.Diem> data = epaa.ThayDoiSoLuongDuLieu(epaa.SoCot/(int)txtSoCot2.Value);
+               List<ThuVienEPAA.Diem> data = epaa.ThayDoiSoLuongDuLieu(epaa.SoCot/(int)txtSoCot2.Value);
                 HienThiDuLieu(1, data, 1, 0, true);
+                //HienThiDuLieu(1, epaa.ChuanHoa().Data, 1, 0,true);
             }
             catch(Exception e1)
             {
@@ -283,8 +284,8 @@ namespace BaiToan
 
                 double doSaiLech = 0;
 
-                trungKhop = goc.DoDoTuongTu(sosanh, epaa.SoCot / (int)txtSoCot.Value);
-                if (trungKhop < 0.1)
+                trungKhop = goc.DoDoTuongTu(sosanh, epaa.SoCot / (int)txtSoCot2.Value);
+                if (trungKhop < 5)
                 {
 
                     doSaiLech = trungKhop;
@@ -338,28 +339,28 @@ namespace BaiToan
 
         private void btnChonFile2_Click(object sender, EventArgs e)
         {
-            OpenFileDialog FileDialog = new OpenFileDialog();
-            FileDialog.Filter = "Data|*.txt";
-            if (FileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            {
-                txtTenFile2.Text = FileDialog.FileName;
-            }
+            //OpenFileDialog FileDialog = new OpenFileDialog();
+            //FileDialog.Filter = "Data|*.txt";
+            //if (FileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            //{
+            //    txtTenFile2.Text = FileDialog.FileName;
+            //}
         }
 
         private void btnThemDuLieu_Click(object sender, EventArgs e)
         {
-            ThuVienEPAA.EPAA ep;
-            if (txtTenFile.Text.Length != 0)
-            {
-                ep = new ThuVienEPAA.EPAA(txtTenFile2.Text);
-                ep.ChuanHoa();
-                if(ep.SoCot > 0)
-                {
-                    List<ThuVienEPAA.Diem> data = ep.ChuanHoa().Data;
-                    HienThiDuLieu(2, data, du_lieu_so_sanh.Count + 2, 0, false);
-                    du_lieu_so_sanh.Add(ep);
-                }
-            }
+            //ThuVienEPAA.EPAA ep;
+            //if (txtTenFile.Text.Length != 0)
+            //{
+            //    ep = new ThuVienEPAA.EPAA(txtTenFile2.Text);
+            //    ep.ChuanHoa();
+            //    if(ep.SoCot > 0)
+            //    {
+            //        List<ThuVienEPAA.Diem> data = ep.ChuanHoa().Data;
+            //        HienThiDuLieu(2, data, du_lieu_so_sanh.Count + 2, 0, false);
+            //        du_lieu_so_sanh.Add(ep);
+            //    }
+            //}
 
         }
 
@@ -446,6 +447,16 @@ namespace BaiToan
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }

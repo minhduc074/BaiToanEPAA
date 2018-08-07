@@ -33,53 +33,66 @@
             this.tabPane1 = new DevExpress.XtraBars.Navigation.TabPane();
             this.tabNavigationPage1 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.txtTenFile = new System.Windows.Forms.TextBox();
-            this.btnReset = new System.Windows.Forms.Button();
-            this.btnChuanHoa = new System.Windows.Forms.Button();
-            this.btndocFile = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnChonFile = new System.Windows.Forms.Button();
             this.tabNavigationPage2 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
             this.zedGraphControl2 = new ZedGraph.ZedGraphControl();
-            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
-            this.btnReset2 = new System.Windows.Forms.Button();
-            this.btnChonFile2 = new System.Windows.Forms.Button();
-            this.btnSoSanh = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtTenFile2 = new System.Windows.Forms.TextBox();
-            this.txtSoCot = new System.Windows.Forms.NumericUpDown();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btnThemDuLieu = new System.Windows.Forms.Button();
             this.tabNavigationPage3 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
             this.zedGraphControl3 = new ZedGraph.ZedGraphControl();
             this.groupControl6 = new DevExpress.XtraEditors.GroupControl();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnReset3 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
+            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnXoaFileC = new System.Windows.Forms.Button();
+            this.btnDocFileC = new System.Windows.Forms.Button();
+            this.btnXoaFileG = new System.Windows.Forms.Button();
+            this.btnDocFileG = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btnChuanHoa = new System.Windows.Forms.Button();
+            this.txtTenFile = new System.Windows.Forms.TextBox();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.btndocFile = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnChonFile = new System.Windows.Forms.Button();
+            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            this.btnReset2 = new System.Windows.Forms.Button();
+            this.btnSoSanh = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtSoCot2 = new System.Windows.Forms.NumericUpDown();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnThemDuLieu = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
             this.tabPane1.SuspendLayout();
             this.tabNavigationPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
-            this.groupControl1.SuspendLayout();
             this.tabNavigationPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
             this.groupControl4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
-            this.groupControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSoCot)).BeginInit();
             this.tabNavigationPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
             this.groupControl5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl6)).BeginInit();
             this.groupControl6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            this.groupControl1.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
+            this.groupControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoCot2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
             this.SuspendLayout();
             // 
             // zedGraphControl1
@@ -94,7 +107,7 @@
             this.zedGraphControl1.ScrollMinX = 0D;
             this.zedGraphControl1.ScrollMinY = 0D;
             this.zedGraphControl1.ScrollMinY2 = 0D;
-            this.zedGraphControl1.Size = new System.Drawing.Size(843, 332);
+            this.zedGraphControl1.Size = new System.Drawing.Size(746, 332);
             this.zedGraphControl1.TabIndex = 8;
             this.zedGraphControl1.UseExtendedPrintDialog = true;
             // 
@@ -130,102 +143,11 @@
             // 
             this.groupControl2.Controls.Add(this.zedGraphControl1);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupControl2.Location = new System.Drawing.Point(330, 0);
+            this.groupControl2.Location = new System.Drawing.Point(427, 0);
             this.groupControl2.Name = "groupControl2";
-            this.groupControl2.Size = new System.Drawing.Size(847, 354);
+            this.groupControl2.Size = new System.Drawing.Size(750, 354);
             this.groupControl2.TabIndex = 20;
             this.groupControl2.Text = "Biểu diễn đồ thị";
-            // 
-            // groupControl1
-            // 
-            this.groupControl1.Appearance.BackColor = System.Drawing.Color.Transparent;
-            this.groupControl1.Appearance.Options.UseBackColor = true;
-            this.groupControl1.ContentImage = global::BaiToan.Properties.Resources._50668201;
-            this.groupControl1.Controls.Add(this.label4);
-            this.groupControl1.Controls.Add(this.txtTenFile);
-            this.groupControl1.Controls.Add(this.txtSoCot2);
-            this.groupControl1.Controls.Add(this.btnReset);
-            this.groupControl1.Controls.Add(this.btnChuanHoa);
-            this.groupControl1.Controls.Add(this.btndocFile);
-            this.groupControl1.Controls.Add(this.label2);
-            this.groupControl1.Controls.Add(this.btnChonFile);
-            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupControl1.Location = new System.Drawing.Point(0, 0);
-            this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(330, 354);
-            this.groupControl1.TabIndex = 19;
-            this.groupControl1.Text = "Nhập dữ liệu data";
-            this.groupControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl1_Paint);
-            // 
-            // txtTenFile
-            // 
-            this.txtTenFile.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenFile.Location = new System.Drawing.Point(99, 46);
-            this.txtTenFile.Name = "txtTenFile";
-            this.txtTenFile.Size = new System.Drawing.Size(165, 25);
-            this.txtTenFile.TabIndex = 9;
-            this.txtTenFile.TextChanged += new System.EventHandler(this.txtTenFile_TextChanged);
-            // 
-            // btnReset
-            // 
-            this.btnReset.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.Image = global::BaiToan.Properties.Resources.undo;
-            this.btnReset.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReset.Location = new System.Drawing.Point(99, 278);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(165, 47);
-            this.btnReset.TabIndex = 18;
-            this.btnReset.Text = "Reset";
-            this.btnReset.UseVisualStyleBackColor = true;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
-            // 
-            // btnChuanHoa
-            // 
-            this.btnChuanHoa.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChuanHoa.Image = global::BaiToan.Properties.Resources.registry;
-            this.btnChuanHoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnChuanHoa.Location = new System.Drawing.Point(99, 217);
-            this.btnChuanHoa.Name = "btnChuanHoa";
-            this.btnChuanHoa.Size = new System.Drawing.Size(165, 47);
-            this.btnChuanHoa.TabIndex = 4;
-            this.btnChuanHoa.Text = "Chuẩn hóa";
-            this.btnChuanHoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnChuanHoa.UseVisualStyleBackColor = true;
-            this.btnChuanHoa.Click += new System.EventHandler(this.btnChuanHoa_Click);
-            // 
-            // btndocFile
-            // 
-            this.btndocFile.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btndocFile.Image = global::BaiToan.Properties.Resources.add;
-            this.btndocFile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btndocFile.Location = new System.Drawing.Point(99, 156);
-            this.btndocFile.Name = "btndocFile";
-            this.btndocFile.Size = new System.Drawing.Size(165, 47);
-            this.btndocFile.TabIndex = 0;
-            this.btndocFile.Text = "Đọc dữ liệu";
-            this.btndocFile.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btndocFile.UseVisualStyleBackColor = true;
-            this.btndocFile.Click += new System.EventHandler(this.btndocFile_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(8, 47);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 22);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "Chọn tệp:";
-            // 
-            // btnChonFile
-            // 
-            this.btnChonFile.Location = new System.Drawing.Point(270, 46);
-            this.btnChonFile.Name = "btnChonFile";
-            this.btnChonFile.Size = new System.Drawing.Size(40, 26);
-            this.btnChonFile.TabIndex = 10;
-            this.btnChonFile.Text = "...";
-            this.btnChonFile.UseVisualStyleBackColor = true;
-            this.btnChonFile.Click += new System.EventHandler(this.btnChonFile_Click);
             // 
             // tabNavigationPage2
             // 
@@ -262,125 +184,6 @@
             this.zedGraphControl2.Size = new System.Drawing.Size(853, 332);
             this.zedGraphControl2.TabIndex = 14;
             this.zedGraphControl2.UseExtendedPrintDialog = true;
-            // 
-            // groupControl3
-            // 
-            this.groupControl3.ContentImage = global::BaiToan.Properties.Resources._50668201;
-            this.groupControl3.Controls.Add(this.btnReset2);
-            this.groupControl3.Controls.Add(this.btnChonFile2);
-            this.groupControl3.Controls.Add(this.btnSoSanh);
-            this.groupControl3.Controls.Add(this.label1);
-            this.groupControl3.Controls.Add(this.txtTenFile2);
-            this.groupControl3.Controls.Add(this.txtSoCot);
-            this.groupControl3.Controls.Add(this.label3);
-            this.groupControl3.Controls.Add(this.btnThemDuLieu);
-            this.groupControl3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.groupControl3.Location = new System.Drawing.Point(0, 0);
-            this.groupControl3.Name = "groupControl3";
-            this.groupControl3.Size = new System.Drawing.Size(320, 354);
-            this.groupControl3.TabIndex = 19;
-            this.groupControl3.Text = "Nhập dữ liệu so trùng";
-            // 
-            // btnReset2
-            // 
-            this.btnReset2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset2.Image = global::BaiToan.Properties.Resources.undo;
-            this.btnReset2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReset2.Location = new System.Drawing.Point(100, 252);
-            this.btnReset2.Name = "btnReset2";
-            this.btnReset2.Size = new System.Drawing.Size(168, 49);
-            this.btnReset2.TabIndex = 18;
-            this.btnReset2.Text = "Reset";
-            this.btnReset2.UseVisualStyleBackColor = true;
-            this.btnReset2.Click += new System.EventHandler(this.btnReset2_Click);
-            // 
-            // btnChonFile2
-            // 
-            this.btnChonFile2.Location = new System.Drawing.Point(274, 54);
-            this.btnChonFile2.Name = "btnChonFile2";
-            this.btnChonFile2.Size = new System.Drawing.Size(32, 26);
-            this.btnChonFile2.TabIndex = 10;
-            this.btnChonFile2.Text = "...";
-            this.btnChonFile2.UseVisualStyleBackColor = true;
-            this.btnChonFile2.Click += new System.EventHandler(this.btnChonFile2_Click);
-            // 
-            // btnSoSanh
-            // 
-            this.btnSoSanh.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSoSanh.Location = new System.Drawing.Point(100, 195);
-            this.btnSoSanh.Name = "btnSoSanh";
-            this.btnSoSanh.Size = new System.Drawing.Size(168, 49);
-            this.btnSoSanh.TabIndex = 17;
-            this.btnSoSanh.Text = "So trùng EPAA";
-            this.btnSoSanh.UseVisualStyleBackColor = true;
-            this.btnSoSanh.Click += new System.EventHandler(this.btnSoSanh_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(5, 98);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 22);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Độ dài ";
-            // 
-            // txtTenFile2
-            // 
-            this.txtTenFile2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenFile2.Location = new System.Drawing.Point(100, 54);
-            this.txtTenFile2.Name = "txtTenFile2";
-            this.txtTenFile2.Size = new System.Drawing.Size(168, 26);
-            this.txtTenFile2.TabIndex = 9;
-            // 
-            // txtSoCot
-            // 
-            this.txtSoCot.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSoCot.Location = new System.Drawing.Point(100, 93);
-            this.txtSoCot.Maximum = new decimal(new int[] {
-            999999,
-            0,
-            0,
-            0});
-            this.txtSoCot.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.txtSoCot.Name = "txtSoCot";
-            this.txtSoCot.Size = new System.Drawing.Size(168, 27);
-            this.txtSoCot.TabIndex = 11;
-            this.txtSoCot.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(5, 58);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(94, 22);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "Chọn tiệp:";
-            // 
-            // btnThemDuLieu
-            // 
-            this.btnThemDuLieu.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThemDuLieu.Image = global::BaiToan.Properties.Resources.add;
-            this.btnThemDuLieu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThemDuLieu.Location = new System.Drawing.Point(100, 140);
-            this.btnThemDuLieu.Name = "btnThemDuLieu";
-            this.btnThemDuLieu.Size = new System.Drawing.Size(168, 49);
-            this.btnThemDuLieu.TabIndex = 16;
-            this.btnThemDuLieu.Text = "Đọc File";
-            this.btnThemDuLieu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnThemDuLieu.UseVisualStyleBackColor = true;
-            this.btnThemDuLieu.Click += new System.EventHandler(this.btnThemDuLieu_Click);
             // 
             // tabNavigationPage3
             // 
@@ -452,21 +255,284 @@
             this.btnReset3.UseVisualStyleBackColor = true;
             this.btnReset3.Click += new System.EventHandler(this.btnReset3_Click);
             // 
-            // label4
+            // groupControl1
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(8, 99);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 22);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "Độ dài ";
+            this.groupControl1.Appearance.BackColor = System.Drawing.Color.Transparent;
+            this.groupControl1.Appearance.Options.UseBackColor = true;
+            this.groupControl1.ContentImage = global::BaiToan.Properties.Resources._50668201;
+            this.groupControl1.Controls.Add(this.groupBox1);
+            this.groupControl1.Controls.Add(this.txtTenFile);
+            this.groupControl1.Controls.Add(this.btnReset);
+            this.groupControl1.Controls.Add(this.btndocFile);
+            this.groupControl1.Controls.Add(this.label2);
+            this.groupControl1.Controls.Add(this.btnChonFile);
+            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.groupControl1.Location = new System.Drawing.Point(0, 0);
+            this.groupControl1.Name = "groupControl1";
+            this.groupControl1.Size = new System.Drawing.Size(427, 354);
+            this.groupControl1.TabIndex = 19;
+            this.groupControl1.Text = "Nhập dữ liệu data";
+            this.groupControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl1_Paint);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.numericUpDown4);
+            this.groupBox1.Controls.Add(this.numericUpDown3);
+            this.groupBox1.Controls.Add(this.numericUpDown2);
+            this.groupBox1.Controls.Add(this.numericUpDown1);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.btnXoaFileC);
+            this.groupBox1.Controls.Add(this.btnDocFileC);
+            this.groupBox1.Controls.Add(this.btnXoaFileG);
+            this.groupBox1.Controls.Add(this.btnDocFileG);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.btnChuanHoa);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(2, 117);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(423, 235);
+            this.groupBox1.TabIndex = 19;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Tạo dữ liệu thực nghiệm";
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown2.Location = new System.Drawing.Point(164, 69);
+            this.numericUpDown2.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
+            this.numericUpDown2.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(126, 27);
+            this.numericUpDown2.TabIndex = 13;
+            this.numericUpDown2.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown1.Location = new System.Drawing.Point(164, 151);
+            this.numericUpDown1.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(126, 27);
+            this.numericUpDown1.TabIndex = 13;
+            this.numericUpDown1.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(6, 74);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(152, 22);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Độ dài chuỗi gốc:";
+            this.label6.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // btnXoaFileC
+            // 
+            this.btnXoaFileC.Image = global::BaiToan.Properties.Resources.CapNhat;
+            this.btnXoaFileC.Location = new System.Drawing.Point(342, 150);
+            this.btnXoaFileC.Name = "btnXoaFileC";
+            this.btnXoaFileC.Size = new System.Drawing.Size(40, 27);
+            this.btnXoaFileC.TabIndex = 10;
+            this.btnXoaFileC.UseVisualStyleBackColor = true;
+            this.btnXoaFileC.Click += new System.EventHandler(this.btnChonFile_Click);
+            // 
+            // btnDocFileC
+            // 
+            this.btnDocFileC.Image = global::BaiToan.Properties.Resources.add1;
+            this.btnDocFileC.Location = new System.Drawing.Point(296, 150);
+            this.btnDocFileC.Name = "btnDocFileC";
+            this.btnDocFileC.Size = new System.Drawing.Size(40, 27);
+            this.btnDocFileC.TabIndex = 10;
+            this.btnDocFileC.UseVisualStyleBackColor = true;
+            this.btnDocFileC.Click += new System.EventHandler(this.btnChonFile_Click);
+            // 
+            // btnXoaFileG
+            // 
+            this.btnXoaFileG.Image = global::BaiToan.Properties.Resources.CapNhat;
+            this.btnXoaFileG.Location = new System.Drawing.Point(342, 69);
+            this.btnXoaFileG.Name = "btnXoaFileG";
+            this.btnXoaFileG.Size = new System.Drawing.Size(40, 27);
+            this.btnXoaFileG.TabIndex = 10;
+            this.btnXoaFileG.UseVisualStyleBackColor = true;
+            this.btnXoaFileG.Click += new System.EventHandler(this.btnChonFile_Click);
+            // 
+            // btnDocFileG
+            // 
+            this.btnDocFileG.Image = global::BaiToan.Properties.Resources.add1;
+            this.btnDocFileG.Location = new System.Drawing.Point(296, 69);
+            this.btnDocFileG.Name = "btnDocFileG";
+            this.btnDocFileG.Size = new System.Drawing.Size(40, 27);
+            this.btnDocFileG.TabIndex = 10;
+            this.btnDocFileG.UseVisualStyleBackColor = true;
+            this.btnDocFileG.Click += new System.EventHandler(this.btnChonFile_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(6, 156);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(152, 22);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Độ dài chuỗi con:";
+            this.label5.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // btnChuanHoa
+            // 
+            this.btnChuanHoa.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChuanHoa.Image = global::BaiToan.Properties.Resources.registry;
+            this.btnChuanHoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnChuanHoa.Location = new System.Drawing.Point(164, 182);
+            this.btnChuanHoa.Name = "btnChuanHoa";
+            this.btnChuanHoa.Size = new System.Drawing.Size(126, 47);
+            this.btnChuanHoa.TabIndex = 4;
+            this.btnChuanHoa.Text = "Chuẩn hóa";
+            this.btnChuanHoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnChuanHoa.UseVisualStyleBackColor = true;
+            this.btnChuanHoa.Click += new System.EventHandler(this.btnChuanHoa_Click);
+            // 
+            // txtTenFile
+            // 
+            this.txtTenFile.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTenFile.Location = new System.Drawing.Point(93, 33);
+            this.txtTenFile.Name = "txtTenFile";
+            this.txtTenFile.Size = new System.Drawing.Size(282, 25);
+            this.txtTenFile.TabIndex = 9;
+            this.txtTenFile.TextChanged += new System.EventHandler(this.txtTenFile_TextChanged);
+            // 
+            // btnReset
+            // 
+            this.btnReset.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.Image = global::BaiToan.Properties.Resources.undo;
+            this.btnReset.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReset.Location = new System.Drawing.Point(274, 64);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(101, 47);
+            this.btnReset.TabIndex = 18;
+            this.btnReset.Text = "Reset";
+            this.btnReset.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
+            // btndocFile
+            // 
+            this.btndocFile.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btndocFile.Image = global::BaiToan.Properties.Resources.add;
+            this.btndocFile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btndocFile.Location = new System.Drawing.Point(93, 64);
+            this.btndocFile.Name = "btndocFile";
+            this.btndocFile.Size = new System.Drawing.Size(158, 47);
+            this.btndocFile.TabIndex = 0;
+            this.btndocFile.Text = "Đọc file gốc";
+            this.btndocFile.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btndocFile.UseVisualStyleBackColor = true;
+            this.btndocFile.Click += new System.EventHandler(this.btndocFile_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(5, 36);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(89, 22);
+            this.label2.TabIndex = 13;
+            this.label2.Text = "Chọn file:";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // btnChonFile
+            // 
+            this.btnChonFile.Location = new System.Drawing.Point(381, 32);
+            this.btnChonFile.Name = "btnChonFile";
+            this.btnChonFile.Size = new System.Drawing.Size(40, 26);
+            this.btnChonFile.TabIndex = 10;
+            this.btnChonFile.Text = "...";
+            this.btnChonFile.UseVisualStyleBackColor = true;
+            this.btnChonFile.Click += new System.EventHandler(this.btnChonFile_Click);
+            // 
+            // groupControl3
+            // 
+            this.groupControl3.ContentImage = global::BaiToan.Properties.Resources._50668201;
+            this.groupControl3.Controls.Add(this.btnReset2);
+            this.groupControl3.Controls.Add(this.btnSoSanh);
+            this.groupControl3.Controls.Add(this.label1);
+            this.groupControl3.Controls.Add(this.txtSoCot2);
+            this.groupControl3.Controls.Add(this.label3);
+            this.groupControl3.Controls.Add(this.btnThemDuLieu);
+            this.groupControl3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.groupControl3.Location = new System.Drawing.Point(0, 0);
+            this.groupControl3.Name = "groupControl3";
+            this.groupControl3.Size = new System.Drawing.Size(320, 354);
+            this.groupControl3.TabIndex = 19;
+            this.groupControl3.Text = "EPAA";
+            // 
+            // btnReset2
+            // 
+            this.btnReset2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset2.Image = global::BaiToan.Properties.Resources.undo;
+            this.btnReset2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReset2.Location = new System.Drawing.Point(100, 252);
+            this.btnReset2.Name = "btnReset2";
+            this.btnReset2.Size = new System.Drawing.Size(168, 49);
+            this.btnReset2.TabIndex = 18;
+            this.btnReset2.Text = "Reset";
+            this.btnReset2.UseVisualStyleBackColor = true;
+            this.btnReset2.Click += new System.EventHandler(this.btnReset2_Click);
+            // 
+            // btnSoSanh
+            // 
+            this.btnSoSanh.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSoSanh.Location = new System.Drawing.Point(100, 195);
+            this.btnSoSanh.Name = "btnSoSanh";
+            this.btnSoSanh.Size = new System.Drawing.Size(168, 49);
+            this.btnSoSanh.TabIndex = 17;
+            this.btnSoSanh.Text = "So trùng EPAA";
+            this.btnSoSanh.UseVisualStyleBackColor = true;
+            this.btnSoSanh.Click += new System.EventHandler(this.btnSoSanh_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(5, 98);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(149, 22);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Độ dài mỗi đoạn:";
             // 
             // txtSoCot2
             // 
             this.txtSoCot2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSoCot2.Location = new System.Drawing.Point(99, 98);
+            this.txtSoCot2.Location = new System.Drawing.Point(160, 93);
             this.txtSoCot2.Maximum = new decimal(new int[] {
             999999,
             0,
@@ -478,9 +544,101 @@
             0,
             0});
             this.txtSoCot2.Name = "txtSoCot2";
-            this.txtSoCot2.Size = new System.Drawing.Size(168, 27);
-            this.txtSoCot2.TabIndex = 13;
+            this.txtSoCot2.Size = new System.Drawing.Size(114, 27);
+            this.txtSoCot2.TabIndex = 11;
             this.txtSoCot2.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(5, 58);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(0, 22);
+            this.label3.TabIndex = 13;
+            // 
+            // btnThemDuLieu
+            // 
+            this.btnThemDuLieu.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemDuLieu.Image = global::BaiToan.Properties.Resources.add;
+            this.btnThemDuLieu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThemDuLieu.Location = new System.Drawing.Point(100, 140);
+            this.btnThemDuLieu.Name = "btnThemDuLieu";
+            this.btnThemDuLieu.Size = new System.Drawing.Size(168, 49);
+            this.btnThemDuLieu.TabIndex = 16;
+            this.btnThemDuLieu.Text = "Biến đổi EPAA";
+            this.btnThemDuLieu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnThemDuLieu.UseVisualStyleBackColor = true;
+            this.btnThemDuLieu.Click += new System.EventHandler(this.btnThemDuLieu_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(6, 35);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(91, 22);
+            this.label4.TabIndex = 13;
+            this.label4.Text = "Vị trí gốc:";
+            this.label4.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(6, 121);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(91, 22);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Vị trí con:";
+            this.label7.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // numericUpDown3
+            // 
+            this.numericUpDown3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown3.Location = new System.Drawing.Point(164, 36);
+            this.numericUpDown3.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
+            this.numericUpDown3.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown3.Name = "numericUpDown3";
+            this.numericUpDown3.Size = new System.Drawing.Size(126, 27);
+            this.numericUpDown3.TabIndex = 13;
+            this.numericUpDown3.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            // 
+            // numericUpDown4
+            // 
+            this.numericUpDown4.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown4.Location = new System.Drawing.Point(164, 116);
+            this.numericUpDown4.Maximum = new decimal(new int[] {
+            999999,
+            0,
+            0,
+            0});
+            this.numericUpDown4.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+            this.numericUpDown4.Name = "numericUpDown4";
+            this.numericUpDown4.Size = new System.Drawing.Size(126, 27);
+            this.numericUpDown4.TabIndex = 13;
+            this.numericUpDown4.Value = new decimal(new int[] {
             1,
             0,
             0,
@@ -502,23 +660,28 @@
             this.tabNavigationPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
-            this.groupControl1.ResumeLayout(false);
-            this.groupControl1.PerformLayout();
             this.tabNavigationPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
             this.groupControl4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
-            this.groupControl3.ResumeLayout(false);
-            this.groupControl3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSoCot)).EndInit();
             this.tabNavigationPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).EndInit();
             this.groupControl5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl6)).EndInit();
             this.groupControl6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            this.groupControl1.ResumeLayout(false);
+            this.groupControl1.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
+            this.groupControl3.ResumeLayout(false);
+            this.groupControl3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoCot2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -532,14 +695,12 @@
         private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage2;
         private System.Windows.Forms.Button btnChonFile;
         private System.Windows.Forms.TextBox txtTenFile;
-        private System.Windows.Forms.NumericUpDown txtSoCot;
+        private System.Windows.Forms.NumericUpDown txtSoCot2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnChuanHoa;
         private ZedGraph.ZedGraphControl zedGraphControl2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtTenFile2;
-        private System.Windows.Forms.Button btnChonFile2;
         private System.Windows.Forms.Button btnThemDuLieu;
         private System.Windows.Forms.Button btnSoSanh;
         private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage3;
@@ -554,8 +715,19 @@
         private DevExpress.XtraEditors.GroupControl groupControl5;
         private ZedGraph.ZedGraphControl zedGraphControl3;
         private DevExpress.XtraEditors.GroupControl groupControl6;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btnDocFileC;
+        private System.Windows.Forms.Button btnDocFileG;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnXoaFileC;
+        private System.Windows.Forms.Button btnXoaFileG;
+        private System.Windows.Forms.NumericUpDown numericUpDown4;
+        private System.Windows.Forms.NumericUpDown numericUpDown3;
+        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.NumericUpDown txtSoCot2;
 
     }
 }
