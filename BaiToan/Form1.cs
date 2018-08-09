@@ -62,15 +62,28 @@ namespace BaiToan
             dataTable.Columns.Add("Độ Sai Lệch", typeof(double));
         }
 
-        private void HienThiDuLieu(int pane, List<ThuVienEPAA.Diem> data, int duLieuGoc, int vitri, bool isEPAA)
+        private void HienThiDuLieu(int pane, List<ThuVienEPAA.Diem> data, string ten, int vitri, bool isEPAA)
         {
-            zedGraphControl1.RestoreScale(zedGraphControl1.GraphPane);
+            ZedGraphControl zedGraph;
+
             GraphPane graphpane;
             if (pane == 1)
+            {
+                zedGraph = zedGraphControl1;
                 graphpane = myPane1;
+            }
             else if (pane == 2)
+            {
+                zedGraph = zedGraphControl2;
                 graphpane = myPane2;
-            else graphpane = myPane3;
+            }
+            else
+            {
+                zedGraph = zedGraphControl3;
+                graphpane = myPane3;
+            }
+
+            zedGraph.RestoreScale(zedGraphControl1.GraphPane);
 
             List<double> data_int = new List<double>();
             //List<double> data_int2 = new List<double>();
@@ -95,24 +108,23 @@ namespace BaiToan
                 }
             }
 
-            //chart1.Series.Clear();
-            //chart1.Series.Add("GiaTri");
-            //chart1.ChartAreas["ChartArea1"].AxisX.Interval = 3;
-            //chart1.Series["GiaTri"].YValuesPerPoint = 10;
-            //chart1.Series["GiaTri"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+
             for (int i = 0; i < data.Count(); i++)
             {
-                if (pane == 3 && duLieuGoc != 1)
+                //+2 giá trị ở tab 3 để hiển thị rõ hơn nếu dữ liệu bị trùng
+                if (pane == 3 && ten.CompareTo("DuLieuGoc") != 0)
                 {
                     data[i].Max.Giatri += 2;
                     data[i].Avg.Giatri += 2;
                     data[i].Min.Giatri += 2;
                 }
 
+                //Dữ liệu chưa qua xử lý EPAA
                 if (!isEPAA)
                 {
                     data_int.Add(data[i].Avg.Giatri);
                 }
+                //Dữ liệu đã qua xử lý EPAA
                 else if ((data[i].Max.Vitri < data[i].Avg.Vitri) && (data[i].Avg.Vitri < data[i].Min.Vitri))
                 {
                     int index = 0;
@@ -176,48 +188,19 @@ namespace BaiToan
 
             }
 
-            int curveIndex = graphpane.CurveList.IndexOfTag("DuLieuGoc");
-            if (curveIndex != -1 && duLieuGoc == 1 && pane != 1 && pane != 2)
+            int curveIndex = graphpane.CurveList.IndexOfTag(ten);
+            if (curveIndex != -1)
             {
                 graphpane.CurveList.RemoveAt(curveIndex);
             }
-            string tenDuLieu = "Du Lieu " + duLieuGoc;
-            string tagDuLieu = "DuLieu" + duLieuGoc;
-            if (duLieuGoc != 1 && pane != 1)
-            {
-                curveIndex = graphpane.CurveList.IndexOfTag(tagDuLieu);
-                if (curveIndex != -1 && duLieuGoc != 2)
-                {
-                    graphpane.CurveList.RemoveAt(curveIndex);
-                }
-            }
+
 
             LineItem myCurve;
-            if (duLieuGoc == 1)
-            {
-                if (graphpane.CurveList.IndexOfTag("DuLieuGoc") != -1)
-                {
-                    myCurve = graphpane.AddCurve("Du Lieu Goc EPAA", null, data_int.ToArray(), Color.Red, SymbolType.None);
-                    myCurve.Tag = "DuLieuGocEPAA";
-                }
-                else
-                {
-                    myCurve = graphpane.AddCurve("Du Lieu Goc", null, data_int.ToArray(), Color.Blue, SymbolType.None);
-                    myCurve.Tag = "DuLieuGoc";
-                }
-            }
-            else
-            {
-                if (graphpane.CurveList.IndexOfTag(tagDuLieu) != -1)
-                {
-                    tenDuLieu = "Du Lieu " + duLieuGoc + " EPAA";
-                    tagDuLieu = "DuLieu" + duLieuGoc + " EPAA";
-                }
 
-                Random r = new Random();
-                myCurve = graphpane.AddCurve(tenDuLieu, null, data_int.ToArray(), Color.FromArgb(100, r.Next(0, 256), r.Next(0, 256), r.Next(0, 256)), SymbolType.None);
-                myCurve.Tag = tagDuLieu;
-            }
+
+            Random r = new Random();
+            myCurve = graphpane.AddCurve(ten, null, data_int.ToArray(), Color.FromArgb(255, r.Next(150, 256), r.Next(150, 256), r.Next(150, 256)), SymbolType.None);
+            myCurve.Tag = ten;
 
 
             myCurve.Symbol.Fill = new Fill(Color.White);
@@ -226,24 +209,10 @@ namespace BaiToan
 
 
             graphpane.AxisChange();
-            if (pane == 1)
-            {
-                zedGraphControl1.Invalidate();
-                zedGraphControl1.AxisChange();
-                zedGraphControl1.Refresh();
-            }
-            else if (pane == 2)
-            {
-                zedGraphControl2.Invalidate();
-                zedGraphControl2.AxisChange();
-                zedGraphControl2.Refresh();
-            }
-            else
-            {
-                zedGraphControl3.Invalidate();
-                zedGraphControl3.AxisChange();
-                zedGraphControl3.Refresh();
-            }
+            zedGraph.Invalidate();
+            zedGraph.AxisChange();
+            zedGraph.Refresh();
+
 
         }
 
@@ -253,7 +222,7 @@ namespace BaiToan
             {
                 du_lieu_goc = new ThuVienEPAA.EPAA(txtTenFile.Text);
                 List<ThuVienEPAA.Diem> data = du_lieu_goc.Data;
-                HienThiDuLieu(1, data, 1, 0, false);
+                HienThiDuLieu(1, data, "Du lieu doc tu file", 0, false);
                 //HienThiDuLieu(2, epaa.ChuanHoa().Data, 1, 0, false);
                 //HienThiDuLieu(3, epaa.ChuanHoa().Data, 1, 0, false);
             }
@@ -265,14 +234,18 @@ namespace BaiToan
             
             try
             {
-                int curveIndex = myPane1.CurveList.IndexOfTag("DuLieuGoc");
-                if (curveIndex != -1)
-                {
-                    myPane1.CurveList.RemoveAt(curveIndex);
-                }
                 List<ThuVienEPAA.Diem> data = du_lieu_goc.ChuanHoa().Data;
-                HienThiDuLieu(1, data, 1, 0, false);
+                HienThiDuLieu(1, data, "Du lieu doc tu file", 0, false);
                 //HienThiDuLieu(1, epaa.ChuanHoa().Data, 1, 0,true);
+                if(epaa != null && epaa.SoCot > 0)
+                {
+                    HienThiDuLieu(1, epaa.ChuanHoa().Data, "Du Lieu Goc", 0, false);
+                    
+                }
+                else if(du_lieu_so_sanh != null && du_lieu_so_sanh[0].SoCot > 0)
+                {
+                    HienThiDuLieu(1, du_lieu_so_sanh[0].ChuanHoa().Data, "Du Lieu Con " + (du_lieu_so_sanh.Count + 1), 0, false);
+                }
             }
             catch(Exception e1)
             {
@@ -301,7 +274,7 @@ namespace BaiToan
 
                     doSaiLech = trungKhop;
                     dataTable.Rows.Add(ten, viTri+1, doSaiLech);
-                    HienThiDuLieu(3, sosanh.ChuanHoa().Data, zedGraphControl3.GraphPane.CurveList.Count+1, j, false);
+                    HienThiDuLieu(3, sosanh.ChuanHoa().Data, "Du lieu " + (zedGraphControl3.GraphPane.CurveList.Count+1), j, false);
                     //soluong++;
                     //break;
                 }
@@ -335,45 +308,18 @@ namespace BaiToan
             }
         }
 
-        private void tabPane1_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                List<ThuVienEPAA.Diem> data = epaa.ChuanHoa().Data;
-                HienThiDuLieu(2, data, 1, 0, false);
-            }
-            catch (Exception e1)
-            {
+        //private void tabPane1_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        List<ThuVienEPAA.Diem> data = epaa.ChuanHoa().Data;
+        //        HienThiDuLieu(2, data, "Du Lieu Goc", 0, false);
+        //    }
+        //    catch (Exception e1)
+        //    {
                 
-            }
-        }
-
-        private void btnChonFile2_Click(object sender, EventArgs e)
-        {
-            //OpenFileDialog FileDialog = new OpenFileDialog();
-            //FileDialog.Filter = "Data|*.txt";
-            //if (FileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-            //{
-            //    txtTenFile2.Text = FileDialog.FileName;
-            //}
-        }
-
-        private void btnThemDuLieu_Click(object sender, EventArgs e)
-        {
-            //ThuVienEPAA.EPAA ep;
-            //if (txtTenFile.Text.Length != 0)
-            //{
-            //    ep = new ThuVienEPAA.EPAA(txtTenFile2.Text);
-            //    ep.ChuanHoa();
-            //    if(ep.SoCot > 0)
-            //    {
-            //        List<ThuVienEPAA.Diem> data = ep.ChuanHoa().Data;
-            //        HienThiDuLieu(2, data, du_lieu_so_sanh.Count + 2, 0, false);
-            //        du_lieu_so_sanh.Add(ep);
-            //    }
-            //}
-
-        }
+        //    }
+        //}
 
         private void tabPane1_SelectedPageIndexChanged(object sender, EventArgs e)
         {
@@ -395,11 +341,11 @@ namespace BaiToan
                         zedGraphControl2.Refresh();
 
                         List<ThuVienEPAA.Diem> data = epaa.ChuanHoa().Data;
-                        HienThiDuLieu(2, data, 1, 0, false);
+                        HienThiDuLieu(2, data, "Du Lieu Goc", 0, false);
                         for (int i = 0; i < du_lieu_so_sanh.Count; i++)
                         {
                             data = du_lieu_so_sanh[i].ChuanHoa().Data;
-                            HienThiDuLieu(2, data, i+2, 0, false);
+                            HienThiDuLieu(2, data, "Du lieu con " + (i+2), 0, false);
                         }
                     }
 
@@ -414,8 +360,15 @@ namespace BaiToan
                 try
                 {
                     //epaa.ChuanHoa();
-                    //List<ThuVienEPAA.Diem> data = epaa.Data;
-                    //HienThiDuLieu(3, data, 1);
+                    List<ThuVienEPAA.Diem> data = epaa.ChuanHoa().Data;
+                    HienThiDuLieu(3, data, "Du Lieu Goc", 0, false);
+
+                    //for(int i = 0; i < du_lieu_so_sanh.Count; i++)
+                    //{
+                    //    data = du_lieu_so_sanh[i].ChuanHoa().Data;
+                    //    HienThiDuLieu(3, data, "Du lieu con " + (i + 2), 0, false);
+                    //}
+
                 }
                 catch
                 {
@@ -426,10 +379,8 @@ namespace BaiToan
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            //zedGraphControl1.GraphPane.CurveList.Clear();
-            //zedGraphControl1.GraphPane.GraphObjList.Clear();
-
-            zedGraphControl1.RestoreScale(zedGraphControl1.GraphPane);
+            du_lieu_goc.Clear();
+            xoaDoThi(1, "Du lieu doc tu file");
         }
 
         private void btnReset2_Click(object sender, EventArgs e)
@@ -455,43 +406,114 @@ namespace BaiToan
 
         private void btnDocFileG_Click(object sender, EventArgs e)
         {
+            if (du_lieu_goc == null || du_lieu_goc.SoCot == 0)
+            {
+                MessageBox.Show("Dữ liệu gốc rỗng.", "Lỗi");
+                return;
+            }
             if (epaa == null)
                 epaa = new ThuVienEPAA.EPAA();
-            for(int i = (int)txtViTriGoc.Value; i < (int)txtViTriGoc.Value + (int)txtDoDaiGoc.Value; i++)
+            else
+                epaa.Clear();
+            for(int i = (int)txtViTriGoc.Value - 1; i < (int)txtViTriGoc.Value + (int)txtDoDaiGoc.Value - 1; i++)
             {
                 epaa.Add(du_lieu_goc.Data[i]);
             }
+            HienThiDuLieu(1, epaa.Data, "Du Lieu Goc", 0, false);
         }
 
         private void btnDocFileC_Click(object sender, EventArgs e)
         {
+            if (du_lieu_goc == null || du_lieu_goc.SoCot == 0)
+            {
+                MessageBox.Show("Dữ liệu gốc rỗng.", "Lỗi");
+                return;
+            }
+
+            /////////////
+            du_lieu_so_sanh.Clear();
+
             ThuVienEPAA.EPAA ret = new ThuVienEPAA.EPAA();
-            for (int i = (int)txtviTriCon.Value; i < (int)txtviTriCon.Value + (int)txtDoDaiCon.Value; i++)
+            for (int i = (int)txtviTriCon.Value - 1; i < (int)txtviTriCon.Value + (int)txtDoDaiCon.Value - 1; i++)
             {
                 ret.Add(du_lieu_goc.Data[i]);
             }
             du_lieu_so_sanh.Add(ret);
+            HienThiDuLieu(1, ret.Data, "Du Lieu Con " + (du_lieu_so_sanh.Count + 1), 0, false);
+
         }
 
         private void btnEPAA_Click(object sender, EventArgs e)
         {
             List<ThuVienEPAA.Diem> data = epaa.ChuanHoa().ThayDoiSoLuongDuLieu(epaa.SoCot/(int)txtSoCot2.Value);
-            HienThiDuLieu(2, data, 1, 0, true);
+            HienThiDuLieu(2, data, "Du Lieu Goc EPAA", 0, true);
 
             for (int i = 0; i < du_lieu_so_sanh.Count; i++)
             {
                 data = du_lieu_so_sanh[i].ChuanHoa().ThayDoiSoLuongDuLieu(du_lieu_so_sanh[i].SoCot/(int)txtSoCot2.Value);
-                HienThiDuLieu(2, data, i + 2, 0, true);
+                HienThiDuLieu(2, data, "Du lieu con " + (i + 2) + " EPAA", 0, true);
+            }
+        }
+
+        private void xoaDoThi(int pane, string ten)
+        {
+            ZedGraphControl zedGraph;
+
+            GraphPane graphpane;
+            if (pane == 1)
+            {
+                zedGraph = zedGraphControl1;
+                graphpane = myPane1;
+            }
+            else if (pane == 2)
+            {
+                zedGraph = zedGraphControl2;
+                graphpane = myPane2;
+            }
+            else
+            {
+                zedGraph = zedGraphControl3;
+                graphpane = myPane3;
+            }
+
+            zedGraph.RestoreScale(zedGraphControl1.GraphPane);
+
+            try
+            {
+                if(ten.CompareTo("") == 0)
+                {
+                    while (graphpane.CurveList.Count > 0)
+                        graphpane.CurveList.RemoveAt(myPane1.CurveList.Count - 1);
+                }
+                else
+                {
+                    int curveIndex = graphpane.CurveList.IndexOfTag(ten);
+                    if (curveIndex != -1)
+                    {
+                        graphpane.CurveList.RemoveAt(curveIndex);
+                    }
+                }
+
+                zedGraph.Invalidate();
+                zedGraph.AxisChange();
+                zedGraph.Refresh();
+                
+            }
+            catch (Exception e1)
+            {
+                MessageBox.Show(e1.Message, "Lỗi");
             }
         }
 
         private void btnXoaFileG_Click(object sender, EventArgs e)
         {
             epaa.Clear();
+            xoaDoThi(1, "Du Lieu Goc");
         }
 
         private void btnXoaFileC_Click(object sender, EventArgs e)
         {
+            xoaDoThi(1, "Du Lieu Con " + (du_lieu_so_sanh.Count + 1));
             du_lieu_so_sanh.Clear();
         }
 
