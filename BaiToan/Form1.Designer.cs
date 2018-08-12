@@ -69,6 +69,7 @@
             this.groupControl6 = new DevExpress.XtraEditors.GroupControl();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnReset3 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
             this.tabPane1.SuspendLayout();
             this.tabNavigationPage1.SuspendLayout();
@@ -168,6 +169,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.txtviTriCon);
             this.groupBox1.Controls.Add(this.txtViTriGoc);
             this.groupBox1.Controls.Add(this.txtDoDaiGoc);
@@ -635,6 +637,16 @@
             this.btnReset3.UseVisualStyleBackColor = true;
             this.btnReset3.Click += new System.EventHandler(this.btnReset3_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(388, 150);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(31, 26);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "...";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -718,6 +730,7 @@
         private System.Windows.Forms.NumericUpDown txtViTriGoc;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button1;
 
     }
 }
