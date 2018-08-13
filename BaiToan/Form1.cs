@@ -325,11 +325,33 @@ namespace BaiToan
 
         private void btnChonFile_Click(object sender, EventArgs e)
         {
+            
+
             OpenFileDialog FileDialog = new OpenFileDialog();
             FileDialog.Filter = "Data|*.txt";
             if (FileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 txtTenFile.Text = FileDialog.FileName;
+
+                try
+                {
+                    du_lieu_goc.Clear();
+                    xoaDoThi(1, "Du lieu doc tu file");
+                    //txtTenFile.Text = "";
+                }
+                catch
+                {
+
+                }
+            }
+
+            if (txtTenFile.Text.Length != 0)
+            {
+                du_lieu_goc = new ThuVienEPAA.EPAA(txtTenFile.Text);
+                List<ThuVienEPAA.Diem> data = du_lieu_goc.Data;
+                HienThiDuLieu(1, data, "Du lieu doc tu file", 0, false);
+                //HienThiDuLieu(2, epaa.ChuanHoa().Data, 1, 0, false);
+                //HienThiDuLieu(3, epaa.ChuanHoa().Data, 1, 0, false);
             }
         }
 
@@ -375,7 +397,7 @@ namespace BaiToan
                         for (int i = 0; i < du_lieu_so_sanh.Count; i++)
                         {
                             data = du_lieu_so_sanh[i].ChuanHoa().Data;
-                            HienThiDuLieu(2, data, "Du lieu con " + (i+2), 0, false);
+                            HienThiDuLieu(2, data, "Du Lieu Con " + (i + 2), 0, false);
                         }
                     }
 
@@ -431,11 +453,27 @@ namespace BaiToan
             zedGraphControl2.Refresh();
 
             du_lieu_so_sanh.Clear();
+            //du_lieu_goc.Clear();
+            epaa.Clear();
+            xoaDoThi(2, "");
+            xoaDoThi(3, "");
+            xoaDoThi(1, "");
+
+            tabPane1.SelectNextPage();
+            tabPane1.SelectNextPage();
         }
 
         private void btnReset3_Click(object sender, EventArgs e)
         {
             zedGraphControl3.RestoreScale(zedGraphControl3.GraphPane);
+            du_lieu_so_sanh.Clear();
+            //du_lieu_goc.Clear();
+            epaa.Clear();
+            xoaDoThi(2, "");
+            xoaDoThi(3, "");
+            xoaDoThi(1, "");
+            dataTable.Clear();
+            tabPane1.SelectNextPage();
         }
 
         private void btnDocFileG_Click(object sender, EventArgs e)
@@ -512,7 +550,7 @@ namespace BaiToan
             for (int i = 0; i < du_lieu_so_sanh.Count; i++)
             {
                 data = du_lieu_so_sanh[i].ChuanHoa().ThayDoiSoLuongDuLieu(du_lieu_so_sanh[i].SoCot/(int)txtSoCot2.Value);
-                HienThiDuLieu(2, data, "Du lieu con " + (i + 2) + " EPAA", 0, true);
+                HienThiDuLieu(2, data, "Du Lieu Con " + (i + 2) + " EPAA", 0, true);
             }
         }
 
@@ -624,6 +662,14 @@ namespace BaiToan
                         MessageBox.Show("Đọc file lỗi", "Lỗi");
                     }
                 }
+            }
+        }
+
+        private void txtSoCot2_ValueChanged(object sender, EventArgs e)
+        {
+            if (du_lieu_so_sanh[0].SoCot % (int)txtSoCot2.Value == 0)
+            {
+                btnEPAA_Click(sender, e);
             }
         }
 

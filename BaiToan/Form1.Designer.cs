@@ -519,6 +519,7 @@
             0,
             0,
             0});
+            this.txtSoCot2.ValueChanged += new System.EventHandler(this.txtSoCot2_ValueChanged);
             // 
             // label3
             // 
