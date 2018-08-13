@@ -520,6 +520,8 @@
             0,
             0});
             this.txtSoCot2.ValueChanged += new System.EventHandler(this.txtSoCot2_ValueChanged);
+            this.txtSoCot2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoCot2_KeyPress);
+            this.txtSoCot2.Leave += new System.EventHandler(this.txtSoCot2_Leave);
             // 
             // label3
             // 

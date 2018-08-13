@@ -400,6 +400,7 @@ namespace BaiToan
                             HienThiDuLieu(2, data, "Du Lieu Con " + (i + 2), 0, false);
                         }
                     }
+                    btnEPAA_Click(sender, e);
 
                     xoaDoThi(3, "");
                     dataTable.Clear();
@@ -671,6 +672,16 @@ namespace BaiToan
             {
                 btnEPAA_Click(sender, e);
             }
+        }
+
+        private void txtSoCot2_Leave(object sender, EventArgs e)
+        {
+            txtSoCot2_ValueChanged(sender, e);
+        }
+
+        private void txtSoCot2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtSoCot2_ValueChanged(sender, e);
         }
 
     }
