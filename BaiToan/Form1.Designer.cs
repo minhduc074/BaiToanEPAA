@@ -35,6 +35,7 @@
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.txtviTriCon = new System.Windows.Forms.NumericUpDown();
             this.txtViTriGoc = new System.Windows.Forms.NumericUpDown();
             this.txtDoDaiGoc = new System.Windows.Forms.NumericUpDown();
@@ -49,8 +50,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnChuanHoa = new System.Windows.Forms.Button();
             this.txtTenFile = new System.Windows.Forms.TextBox();
-            this.btnReset = new System.Windows.Forms.Button();
-            this.btndocFile = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.btnChonFile = new System.Windows.Forms.Button();
             this.tabNavigationPage2 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
@@ -62,14 +61,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtSoCot2 = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnEPAA = new System.Windows.Forms.Button();
             this.tabNavigationPage3 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
             this.zedGraphControl3 = new ZedGraph.ZedGraphControl();
             this.groupControl6 = new DevExpress.XtraEditors.GroupControl();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnReset3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
             this.tabPane1.SuspendLayout();
             this.tabNavigationPage1.SuspendLayout();
@@ -156,8 +153,6 @@
             this.groupControl1.ContentImage = global::BaiToan.Properties.Resources._50668201;
             this.groupControl1.Controls.Add(this.groupBox1);
             this.groupControl1.Controls.Add(this.txtTenFile);
-            this.groupControl1.Controls.Add(this.btnReset);
-            this.groupControl1.Controls.Add(this.btndocFile);
             this.groupControl1.Controls.Add(this.label2);
             this.groupControl1.Controls.Add(this.btnChonFile);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -185,12 +180,22 @@
             this.groupBox1.Controls.Add(this.btnChuanHoa);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(2, 117);
+            this.groupBox1.Location = new System.Drawing.Point(2, 80);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(423, 235);
+            this.groupBox1.Size = new System.Drawing.Size(423, 272);
             this.groupBox1.TabIndex = 19;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tạo dữ liệu thực nghiệm";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(392, 150);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(31, 26);
+            this.button1.TabIndex = 14;
+            this.button1.Text = "...";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtviTriCon
             // 
@@ -210,7 +215,7 @@
             this.txtviTriCon.Size = new System.Drawing.Size(126, 27);
             this.txtviTriCon.TabIndex = 13;
             this.txtviTriCon.Value = new decimal(new int[] {
-            1,
+            2,
             0,
             0,
             0});
@@ -256,7 +261,7 @@
             this.txtDoDaiGoc.Size = new System.Drawing.Size(126, 27);
             this.txtDoDaiGoc.TabIndex = 13;
             this.txtDoDaiGoc.Value = new decimal(new int[] {
-            1,
+            2000,
             0,
             0,
             0});
@@ -279,7 +284,7 @@
             this.txtDoDaiCon.Size = new System.Drawing.Size(126, 27);
             this.txtDoDaiCon.TabIndex = 13;
             this.txtDoDaiCon.Value = new decimal(new int[] {
-            1,
+            100,
             0,
             0,
             0});
@@ -297,7 +302,7 @@
             // btnXoaFileC
             // 
             this.btnXoaFileC.Image = global::BaiToan.Properties.Resources.CapNhat;
-            this.btnXoaFileC.Location = new System.Drawing.Point(342, 150);
+            this.btnXoaFileC.Location = new System.Drawing.Point(353, 150);
             this.btnXoaFileC.Name = "btnXoaFileC";
             this.btnXoaFileC.Size = new System.Drawing.Size(40, 27);
             this.btnXoaFileC.TabIndex = 10;
@@ -306,31 +311,31 @@
             // 
             // btnDocFileC
             // 
-            this.btnDocFileC.Image = global::BaiToan.Properties.Resources.add1;
             this.btnDocFileC.Location = new System.Drawing.Point(296, 150);
             this.btnDocFileC.Name = "btnDocFileC";
-            this.btnDocFileC.Size = new System.Drawing.Size(40, 27);
+            this.btnDocFileC.Size = new System.Drawing.Size(53, 27);
             this.btnDocFileC.TabIndex = 10;
+            this.btnDocFileC.Text = "Đọc";
             this.btnDocFileC.UseVisualStyleBackColor = true;
             this.btnDocFileC.Click += new System.EventHandler(this.btnDocFileC_Click);
             // 
             // btnXoaFileG
             // 
             this.btnXoaFileG.Image = global::BaiToan.Properties.Resources.CapNhat;
-            this.btnXoaFileG.Location = new System.Drawing.Point(342, 69);
+            this.btnXoaFileG.Location = new System.Drawing.Point(355, 72);
             this.btnXoaFileG.Name = "btnXoaFileG";
-            this.btnXoaFileG.Size = new System.Drawing.Size(40, 27);
+            this.btnXoaFileG.Size = new System.Drawing.Size(29, 27);
             this.btnXoaFileG.TabIndex = 10;
             this.btnXoaFileG.UseVisualStyleBackColor = true;
             this.btnXoaFileG.Click += new System.EventHandler(this.btnXoaFileG_Click);
             // 
             // btnDocFileG
             // 
-            this.btnDocFileG.Image = global::BaiToan.Properties.Resources.add1;
             this.btnDocFileG.Location = new System.Drawing.Point(296, 69);
             this.btnDocFileG.Name = "btnDocFileG";
-            this.btnDocFileG.Size = new System.Drawing.Size(40, 27);
+            this.btnDocFileG.Size = new System.Drawing.Size(53, 27);
             this.btnDocFileG.TabIndex = 10;
+            this.btnDocFileG.Text = "Đọc";
             this.btnDocFileG.UseVisualStyleBackColor = true;
             this.btnDocFileG.Click += new System.EventHandler(this.btnDocFileG_Click);
             // 
@@ -369,7 +374,7 @@
             this.btnChuanHoa.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChuanHoa.Image = global::BaiToan.Properties.Resources.registry;
             this.btnChuanHoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnChuanHoa.Location = new System.Drawing.Point(164, 182);
+            this.btnChuanHoa.Location = new System.Drawing.Point(164, 203);
             this.btnChuanHoa.Name = "btnChuanHoa";
             this.btnChuanHoa.Size = new System.Drawing.Size(126, 47);
             this.btnChuanHoa.TabIndex = 4;
@@ -385,34 +390,6 @@
             this.txtTenFile.Name = "txtTenFile";
             this.txtTenFile.Size = new System.Drawing.Size(282, 25);
             this.txtTenFile.TabIndex = 9;
-            // 
-            // btnReset
-            // 
-            this.btnReset.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnReset.Image = global::BaiToan.Properties.Resources.undo;
-            this.btnReset.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReset.Location = new System.Drawing.Point(274, 64);
-            this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(101, 47);
-            this.btnReset.TabIndex = 18;
-            this.btnReset.Text = "Reset";
-            this.btnReset.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnReset.UseVisualStyleBackColor = true;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
-            // 
-            // btndocFile
-            // 
-            this.btndocFile.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btndocFile.Image = global::BaiToan.Properties.Resources.add;
-            this.btndocFile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btndocFile.Location = new System.Drawing.Point(93, 64);
-            this.btndocFile.Name = "btndocFile";
-            this.btndocFile.Size = new System.Drawing.Size(158, 47);
-            this.btndocFile.TabIndex = 0;
-            this.btndocFile.Text = "Đọc file gốc";
-            this.btndocFile.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btndocFile.UseVisualStyleBackColor = true;
-            this.btndocFile.Click += new System.EventHandler(this.btndocFile_Click);
             // 
             // label2
             // 
@@ -478,7 +455,6 @@
             this.groupControl3.Controls.Add(this.label1);
             this.groupControl3.Controls.Add(this.txtSoCot2);
             this.groupControl3.Controls.Add(this.label3);
-            this.groupControl3.Controls.Add(this.btnEPAA);
             this.groupControl3.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupControl3.Location = new System.Drawing.Point(0, 0);
             this.groupControl3.Name = "groupControl3";
@@ -491,18 +467,18 @@
             this.btnReset2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnReset2.Image = global::BaiToan.Properties.Resources.undo;
             this.btnReset2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReset2.Location = new System.Drawing.Point(100, 252);
+            this.btnReset2.Location = new System.Drawing.Point(69, 181);
             this.btnReset2.Name = "btnReset2";
             this.btnReset2.Size = new System.Drawing.Size(168, 49);
             this.btnReset2.TabIndex = 18;
-            this.btnReset2.Text = "Reset";
+            this.btnReset2.Text = "Làm lại";
             this.btnReset2.UseVisualStyleBackColor = true;
             this.btnReset2.Click += new System.EventHandler(this.btnReset2_Click);
             // 
             // btnSoSanh
             // 
             this.btnSoSanh.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSoSanh.Location = new System.Drawing.Point(100, 195);
+            this.btnSoSanh.Location = new System.Drawing.Point(69, 94);
             this.btnSoSanh.Name = "btnSoSanh";
             this.btnSoSanh.Size = new System.Drawing.Size(168, 49);
             this.btnSoSanh.TabIndex = 17;
@@ -515,7 +491,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(5, 98);
+            this.label1.Location = new System.Drawing.Point(11, 47);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(149, 22);
             this.label1.TabIndex = 12;
@@ -524,7 +500,7 @@
             // txtSoCot2
             // 
             this.txtSoCot2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSoCot2.Location = new System.Drawing.Point(160, 93);
+            this.txtSoCot2.Location = new System.Drawing.Point(166, 42);
             this.txtSoCot2.Maximum = new decimal(new int[] {
             999999,
             0,
@@ -539,7 +515,7 @@
             this.txtSoCot2.Size = new System.Drawing.Size(114, 27);
             this.txtSoCot2.TabIndex = 11;
             this.txtSoCot2.Value = new decimal(new int[] {
-            1,
+            10,
             0,
             0,
             0});
@@ -553,20 +529,6 @@
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(0, 22);
             this.label3.TabIndex = 13;
-            // 
-            // btnEPAA
-            // 
-            this.btnEPAA.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEPAA.Image = global::BaiToan.Properties.Resources.add;
-            this.btnEPAA.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEPAA.Location = new System.Drawing.Point(100, 140);
-            this.btnEPAA.Name = "btnEPAA";
-            this.btnEPAA.Size = new System.Drawing.Size(168, 49);
-            this.btnEPAA.TabIndex = 16;
-            this.btnEPAA.Text = "Biến đổi EPAA";
-            this.btnEPAA.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEPAA.UseVisualStyleBackColor = true;
-            this.btnEPAA.Click += new System.EventHandler(this.btnEPAA_Click);
             // 
             // tabNavigationPage3
             // 
@@ -629,23 +591,15 @@
             // 
             // btnReset3
             // 
-            this.btnReset3.Location = new System.Drawing.Point(253, 326);
+            this.btnReset3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnReset3.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset3.Location = new System.Drawing.Point(253, 324);
             this.btnReset3.Name = "btnReset3";
-            this.btnReset3.Size = new System.Drawing.Size(75, 23);
+            this.btnReset3.Size = new System.Drawing.Size(75, 28);
             this.btnReset3.TabIndex = 17;
-            this.btnReset3.Text = "Reset";
-            this.btnReset3.UseVisualStyleBackColor = true;
+            this.btnReset3.Text = "Làm lại";
+            this.btnReset3.UseVisualStyleBackColor = false;
             this.btnReset3.Click += new System.EventHandler(this.btnReset3_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(388, 150);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(31, 26);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "...";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
@@ -690,7 +644,6 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btndocFile;
         private ZedGraph.ZedGraphControl zedGraphControl1;
         private DevExpress.XtraBars.Navigation.TabPane tabPane1;
         private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage1;
@@ -703,11 +656,9 @@
         private System.Windows.Forms.Button btnChuanHoa;
         private ZedGraph.ZedGraphControl zedGraphControl2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnEPAA;
         private System.Windows.Forms.Button btnSoSanh;
         private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage3;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button btnReset;
         private System.Windows.Forms.Button btnReset2;
         private System.Windows.Forms.Button btnReset3;
         private DevExpress.XtraEditors.GroupControl groupControl2;

@@ -108,7 +108,6 @@ G:\BaiToanEPAA-master\BaiToan\bin\Debug\tr\ZedGraph.resources.dll
 G:\BaiToanEPAA-master\BaiToan\bin\Debug\zh-cn\ZedGraph.resources.dll
 G:\BaiToanEPAA-master\BaiToan\bin\Debug\zh-tw\ZedGraph.resources.dll
 G:\BaiToanEPAA-master\BaiToan\obj\Debug\BaiToan.csprojResolveAssemblyReference.cache
-G:\BaiToanEPAA-master\BaiToan\obj\Debug\BaiToan.DoThi.resources
 G:\BaiToanEPAA-master\BaiToan\obj\Debug\BaiToan.Form1.resources
 G:\BaiToanEPAA-master\BaiToan\obj\Debug\BaiToan.loading.resources
 G:\BaiToanEPAA-master\BaiToan\obj\Debug\BaiToan.Properties.Resources.resources
