@@ -225,6 +225,7 @@ namespace BaiToan
 
 
             myCurve = graphpane.AddCurve(ten, null, data_int.ToArray(), mau, SymbolType.None);
+            myCurve.Line.Width = 2F;
             myCurve.Tag = ten;
 
 

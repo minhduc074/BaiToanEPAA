@@ -221,7 +221,7 @@ namespace ThuVienEPAA
                 d.Avg = GiaTriTrungBinhTrongDoan(i * len, (i + 1) * len);
                 newData.Add(d);
             }
-            soCot = doDaiCotMoi;
+            //soCot = doDaiCotMoi;
             return newData;
         }
         public void Clear()
