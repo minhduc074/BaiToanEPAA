@@ -60,6 +60,8 @@ namespace BaiToan
             dataTable.Columns.Add("Tên ", typeof(string));
             dataTable.Columns.Add("Vị Trí", typeof(int));
             dataTable.Columns.Add("Độ Sai Lệch", typeof(double));
+
+
         }
 
         private void HienThiDuLieu(int pane, List<ThuVienEPAA.Diem> data, string ten, int vitri, bool isEPAA)
@@ -260,6 +262,7 @@ namespace BaiToan
             
             try
             {
+                errorProvider1.SetError(txtSoCot2, null);
                 List<ThuVienEPAA.Diem> data = du_lieu_goc.ChuanHoa().Data;
                 HienThiDuLieu(1, data, "Du lieu doc tu file", 0, false);
                 //HienThiDuLieu(1, epaa.ChuanHoa().Data, 1, 0,true);
@@ -275,7 +278,8 @@ namespace BaiToan
             }
             catch(Exception e1)
             {
-                MessageBox.Show(e1.Message, "Lỗi");
+                //MessageBox.Show(e1.Message, "Lỗi");
+                errorProvider1.SetError(btnChuanHoa, "Lỗi không xác định \n" + e1.Message);
             }
         }
 
@@ -482,9 +486,11 @@ namespace BaiToan
         {
             try
             {
+                errorProvider1.SetError(txtSoCot2, null);
                 if (du_lieu_goc == null || du_lieu_goc.SoCot == 0)
                 {
-                    MessageBox.Show("Dữ liệu gốc rỗng.", "Lỗi");
+                    //MessageBox.Show("Dữ liệu gốc rỗng.", "Lỗi");
+                    errorProvider1.SetError(btnDocFileG, "Dữ liệu gốc rỗng.");
                     return;
                 }
                 if (epaa == null)
@@ -499,15 +505,18 @@ namespace BaiToan
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Đọc file lỗi ", "Lỗi");
+                //MessageBox.Show("Đọc file lỗi ", "Lỗi");
+                errorProvider1.SetError(btnDocFileG, "Đọc gốc file lỗi " + ex.Message);
             }
         }
 
         private void btnDocFileC_Click(object sender, EventArgs e)
         {
+            errorProvider1.SetError(txtSoCot2, null);
             if (du_lieu_goc == null || du_lieu_goc.SoCot == 0)
             {
-                MessageBox.Show("Dữ liệu gốc rỗng.", "Lỗi");
+                //MessageBox.Show("Dữ liệu gốc rỗng.", "Lỗi");
+                errorProvider1.SetError(btnDocFileC, "Dữ liệu gốc rỗng.");
                 return;
             }
 
@@ -516,7 +525,8 @@ namespace BaiToan
                 int doDai = (int)txtDoDaiCon.Value - 1;
                 if(doDai > epaa.SoCot)
                 {
-                    MessageBox.Show("Độ dài chuỗi con không được lớn hơn độ dài chuỗi gốc", "Lỗi");
+                    //MessageBox.Show("Độ dài chuỗi con không được lớn hơn độ dài chuỗi gốc", "Lỗi");
+                    errorProvider1.SetError(btnDocFileC, "Độ dài chuỗi con không được lớn hơn độ dài chuỗi gốc");
                     return;
                 }
 
@@ -531,18 +541,22 @@ namespace BaiToan
                 du_lieu_so_sanh.Add(ret);
                 HienThiDuLieu(1, ret.Data, "Du Lieu Con " + (du_lieu_so_sanh.Count + 1), 0, false);
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Đọc file lỗi", "Lỗi");
+                //MessageBox.Show("Đọc file lỗi", "Lỗi");
+                errorProvider1.SetError(btnDocFileC, "Đọc file lỗi " + ex.Message);
             }
 
         }
 
         private void btnEPAA_Click(object sender, EventArgs e)
         {
+            errorProvider1.SetError(txtSoCot2, null);
             if(txtSoCot2.Value > du_lieu_so_sanh[0].SoCot)
             {
-                MessageBox.Show("Số lượng mỗi cột không được lớn độ dài chuỗi con", "Lỗi");
+                //MessageBox.Show("Số lượng mỗi cột không được lớn độ dài chuỗi con", "Lỗi");
+                errorProvider1.SetError(txtSoCot2, "Số lượng mỗi cột không được lớn độ dài chuỗi con");
+
                 return;
             }
 
@@ -602,7 +616,7 @@ namespace BaiToan
             }
             catch (Exception e1)
             {
-                MessageBox.Show(e1.Message, "Lỗi");
+                //MessageBox.Show(e1.Message, "Lỗi");
             }
         }
 
@@ -634,6 +648,7 @@ namespace BaiToan
 
         private void button1_Click(object sender, EventArgs e)
         {
+            errorProvider1.SetError(txtSoCot2, null);
             OpenFileDialog FileDialog = new OpenFileDialog();
             FileDialog.Filter = "Data|*.txt";
             if (FileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
@@ -649,7 +664,8 @@ namespace BaiToan
                         int doDai = data.Count;
                         if (doDai > epaa.SoCot)
                         {
-                            MessageBox.Show("Độ dài chuỗi con không được lớn hơn độ dài chuỗi gốc", "Lỗi");
+                            //MessageBox.Show("Độ dài chuỗi con không được lớn hơn độ dài chuỗi gốc", "Lỗi");
+                            errorProvider1.SetError(txtSoCot2, "Độ dài chuỗi con không được lớn hơn độ dài chuỗi gốc");
                             return;
                         }
 
@@ -659,9 +675,10 @@ namespace BaiToan
                         du_lieu_so_sanh.Add(du_lieu_con);
                         HienThiDuLieu(1, du_lieu_con.Data, "Du Lieu Con " + (du_lieu_so_sanh.Count + 1), 0, false);
                     }
-                    catch
+                    catch (Exception ex)
                     {
-                        MessageBox.Show("Đọc file lỗi", "Lỗi");
+                        //MessageBox.Show("Đọc file lỗi", "Lỗi");
+                        errorProvider1.SetError(txtSoCot2, "Lỗi không xác định \n" + ex.Message);
                     }
                 }
             }

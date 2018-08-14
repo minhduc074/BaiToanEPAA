@@ -9,6 +9,28 @@ namespace ThuVienEPAA
 {
     public class TapTin
     {
+
+        static double ParseE(string input)
+        {
+            double ret = 0;
+
+            string[] bits = input.Split('e');
+
+            double pre;
+
+            if (!double.TryParse(bits[0], out pre))
+            {
+                throw new InvalidDataException();
+            }
+            int dex = Int32.Parse(bits[1]);
+
+            ret = pre;
+
+            ret = ret * Math.Exp((double)dex);
+
+            return ret;
+        }
+
         public static List<Diem> DocFile(string tenFile)
         {
             List<Diem> ret = new List<Diem>();
@@ -26,8 +48,9 @@ namespace ThuVienEPAA
                     double value;
                     if (!double.TryParse(bit, out value))
                     {
-                        return null;
+                        continue;
                     }
+
                     Diem n = new Diem(value, i);
                     ret.Add(n);
                     i++;
