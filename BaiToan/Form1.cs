@@ -690,6 +690,10 @@ namespace BaiToan
             {
                 btnEPAA_Click(sender, e);
             }
+            else
+            {
+                errorProvider1.SetError(txtSoCot2, "Độ dài mỗi đoạn phải là ước số của chuỗi con");
+            }
         }
 
         private void txtSoCot2_Leave(object sender, EventArgs e)
