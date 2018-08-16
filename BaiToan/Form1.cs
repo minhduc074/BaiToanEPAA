@@ -64,10 +64,10 @@ namespace BaiToan
 
         }
 
-        private void HienThiDuLieu(int pane, List<ThuVienEPAA.Diem> data, string ten, int vitri, bool isEPAA)
+        private void HienThiDuLieu(int pane, List<ThuVienEPAA.Diem> data1, string ten, int vitri, bool isEPAA)
         {
             ZedGraphControl zedGraph;
-
+            List<ThuVienEPAA.Diem> data = new List<ThuVienEPAA.Diem>(data1);
             GraphPane graphpane;
             if (pane == 1)
             {
@@ -114,17 +114,25 @@ namespace BaiToan
             for (int i = 0; i < data.Count(); i++)
             {
                 //+2 giá trị ở tab 3 để hiển thị rõ hơn nếu dữ liệu bị trùng
-                if (pane == 3 && ten.CompareTo("DuLieuGoc") != 0)
-                {
-                    data[i].Max.Giatri += 2;
-                    data[i].Avg.Giatri += 2;
-                    data[i].Min.Giatri += 2;
-                }
+                //if (pane == 3 && ten.CompareTo("Du Lieu Goc") != 0 && data[i].Avg.Giatri > 1000)
+                //{
+                //    data[i].Max.Giatri += 2;
+                //    data[i].Avg.Giatri += 2;
+                //    data[i].Min.Giatri += 2;
+                //}
 
                 //Dữ liệu chưa qua xử lý EPAA
                 if (!isEPAA)
                 {
-                    data_int.Add(data[i].Avg.Giatri);
+                    
+                    if(pane == 3 && ten.CompareTo("Du Lieu Goc") != 0)
+                    {
+                        data_int.Add(data[i].Avg.Giatri + 1);
+                    }
+                    else
+                    {
+                        data_int.Add(data[i].Avg.Giatri);
+                    }
                 }
                 //Dữ liệu đã qua xử lý EPAA
                 else if ((data[i].Max.Vitri < data[i].Avg.Vitri) && (data[i].Avg.Vitri < data[i].Min.Vitri))
@@ -224,7 +232,11 @@ namespace BaiToan
             {
                 mau = Color.Violet;
             }
-
+            else
+            {
+                Random r = new Random(DateTime.Now.Millisecond);
+                mau = Color.FromArgb(255, r.Next(1, 254), r.Next(1, 254), r.Next(1, 254));
+            }
 
             myCurve = graphpane.AddCurve(ten, null, data_int.ToArray(), mau, SymbolType.None);
             myCurve.Line.Width = 2F;
@@ -259,12 +271,12 @@ namespace BaiToan
 
         private void btnChuanHoa_Click(object sender, EventArgs e)
         {
-            
+            xoaDoThi(1, "Du lieu doc tu file");
             try
             {
                 errorProvider1.SetError(txtSoCot2, null);
                 List<ThuVienEPAA.Diem> data = du_lieu_goc.ChuanHoa().Data;
-                HienThiDuLieu(1, data, "Du lieu doc tu file", 0, false);
+                //HienThiDuLieu(1, data, "Du lieu doc tu file", 0, false);
                 //HienThiDuLieu(1, epaa.ChuanHoa().Data, 1, 0,true);
                 if(epaa != null && epaa.SoCot > 0)
                 {
@@ -273,7 +285,7 @@ namespace BaiToan
                 }
                 if(du_lieu_so_sanh != null && du_lieu_so_sanh[0].SoCot > 0)
                 {
-                    HienThiDuLieu(1, du_lieu_so_sanh[0].ChuanHoa().Data, "Du Lieu Con " + (du_lieu_so_sanh.Count + 1), 0, false);
+                    HienThiDuLieu(1, du_lieu_so_sanh[0].ChuanHoa().Data, "Du Lieu Con 2" , 0, false);
                 }
             }
             catch(Exception e1)
@@ -304,7 +316,7 @@ namespace BaiToan
 
                     doSaiLech = trungKhop;
                     dataTable.Rows.Add(ten, viTri+1, doSaiLech);
-                    HienThiDuLieu(3, sosanh.Data, "Du lieu " + (zedGraphControl3.GraphPane.CurveList.Count+1), j, false);
+                    HienThiDuLieu(3, sosanh.Data, "Du lieu Con " + (zedGraphControl3.GraphPane.CurveList.Count + 1), j, false);
                     //soluong++;
                     //break;
                 }
@@ -330,7 +342,15 @@ namespace BaiToan
 
         private void btnChonFile_Click(object sender, EventArgs e)
         {
-            
+            xoaDoThi(1, "");
+            xoaDoThi(2, "");
+            xoaDoThi(3, "");
+            if(du_lieu_goc != null)
+                du_lieu_goc.Clear();
+            //if (du_lieu_so_sanh != null)
+            //    du_lieu_so_sanh.Clear();
+            //if (epaa != null)
+            //    epaa.Clear();
 
             OpenFileDialog FileDialog = new OpenFileDialog();
             FileDialog.Filter = "Data|*.txt";
@@ -692,7 +712,7 @@ namespace BaiToan
             }
             else
             {
-                errorProvider1.SetError(txtSoCot2, "Độ dài mỗi đoạn phải là ước số của chuỗi con");
+                errorProvider1.SetError(txtSoCot2, "Độ dài mỗi đoạn phải là ước số của chuỗi con0");
             }
         }
 
