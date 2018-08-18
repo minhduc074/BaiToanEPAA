@@ -224,11 +224,11 @@ namespace BaiToan
             {
                 mau = Color.Green;
             }
-            else if (ten.CompareTo("Du Lieu Con 2") == 0)
+            else if (ten.CompareTo("Du Lieu Con") == 0)
             {
                 mau = Color.Black;
             }
-            else if (ten.CompareTo("Du Lieu Con 2 EPAA") == 0)
+            else if (ten.CompareTo("Du Lieu Con EPAA") == 0)
             {
                 mau = Color.Violet;
             }
@@ -285,7 +285,7 @@ namespace BaiToan
                 }
                 if(du_lieu_so_sanh != null && du_lieu_so_sanh[0].SoCot > 0)
                 {
-                    HienThiDuLieu(1, du_lieu_so_sanh[0].ChuanHoa().Data, "Du Lieu Con 2" , 0, false);
+                    HienThiDuLieu(1, du_lieu_so_sanh[0].ChuanHoa().Data, "Du Lieu Con" , 0, false);
                 }
             }
             catch(Exception e1)
@@ -297,7 +297,7 @@ namespace BaiToan
 
         private void soSanh(int i)
         {
-            //int soluong = 2;
+            int soluong = 1;
             for (int j = 0; j <= epaa.SoCot - du_lieu_so_sanh[i].SoCot; j++ )
             {
                 ThuVienEPAA.EPAA sosanh = du_lieu_so_sanh[i];
@@ -306,7 +306,7 @@ namespace BaiToan
 
                 double trungKhop = 0;
                 int viTri = j;
-                string ten = "Du Lieu Con " + (i + 2);
+                string ten = "Du Lieu Con ";
 
                 double doSaiLech = 0;
 
@@ -315,9 +315,9 @@ namespace BaiToan
                 {
 
                     doSaiLech = trungKhop;
-                    dataTable.Rows.Add(ten, viTri+1, doSaiLech);
-                    HienThiDuLieu(3, sosanh.Data, "Du lieu Con " + (zedGraphControl3.GraphPane.CurveList.Count + 1), j, false);
-                    //soluong++;
+                    dataTable.Rows.Add(ten + soluong, viTri+1, doSaiLech);
+                    HienThiDuLieu(3, sosanh.Data, ten + soluong, j, false);
+                    soluong++;
                     //break;
                 }
                     //MessageBox.Show(doSaiLech.ToString());
@@ -422,7 +422,7 @@ namespace BaiToan
                         for (int i = 0; i < du_lieu_so_sanh.Count; i++)
                         {
                             data = du_lieu_so_sanh[i].ChuanHoa().Data;
-                            HienThiDuLieu(2, data, "Du Lieu Con " + (i + 2), 0, false);
+                            HienThiDuLieu(2, data, "Du Lieu Con", 0, false);
                         }
                     }
                     btnEPAA_Click(sender, e);
@@ -443,6 +443,9 @@ namespace BaiToan
                     //epaa.ChuanHoa();
                     List<ThuVienEPAA.Diem> data = epaa.Data;
                     HienThiDuLieu(3, data, "Du Lieu Goc", 0, false);
+
+                    data = du_lieu_so_sanh[0].Data;
+                    HienThiDuLieu(3, data, "Du Lieu Con", 0, false);
 
                     //for(int i = 0; i < du_lieu_so_sanh.Count; i++)
                     //{
@@ -559,7 +562,7 @@ namespace BaiToan
                     ret.Add(du_lieu_goc.Data[i]);
                 }
                 du_lieu_so_sanh.Add(ret);
-                HienThiDuLieu(1, ret.Data, "Du Lieu Con " + (du_lieu_so_sanh.Count + 1), 0, false);
+                HienThiDuLieu(1, ret.Data, "Du Lieu Con", 0, false);
             }
             catch (Exception ex)
             {
@@ -586,7 +589,7 @@ namespace BaiToan
             for (int i = 0; i < du_lieu_so_sanh.Count; i++)
             {
                 data = du_lieu_so_sanh[i].ChuanHoa().ThayDoiSoLuongDuLieu(du_lieu_so_sanh[i].SoCot/(int)txtSoCot2.Value);
-                HienThiDuLieu(2, data, "Du Lieu Con " + (i + 2) + " EPAA", 0, true);
+                HienThiDuLieu(2, data, "Du Lieu Con"+ " EPAA", 0, true);
             }
         }
 
@@ -654,7 +657,7 @@ namespace BaiToan
         {
             try
             {
-                xoaDoThi(1, "Du Lieu Con " + (du_lieu_so_sanh.Count + 1));
+                xoaDoThi(1, "Du Lieu Con");
                 du_lieu_so_sanh.Clear();
 
                 txtviTriCon.Value = 1;
@@ -693,7 +696,7 @@ namespace BaiToan
                         du_lieu_so_sanh.Clear();
 
                         du_lieu_so_sanh.Add(du_lieu_con);
-                        HienThiDuLieu(1, du_lieu_con.Data, "Du Lieu Con " + (du_lieu_so_sanh.Count + 1), 0, false);
+                        HienThiDuLieu(1, du_lieu_con.Data, "Du Lieu Con", 0, false);
                     }
                     catch (Exception ex)
                     {
