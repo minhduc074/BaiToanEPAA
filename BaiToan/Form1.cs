@@ -116,9 +116,22 @@ namespace BaiToan
                 //+2 giá trị ở tab 3 để hiển thị rõ hơn nếu dữ liệu bị trùng
                 //if (pane == 3 && ten.CompareTo("Du Lieu Goc") != 0 && data[i].Avg.Giatri > 1000)
                 //{
+                //    data[i].Max.Giatri += 20;
+                //    data[i].Avg.Giatri += 20;
+                //    data[i].Min.Giatri += 20;
+                //}
+
+                //else if (pane == 3 && ten.CompareTo("Du Lieu Goc") != 0 && data[i].Avg.Giatri > 10)
+                //{
                 //    data[i].Max.Giatri += 2;
                 //    data[i].Avg.Giatri += 2;
                 //    data[i].Min.Giatri += 2;
+                //}
+                //else if (pane == 3 && ten.CompareTo("Du Lieu Goc") != 0 && data[i].Avg.Giatri > 10)
+                //{
+                //    data[i].Max.Giatri += 1;
+                //    data[i].Avg.Giatri += 1;
+                //    data[i].Min.Giatri += 1;
                 //}
 
                 //Dữ liệu chưa qua xử lý EPAA
@@ -300,9 +313,16 @@ namespace BaiToan
             int soluong = 1;
             for (int j = 0; j <= epaa.SoCot - du_lieu_so_sanh[i].SoCot; j++ )
             {
-                ThuVienEPAA.EPAA sosanh = du_lieu_so_sanh[i];
-                ThuVienEPAA.EPAA goc = epaa.copy(j, sosanh.SoCot);
+                ThuVienEPAA.EPAA sosanh = du_lieu_so_sanh[i].ChuanHoa().ThayDoiSoLuongDuLieuEPAA(du_lieu_so_sanh[i].SoCot/(int)txtSoCot2.Value);
+                ThuVienEPAA.EPAA goc = epaa.copy(j, sosanh.SoCot).ChuanHoa().ThayDoiSoLuongDuLieuEPAA(du_lieu_so_sanh[i].SoCot / (int)txtSoCot2.Value);
 
+                //List<ThuVienEPAA.Diem> data = sosanh.ThayDoiSoLuongDuLieu(sosanh.SoCot / (int)txtSoCot2.Value);
+                //sosanh.Data = data;
+                //sosanh.SoCot = data.Count;
+
+                //data = goc.ThayDoiSoLuongDuLieu(goc.SoCot / (int)txtSoCot2.Value);
+                //goc.Data = data;
+                //goc.SoCot = data.Count;
 
                 double trungKhop = 0;
                 int viTri = j;
@@ -310,18 +330,20 @@ namespace BaiToan
 
                 double doSaiLech = 0;
 
-                trungKhop = goc.DoDoTuongTu(sosanh, goc.SoCot);
-                if (trungKhop < 5)
+                trungKhop = goc.DoDoTuongTu(sosanh, goc.SoCot / (int)txtSoCot2.Value);
+                if (trungKhop < 9)
                 {
 
                     doSaiLech = trungKhop;
                     dataTable.Rows.Add(ten + soluong, viTri+1, doSaiLech);
-                    HienThiDuLieu(3, sosanh.Data, ten + soluong, j, false);
+                    HienThiDuLieu(3, du_lieu_so_sanh[i].Data, ten + soluong, j, false);
+                    //HienThiDuLieu(3, sosanh.Data, ten + soluong, j, false);
                     soluong++;
                     //break;
                 }
                     //MessageBox.Show(doSaiLech.ToString());
             }
+             
         }
 
         private void btnSoSanh_Click(object sender, EventArgs e)
@@ -440,12 +462,20 @@ namespace BaiToan
             {
                 try
                 {
-                    //epaa.ChuanHoa();
+                    
+
+                    //HienThiDuLieu(3, du_lieu_so_sanh[0].ThayDoiSoLuongDuLieuEPAA(du_lieu_so_sanh[0].SoCot/(int)txtSoCot2.Value).Data, "Du Lieu Goc 2", 350, false);
+
+                    epaa.ChuanHoa();
                     List<ThuVienEPAA.Diem> data = epaa.Data;
-                    HienThiDuLieu(3, data, "Du Lieu Goc", 0, false);
+                    HienThiDuLieu(3, epaa.ThayDoiSoLuongDuLieuEPAA(epaa.SoCot / (int)txtSoCot2.Value).Data, "Du Lieu Goc", 0, false);
 
                     data = du_lieu_so_sanh[0].Data;
                     HienThiDuLieu(3, data, "Du Lieu Con", 0, false);
+
+
+                    //ThuVienEPAA.EPAA sosanh = du_lieu_so_sanh[0].ChuanHoa().ThayDoiSoLuongDuLieuEPAA(du_lieu_so_sanh[0].SoCot / (int)txtSoCot2.Value);
+                    //HienThiDuLieu(3, sosanh.Data, "Du Lieu EPAA", 0, false);
 
                     //for(int i = 0; i < du_lieu_so_sanh.Count; i++)
                     //{
@@ -501,6 +531,11 @@ namespace BaiToan
             xoaDoThi(2, "");
             xoaDoThi(3, "");
             xoaDoThi(1, "");
+            txtTenFile.Text = "";
+            txtViTriGoc.Value = 1;
+            txtDoDaiGoc.Value = 2000;
+            txtviTriCon.Value = 2;
+            txtDoDaiCon.Value = 100;
             dataTable.Clear();
             tabPane1.SelectNextPage();
         }
@@ -525,6 +560,8 @@ namespace BaiToan
                     epaa.Add(du_lieu_goc.Data[i]);
                 }
                 HienThiDuLieu(1, epaa.Data, "Du Lieu Goc", 0, false);
+                xoaDoThi(1, "Du lieu doc tu file");
+                //du_lieu_goc.Clear();
             }
             catch(Exception ex)
             {
@@ -563,6 +600,9 @@ namespace BaiToan
                 }
                 du_lieu_so_sanh.Add(ret);
                 HienThiDuLieu(1, ret.Data, "Du Lieu Con", 0, false);
+
+                xoaDoThi(1, "Du lieu doc tu file");
+                //du_lieu_goc.Clear();
             }
             catch (Exception ex)
             {
@@ -709,13 +749,20 @@ namespace BaiToan
 
         private void txtSoCot2_ValueChanged(object sender, EventArgs e)
         {
-            if (du_lieu_so_sanh[0].SoCot % (int)txtSoCot2.Value == 0)
+            try
             {
-                btnEPAA_Click(sender, e);
+                if (du_lieu_so_sanh[0].SoCot % (int)txtSoCot2.Value == 0)
+                {
+                    btnEPAA_Click(sender, e);
+                }
+                else
+                {
+                    errorProvider1.SetError(txtSoCot2, "Độ dài mỗi đoạn phải là ước số của chuỗi con0");
+                }
             }
-            else
+            catch
             {
-                errorProvider1.SetError(txtSoCot2, "Độ dài mỗi đoạn phải là ước số của chuỗi con0");
+                errorProvider1.SetError(txtSoCot2, "Lỗi không xác định \n");
             }
         }
 
@@ -727,6 +774,14 @@ namespace BaiToan
         private void txtSoCot2_KeyPress(object sender, KeyPressEventArgs e)
         {
             txtSoCot2_ValueChanged(sender, e);
+        }
+
+        private void btnResetTab3_Click(object sender, EventArgs e)
+        {
+            zedGraphControl3.RestoreScale(zedGraphControl3.GraphPane);
+            zedGraphControl3.Invalidate();
+            zedGraphControl3.AxisChange();
+            zedGraphControl3.Refresh();
         }
 
     }

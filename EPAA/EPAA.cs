@@ -66,8 +66,8 @@ namespace ThuVienEPAA
         }
         public Diem(double giatri, double vitri)
         {
-            min = new Node(giatri, vitri);
-            max = new Node(giatri, vitri);
+            //min = new Node(giatri, vitri);
+            //max = new Node(giatri, vitri);
             avg = new Node(giatri, vitri);
         }
         public Diem(Node NhoNhat, Node TrungBinh, Node LonNhat)
@@ -224,6 +224,96 @@ namespace ThuVienEPAA
             //soCot = doDaiCotMoi;
             return newData;
         }
+
+        public EPAA ThayDoiSoLuongDuLieuEPAA(int doDaiCotMoi)
+        {
+            DuLieuDaGopTungDoan = true;
+            int soCotMoi = soCot / doDaiCotMoi;
+            EPAA newData = new EPAA();
+            if (soCot == doDaiCotMoi)
+                return this;
+            if (doDaiCotMoi <= 0 && doDaiCotMoi > SoCot)
+                return null;
+            int len = soCot / doDaiCotMoi;
+            for (int i = 0; i < doDaiCotMoi; i++)
+            {
+                //Diem d = new Diem();
+                //d.Max = GiaTriLonNhatTrongDoan(i * len, (i + 1) * len);
+                //d.Min = GiaTriNhoNhatTrongDoan(i * len, (i + 1) * len);
+                //d.Avg = GiaTriTrungBinhTrongDoan(i * len, (i + 1) * len);
+                //newData.Add(d);
+
+                Diem d = new Diem();
+                d.Max = GiaTriLonNhatTrongDoan(i * len, (i + 1) * len);
+                d.Min = GiaTriNhoNhatTrongDoan(i * len, (i + 1) * len);
+                d.Avg = GiaTriTrungBinhTrongDoan(i * len, (i + 1) * len);
+
+                if ((d.Max.Vitri < d.Avg.Vitri) && (d.Avg.Vitri < d.Min.Vitri))
+                {
+                    int index;
+                    for (index = 0; index < soCotMoi / 3; index++)
+                        newData.Add(new Diem(d.Max.Giatri, 0));
+                    for (; index < soCotMoi * 2 / 3; index++)
+                        newData.Add(new Diem(d.Avg.Giatri, 0));
+                    for (; index < soCotMoi; index++)
+                        newData.Add(new Diem(d.Min.Giatri, 0));
+                }
+                else if ((d.Min.Vitri < d.Avg.Vitri) && (d.Avg.Vitri < d.Max.Vitri))
+                {
+                    int index;
+                    for (index = 0; index < soCotMoi / 3; index++)
+                        newData.Add(new Diem(d.Min.Giatri, 0));
+                    for (; index < soCotMoi * 2 / 3; index++)
+                        newData.Add(new Diem(d.Avg.Giatri, 0));
+                    for (; index < soCotMoi; index++)
+                        newData.Add(new Diem(d.Max.Giatri, 0));
+                }
+                else if ((d.Min.Vitri < d.Max.Vitri) && (d.Max.Vitri < d.Avg.Vitri))
+                {
+                    int index;
+                    for (index = 0; index < soCotMoi / 3; index++)
+                        newData.Add(new Diem(d.Min.Giatri, 0));
+                    for (; index < soCotMoi * 2 / 3; index++)
+                        newData.Add(new Diem(d.Max.Giatri, 0));
+                    for (; index < soCotMoi; index++)
+                        newData.Add(new Diem(d.Avg.Giatri, 0));
+                }
+                else if ((d.Max.Vitri < d.Min.Vitri) && (d.Min.Vitri < d.Avg.Vitri))
+                {
+                    int index;
+                    for (index = 0; index < soCotMoi / 3; index++)
+                        newData.Add(new Diem(d.Max.Giatri, 0));
+                    for (; index < soCotMoi * 2 / 3; index++)
+                        newData.Add(new Diem(d.Min.Giatri, 0));
+                    for (; index < soCotMoi; index++)
+                        newData.Add(new Diem(d.Avg.Giatri, 0));
+                }
+                else if ((d.Avg.Vitri < d.Max.Vitri) && (d.Max.Vitri < d.Min.Vitri))
+                {
+                    int index;
+                    for (index = 0; index < soCotMoi / 3; index++)
+                        newData.Add(new Diem(d.Avg.Giatri, 0));
+                    for (; index < soCotMoi * 2 / 3; index++)
+                        newData.Add(new Diem(d.Max.Giatri, 0));
+                    for (; index < soCotMoi; index++)
+                        newData.Add(new Diem(d.Min.Giatri, 0));
+                }
+                else
+                {
+                    int index;
+                    for (index = 0; index < soCotMoi / 3; index++)
+                        newData.Add(new Diem(d.Avg.Giatri, 0));
+                    for (; index < soCotMoi * 2 / 3; index++)
+                        newData.Add(new Diem(d.Min.Giatri, 0));
+                    for (; index < soCotMoi; index++)
+                        newData.Add(new Diem(d.Max.Giatri, 0));
+                }
+
+            }
+            //soCot = doDaiCotMoi;
+            return newData;
+        }
+
         public void Clear()
         {
             data.Clear();
@@ -257,20 +347,13 @@ namespace ThuVienEPAA
 
             double dpaa = 0, drpaa = 0;
 
-            for (int i = 0; i < w; i++)
+            for (int i = 0; i < n; i++)
             {
                 double r;
                 r = data2.Data[i].Avg.Giatri - data1.Data[i].Avg.Giatri;
                 r = r * r;
                 dpaa += r;
 
-                r = data2.Data[i].Min.Giatri - data1.Data[i].Min.Giatri;
-                r = r * r;
-                dpaa += r;
-
-                r = data2.Data[i].Max.Giatri - data1.Data[i].Max.Giatri;
-                r = r * r;
-                dpaa += r;
             }
             drpaa = nw * dpaa;
 
