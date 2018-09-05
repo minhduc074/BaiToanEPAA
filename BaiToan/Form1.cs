@@ -348,6 +348,12 @@ namespace BaiToan
 
         private void btnSoSanh_Click(object sender, EventArgs e)
         {
+            if ((int)txtSoCot2.Value % 3 != 0)
+            {
+                errorProvider1.SetError(txtSoCot2, "Dữ liệu không hợp lệ.");
+                return;
+            }
+
             for (int i = 0; i < du_lieu_so_sanh.Count; i++ )
             {
                 soSanh(i);
@@ -468,7 +474,7 @@ namespace BaiToan
 
                     epaa.ChuanHoa();
                     List<ThuVienEPAA.Diem> data = epaa.Data;
-                    HienThiDuLieu(3, epaa.ThayDoiSoLuongDuLieuEPAA(epaa.SoCot / (int)txtSoCot2.Value).Data, "Du Lieu Goc", 0, false);
+                    HienThiDuLieu(3, epaa.Data, "Du Lieu Goc", 0, false);
 
                     data = du_lieu_so_sanh[0].Data;
                     HienThiDuLieu(3, data, "Du Lieu Con", 0, false);
@@ -751,7 +757,7 @@ namespace BaiToan
         {
             try
             {
-                if (du_lieu_so_sanh[0].SoCot % (int)txtSoCot2.Value == 0)
+                if (du_lieu_so_sanh[0].SoCot % (int)txtSoCot2.Value == 0 && (int)txtSoCot2.Value %3 ==0)
                 {
                     btnEPAA_Click(sender, e);
                 }
