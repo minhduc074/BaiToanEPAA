@@ -350,7 +350,7 @@ namespace BaiToan
         {
             if ((int)txtSoCot2.Value % 3 != 0)
             {
-                errorProvider1.SetError(txtSoCot2, "Dữ liệu không hợp lệ.");
+                errorProvider1.SetError(txtSoCot2, "Dữ liệu không hợp lệ. Dữ liệu phải chia hết cho 3");
                 return;
             }
 
@@ -757,7 +757,7 @@ namespace BaiToan
         {
             try
             {
-                if (du_lieu_so_sanh[0].SoCot % (int)txtSoCot2.Value == 0 && (int)txtSoCot2.Value %3 ==0)
+                if (du_lieu_so_sanh[0].SoCot % (int)txtSoCot2.Value == 0 && (int)txtSoCot2.Value %3 == 0)
                 {
                     btnEPAA_Click(sender, e);
                 }
