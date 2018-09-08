@@ -33,8 +33,3 @@ C:\Users\user\Downloads\BaiToanEPAA-master (3)\BaiToanEPAA-master\EPAA\bin\Debug
 C:\Users\user\Downloads\BaiToanEPAA-master (3)\BaiToanEPAA-master\EPAA\obj\Debug\ThuVienEPAA.csprojResolveAssemblyReference.cache
 C:\Users\user\Downloads\BaiToanEPAA-master (3)\BaiToanEPAA-master\EPAA\obj\Debug\EPAA.dll
 C:\Users\user\Downloads\BaiToanEPAA-master (3)\BaiToanEPAA-master\EPAA\obj\Debug\EPAA.pdb
-C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\EPAA\bin\Debug\EPAA.dll
-C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\EPAA\bin\Debug\EPAA.pdb
-C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\EPAA\obj\Debug\ThuVienEPAA.csprojResolveAssemblyReference.cache
-C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\EPAA\obj\Debug\EPAA.dll
-C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\EPAA\obj\Debug\EPAA.pdb

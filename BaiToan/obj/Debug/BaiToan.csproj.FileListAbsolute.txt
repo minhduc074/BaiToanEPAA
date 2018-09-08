@@ -168,32 +168,3 @@ C:\Users\user\Downloads\BaiToanEPAA-master (3)\BaiToanEPAA-master\BaiToan\obj\De
 C:\Users\user\Downloads\BaiToanEPAA-master (3)\BaiToanEPAA-master\BaiToan\obj\Debug\BaiToan.exe.licenses
 C:\Users\user\Downloads\BaiToanEPAA-master (3)\BaiToanEPAA-master\BaiToan\obj\Debug\BaiToan.exe
 C:\Users\user\Downloads\BaiToanEPAA-master (3)\BaiToanEPAA-master\BaiToan\obj\Debug\BaiToan.pdb
-C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\BaiToan\bin\Debug\BaiToan.exe.config
-C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\BaiToan\bin\Debug\BaiToan.exe
-C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\BaiToan\bin\Debug\BaiToan.pdb
-C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\BaiToan\bin\Debug\EPAA.dll
-C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\BaiToan\bin\Debug\ZedGraph.dll
-C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\BaiToan\bin\Debug\EPAA.pdb
-C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\BaiToan\bin\Debug\ZedGraph.xml
-C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\BaiToan\bin\Debug\de\ZedGraph.resources.dll
-C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\BaiToan\bin\Debug\es\ZedGraph.resources.dll
-C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\BaiToan\bin\Debug\fr\ZedGraph.resources.dll
-C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\BaiToan\bin\Debug\hu\ZedGraph.resources.dll
-C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\BaiToan\bin\Debug\it\ZedGraph.resources.dll
-C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\BaiToan\bin\Debug\ja\ZedGraph.resources.dll
-C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\BaiToan\bin\Debug\pt\ZedGraph.resources.dll
-C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\BaiToan\bin\Debug\ru\ZedGraph.resources.dll
-C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\BaiToan\bin\Debug\sk\ZedGraph.resources.dll
-C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\BaiToan\bin\Debug\sv\ZedGraph.resources.dll
-C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\BaiToan\bin\Debug\tr\ZedGraph.resources.dll
-C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\BaiToan\bin\Debug\zh-cn\ZedGraph.resources.dll
-C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\BaiToan\bin\Debug\zh-tw\ZedGraph.resources.dll
-C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\BaiToan\obj\Debug\BaiToan.csprojResolveAssemblyReference.cache
-C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\BaiToan\obj\Debug\BaiToan.csproj.ResolveComReference.cache
-C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\BaiToan\obj\Debug\BaiToan.Form1.resources
-C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\BaiToan\obj\Debug\BaiToan.loading.resources
-C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\BaiToan\obj\Debug\BaiToan.Properties.Resources.resources
-C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\BaiToan\obj\Debug\BaiToan.csproj.GenerateResource.Cache
-C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\BaiToan\obj\Debug\BaiToan.exe.licenses
-C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\BaiToan\obj\Debug\BaiToan.exe
-C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\BaiToan\obj\Debug\BaiToan.pdb
