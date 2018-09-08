@@ -2234,11 +2234,11 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Bai Toan EPAA"
         "ProductCode" = "8:{C90638C0-9213-48EB-8A92-2949B8852FDA}"
-        "PackageCode" = "8:{7D923027-A3C1-465B-93A1-5A018BB43EE8}"
+        "PackageCode" = "8:{8EDBD1C0-E186-467C-893C-5E3B9BA3781D}"
         "UpgradeCode" = "8:{1E6F4DA3-395F-433E-9D99-276919723213}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
-        "RemovePreviousVersions" = "11:FALSE"
+        "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
         "ProductVersion" = "8:1.0.0"
@@ -2354,6 +2354,20 @@
         }
         "Shortcut"
         {
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_8735F2E530EF48AC8265CDA8C305655D"
+            {
+            "Name" = "8:BaiToan EPAA"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_2630191F7A004D7A8D59AFA4AF4700D3"
+            "Folder" = "8:_34D4A92CFFB8410C836739A12105FFD0"
+            "WorkingFolder" = "8:_EDF661191D95451F8272BE095FECD2A0"
+            "Icon" = "8:"
+            "Feature" = "8:"
+            }
         }
         "UserInterface"
         {
