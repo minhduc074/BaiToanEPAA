@@ -1,4 +1,5 @@
 C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\EPAA\bin\Release\EPAA.dll
 C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\EPAA\bin\Release\EPAA.pdb
+C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\EPAA\obj\Release\ThuVienEPAA.csprojResolveAssemblyReference.cache
 C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\EPAA\obj\Release\EPAA.dll
 C:\Users\DucIT\Documents\GitHub\BaiToanEPAA\EPAA\obj\Release\EPAA.pdb

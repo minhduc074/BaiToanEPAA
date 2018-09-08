@@ -76,7 +76,6 @@ C:\Users\user\Downloads\BaiToanEPAA-master (1)\BaiToanEPAA-master\BaiToan\bin\De
 C:\Users\user\Downloads\BaiToanEPAA-master (1)\BaiToanEPAA-master\BaiToan\bin\Debug\zh-cn\ZedGraph.resources.dll
 C:\Users\user\Downloads\BaiToanEPAA-master (1)\BaiToanEPAA-master\BaiToan\bin\Debug\zh-tw\ZedGraph.resources.dll
 C:\Users\user\Downloads\BaiToanEPAA-master (1)\BaiToanEPAA-master\BaiToan\obj\Debug\BaiToan.csprojResolveAssemblyReference.cache
-C:\Users\user\Downloads\BaiToanEPAA-master (1)\BaiToanEPAA-master\BaiToan\obj\Debug\BaiToan.DoThi.resources
 C:\Users\user\Downloads\BaiToanEPAA-master (1)\BaiToanEPAA-master\BaiToan\obj\Debug\BaiToan.Form1.resources
 C:\Users\user\Downloads\BaiToanEPAA-master (1)\BaiToanEPAA-master\BaiToan\obj\Debug\BaiToan.loading.resources
 C:\Users\user\Downloads\BaiToanEPAA-master (1)\BaiToanEPAA-master\BaiToan\obj\Debug\BaiToan.Properties.Resources.resources

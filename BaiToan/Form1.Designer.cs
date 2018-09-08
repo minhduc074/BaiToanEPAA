@@ -65,10 +65,10 @@
             this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
             this.zedGraphControl3 = new ZedGraph.ZedGraphControl();
             this.groupControl6 = new DevExpress.XtraEditors.GroupControl();
+            this.btnResetTab3 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnReset3 = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btnResetTab3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
             this.tabPane1.SuspendLayout();
             this.tabNavigationPage1.SuspendLayout();
@@ -218,7 +218,7 @@
             this.txtviTriCon.Size = new System.Drawing.Size(126, 27);
             this.txtviTriCon.TabIndex = 13;
             this.txtviTriCon.Value = new decimal(new int[] {
-            2,
+            20,
             0,
             0,
             0});
@@ -264,7 +264,7 @@
             this.txtDoDaiGoc.Size = new System.Drawing.Size(126, 27);
             this.txtDoDaiGoc.TabIndex = 13;
             this.txtDoDaiGoc.Value = new decimal(new int[] {
-            2000,
+            3000,
             0,
             0,
             0});
@@ -287,7 +287,7 @@
             this.txtDoDaiCon.Size = new System.Drawing.Size(126, 27);
             this.txtDoDaiCon.TabIndex = 13;
             this.txtDoDaiCon.Value = new decimal(new int[] {
-            100,
+            300,
             0,
             0,
             0});
@@ -518,7 +518,7 @@
             this.txtSoCot2.Size = new System.Drawing.Size(114, 27);
             this.txtSoCot2.TabIndex = 11;
             this.txtSoCot2.Value = new decimal(new int[] {
-            10,
+            30,
             0,
             0,
             0});
@@ -584,6 +584,18 @@
             this.groupControl6.TabIndex = 19;
             this.groupControl6.Text = "Bảng kết quả sau khi so trùng chuỗi con ";
             // 
+            // btnResetTab3
+            // 
+            this.btnResetTab3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.btnResetTab3.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnResetTab3.Location = new System.Drawing.Point(172, 324);
+            this.btnResetTab3.Name = "btnResetTab3";
+            this.btnResetTab3.Size = new System.Drawing.Size(75, 28);
+            this.btnResetTab3.TabIndex = 18;
+            this.btnResetTab3.Text = "Thu nhỏ";
+            this.btnResetTab3.UseVisualStyleBackColor = false;
+            this.btnResetTab3.Click += new System.EventHandler(this.btnResetTab3_Click);
+            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
@@ -611,18 +623,6 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // btnResetTab3
-            // 
-            this.btnResetTab3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.btnResetTab3.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnResetTab3.Location = new System.Drawing.Point(172, 324);
-            this.btnResetTab3.Name = "btnResetTab3";
-            this.btnResetTab3.Size = new System.Drawing.Size(75, 28);
-            this.btnResetTab3.TabIndex = 18;
-            this.btnResetTab3.Text = "Reset";
-            this.btnResetTab3.UseVisualStyleBackColor = false;
-            this.btnResetTab3.Click += new System.EventHandler(this.btnResetTab3_Click);
             // 
             // Form1
             // 

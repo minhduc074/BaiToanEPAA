@@ -57,12 +57,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_194883C63FE0EEA45E2AD914534C96CD"
-        "OwnerKey" = "8:_2630191F7A004D7A8D59AFA4AF4700D3"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_24A643F4F0800F74D49C17A28BA3C1B9"
         "OwnerKey" = "8:_31079D5C78612B90245C6D7C2C8805E0"
         "MsmSig" = "8:_UNDEFINED"
@@ -148,13 +142,7 @@
         "Entry"
         {
         "MsmKey" = "8:_2A390A28383ACE377490A4F08CFAB219"
-        "OwnerKey" = "8:_25C16478F2D1D67599779A6AB2CF74E8"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_2A390A28383ACE377490A4F08CFAB219"
-        "OwnerKey" = "8:_83AB1299030D6A8754ADD39890934F7C"
+        "OwnerKey" = "8:_CA6A0EE7EDF69802EC578394DF881DBF"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -166,7 +154,13 @@
         "Entry"
         {
         "MsmKey" = "8:_2A390A28383ACE377490A4F08CFAB219"
-        "OwnerKey" = "8:_CA6A0EE7EDF69802EC578394DF881DBF"
+        "OwnerKey" = "8:_83AB1299030D6A8754ADD39890934F7C"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_2A390A28383ACE377490A4F08CFAB219"
+        "OwnerKey" = "8:_25C16478F2D1D67599779A6AB2CF74E8"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -405,6 +399,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_8435CD4229F67C0AF3CDBE15EE190E29"
+        "OwnerKey" = "8:_2630191F7A004D7A8D59AFA4AF4700D3"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_8DE397806A3C6BA9CD45D4DC1829C2D6"
         "OwnerKey" = "8:_CA6A0EE7EDF69802EC578394DF881DBF"
         "MsmSig" = "8:_UNDEFINED"
@@ -424,12 +424,6 @@
         "Entry"
         {
         "MsmKey" = "8:_AF2C69B2FF80329A7BB494BD148D6400"
-        "OwnerKey" = "8:_B8EB1615831A3295573703308DFD3071"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_AF2C69B2FF80329A7BB494BD148D6400"
         "OwnerKey" = "8:_2A390A28383ACE377490A4F08CFAB219"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -597,6 +591,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_AF2C69B2FF80329A7BB494BD148D6400"
+        "OwnerKey" = "8:_B8EB1615831A3295573703308DFD3071"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_B200AA91722F98C76EC50C3DC680F8D3"
         "OwnerKey" = "8:_25C16478F2D1D67599779A6AB2CF74E8"
         "MsmSig" = "8:_UNDEFINED"
@@ -959,18 +959,6 @@
         {
         "MsmKey" = "8:_FCF6C3C3AA7AEA1B693115AD44B17B27"
         "OwnerKey" = "8:_0AF54665161AD110362817C09BC49A93"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_2A390A28383ACE377490A4F08CFAB219"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_194883C63FE0EEA45E2AD914534C96CD"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -988,6 +976,12 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_8435CD4229F67C0AF3CDBE15EE190E29"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_5D54604F95F03B2704F02B0A973B8010"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -1145,6 +1139,12 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_B8EB1615831A3295573703308DFD3071"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_2A390A28383ACE377490A4F08CFAB219"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -1171,6 +1171,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.5"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.5 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.5"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -1187,6 +1203,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -1261,37 +1285,6 @@
                     }
                 }
             "SourcePath" = "8:DevExpress.Utils.v17.1.UI.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_EDF661191D95451F8272BE095FECD2A0"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_194883C63FE0EEA45E2AD914534C96CD"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:EPAA, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_194883C63FE0EEA45E2AD914534C96CD"
-                    {
-                    "Name" = "8:EPAA.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:EPAA.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_EDF661191D95451F8272BE095FECD2A0"
@@ -1836,6 +1829,37 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_8435CD4229F67C0AF3CDBE15EE190E29"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:EPAA, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_8435CD4229F67C0AF3CDBE15EE190E29"
+                    {
+                    "Name" = "8:EPAA.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:EPAA.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_EDF661191D95451F8272BE095FECD2A0"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_8DE397806A3C6BA9CD45D4DC1829C2D6"
             {
             "AssemblyRegister" = "3:1"
@@ -2234,7 +2258,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Bai Toan EPAA"
         "ProductCode" = "8:{C90638C0-9213-48EB-8A92-2949B8852FDA}"
-        "PackageCode" = "8:{8EDBD1C0-E186-467C-893C-5E3B9BA3781D}"
+        "PackageCode" = "8:{79C402DA-2D77-4BFC-B063-9DDAF638FCC8}"
         "UpgradeCode" = "8:{1E6F4DA3-395F-433E-9D99-276919723213}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -2354,6 +2378,20 @@
         }
         "Shortcut"
         {
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_657424C2D87C45B1ACAB0BFDC89E0C10"
+            {
+            "Name" = "8:BaiToan EPAA"
+            "Arguments" = "8:"
+            "Description" = "8:"
+            "ShowCmd" = "3:1"
+            "IconIndex" = "3:0"
+            "Transitive" = "11:FALSE"
+            "Target" = "8:_2630191F7A004D7A8D59AFA4AF4700D3"
+            "Folder" = "8:_143EAE116D244211A5EF20ECD11CEE5F"
+            "WorkingFolder" = "8:_EDF661191D95451F8272BE095FECD2A0"
+            "Icon" = "8:"
+            "Feature" = "8:"
+            }
             "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_8735F2E530EF48AC8265CDA8C305655D"
             {
             "Name" = "8:BaiToan EPAA"
@@ -2769,7 +2807,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_2630191F7A004D7A8D59AFA4AF4700D3"
             {
-            "SourcePath" = "8:..\\BaiToan\\obj\\Release\\BaiToan.exe"
+            "SourcePath" = "8:..\\BaiToan\\obj\\Debug\\BaiToan.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_EDF661191D95451F8272BE095FECD2A0"
