@@ -334,7 +334,7 @@ namespace BaiToan
                 if (trungKhop < 9)
                 {
 
-                    doSaiLech = trungKhop;
+                    doSaiLech = Math.Round(trungKhop, 2);
                     dataTable.Rows.Add(ten + soluong, viTri+1, doSaiLech);
                     HienThiDuLieu(3, du_lieu_so_sanh[i].Data, ten + soluong, j, false);
                     //HienThiDuLieu(3, sosanh.Data, ten + soluong, j, false);
